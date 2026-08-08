@@ -1,0 +1,100 @@
+site_name: Swift / iOS Mobile Engineering Handbook
+site_description: Handbook Swift/iOS bằng tiếng Việt — từ Foundation đến Production, Mobile System Design và Global Interview.
+site_url: https://imindesign96.github.io/Swift-iOS-Mobile-Engineering-Handbook/
+repo_url: https://github.com/imindesign96/Swift-iOS-Mobile-Engineering-Handbook
+repo_name: imindesign96/Swift-iOS-Mobile-Engineering-Handbook
+docs_dir: .site-docs
+site_dir: site
+
+theme:
+  name: material
+  language: vi
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: deep orange
+      accent: orange
+      toggle:
+        icon: material/brightness-7
+        name: Chuyển sang chế độ tối
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: deep orange
+      accent: orange
+      toggle:
+        icon: material/brightness-4
+        name: Chuyển sang chế độ sáng
+  icon:
+    repo: fontawesome/brands/github
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.sections
+    - navigation.indexes
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - toc.follow
+
+plugins:
+  - search:
+      lang:
+        - vi
+        - en
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - meta
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+
+extra_css:
+  - assets/stylesheets/extra.css
+
+nav:
+  - Trang chủ: index.md
+  - Lộ trình: SUMMARY.md
+  - Swift Foundation:
+      - Tổng quan: Phase-01-Swift-Foundation/index.md
+      - Một chương trình Swift chạy như thế nào?: Phase-01-Swift-Foundation/01-how-a-swift-program-runs.md
+      - let, var và type safety: Phase-01-Swift-Foundation/02-let-var-type-inference-and-type-safety.md
+      - Optional và nil safety: Phase-01-Swift-Foundation/03-optionals-and-nil-safety.md
+  - Memory & Runtime: Phase-02-Memory-Runtime/index.md
+  - Concurrency: Phase-03-Concurrency/index.md
+  - iOS Platform: Phase-04-iOS-Platform/index.md
+  - Networking: Phase-05-Networking/index.md
+  - Architecture: Phase-06-Architecture/index.md
+  - Persistence: Phase-07-Persistence/index.md
+  - Testing: Phase-08-Testing/index.md
+  - Production: Phase-09-Production/index.md
+  - Mobile System Design: Phase-10-Mobile-System-Design/index.md
+  - Global Interview: Phase-11-Interview/index.md
+  - Tra cứu:
+      - Glossary: GLOSSARY.md
+      - Cross-reference Index: CROSS_REFERENCE_INDEX.md
+      - Production Playbook: PRODUCTION_PLAYBOOK.md
+      - Interview Playbook: INTERVIEW_PLAYBOOK.md
+      - Specification: SPECIFICATION.md
+  - Templates:
+      - Chapter: handbook-templates/chapter-template.md
+      - Interview Question: handbook-templates/interview-question-template.md
+      - Production Case: handbook-templates/production-case-template.md
+      - ADR: handbook-templates/adr-template.md
+  - Diagram Guidelines: assets/diagrams/index.md
+
+copyright: Copyright &copy; 2026 Swift / iOS Mobile Engineering Handbook

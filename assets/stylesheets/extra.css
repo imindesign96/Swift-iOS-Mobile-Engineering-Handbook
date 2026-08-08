@@ -1,0 +1,48 @@
+:root {
+  --swift-orange: #f05138;
+  --swift-orange-dark: #d83b24;
+  --handbook-ink: #172033;
+}
+
+[data-md-color-scheme="default"] {
+  --md-primary-fg-color: var(--swift-orange);
+  --md-primary-fg-color--dark: var(--swift-orange-dark);
+  --md-accent-fg-color: var(--swift-orange-dark);
+  --md-typeset-a-color: #c93823;
+}
+
+[data-md-color-scheme="slate"] {
+  --md-primary-fg-color: #d84830;
+  --md-accent-fg-color: #ff806a;
+  --md-typeset-a-color: #ff8a74;
+}
+
+.md-header {
+  background: linear-gradient(110deg, #bd2b1f 0%, var(--swift-orange) 58%, #ff8a49 100%);
+}
+
+.md-tabs {
+  background-color: var(--handbook-ink);
+}
+
+.md-typeset h1 {
+  font-weight: 750;
+  letter-spacing: -0.025em;
+}
+
+.md-typeset h2 {
+  font-weight: 700;
+}
+
+.md-typeset code {
+  border-radius: 0.3rem;
+}
+
+.md-typeset table:not([class]) th {
+  background-color: color-mix(in srgb, var(--swift-orange) 13%, transparent);
+}
+
+.md-typeset blockquote {
+  border-left-color: var(--swift-orange);
+}
+
