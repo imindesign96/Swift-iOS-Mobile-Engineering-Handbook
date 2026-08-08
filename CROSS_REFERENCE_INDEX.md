@@ -14,6 +14,11 @@
 | Previous account data | [Account isolation](Phase-07-Persistence/14-logout-login-va-data-isolation-giua-account.md) | Keychain → repository/cache reset → regression test |
 | Rare concurrency crash | [Strict concurrency](Phase-03-Concurrency/10-sendable-at-sendable-va-strict-concurrency.md) | Actor isolation → reentrancy → production correlation |
 | OS kill không crash log | [Memory pressure](Phase-09-Production/06-memory-pressure-va-os-termination.md) | Allocations → image/cache budget → Organizer metrics |
+| Web/native session lệch | [WKWebView bridge](Phase-04-iOS-Platform/24-wkwebview-bridge-cookie-localstorage-va-native-web-data-contract.md) | Cookie store → LocalStorage origin → bridge contract → logout regression |
+| Deep link không mở app | [Universal Links](Phase-04-iOS-Platform/23-universal-links-aasa-routing-fallback-va-security.md) | AASA/entitlement → scene delivery → typed route → security fallback |
+| E2E flaky trên CI | [E2E automation](Phase-08-Testing/15-e2e-automation-voi-xcuitest-fixtures-stability-va-ci.md) | Fixture/identifier → semantic wait → xcresult → flake taxonomy |
+| Release/signing không ổn định | [iOS CI/CD](Phase-09-Production/19-ios-ci-cd-voi-bitrise-va-fastlane.md) | Toolchain pin → tests → readonly signing → immutable artifact |
+| Team chậm nhưng không rõ bottleneck | [Developer productivity](Phase-09-Production/20-developer-productivity-metrics-va-data-driven-improvement.md) | Value stream → DORA/DevEx baseline → experiment → guardrail |
 
 ## Canonical Phase Reviews
 
@@ -31,4 +36,4 @@
 
 ## Full coverage
 
-Xem [Handbook Coverage Matrix](HANDBOOK_COVERAGE.md) để tra toàn bộ 183 chapter và các chiều runtime/memory/concurrency/production/interview.
+Xem [Handbook Coverage Matrix](HANDBOOK_COVERAGE.md) để tra toàn bộ 196 chapter; xem [Professional Skills Matrix](PROFESSIONAL_SKILLS_MATRIX.md) để đối chiếu 13 yêu cầu năng lực tiếng Nhật.

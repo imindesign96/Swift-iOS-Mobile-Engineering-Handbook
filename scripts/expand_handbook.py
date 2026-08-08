@@ -18,6 +18,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 SUMMARY = ROOT / "SUMMARY.md"
 TODAY = "2026-08-09"
+CATALOG_TOTAL = 196
 
 PRESERVE_HAND_WRITTEN = {
     "Phase-01-Swift-Foundation/01-how-a-swift-program-runs.md",
@@ -237,6 +238,19 @@ PHASE_GUIDES = {
 
 
 TOPIC_RULES = [
+    (r"reactive-programming|combine-stream", "Reactive Programming mô hình hóa value, completion và failure theo thời gian; Combine nối Publisher, operator, Subscriber và Subscription thành một contract có demand/cancellation", "pipeline giữ subscription sai lifetime, scheduler hop mơ hồ, nested subscription hoặc bridge async/await làm mất cancellation", "Combine event trace, subscription lifetime, scheduler assertion và deterministic virtual-time test", "dùng Combine khi feature cần compose nhiều event stream hoặc operator theo thời gian; dùng async/await cho one-shot flow và AsyncSequence cho stream tuần tự đơn giản"),
+    (r"human-interface-guidelines|accessibility|adaptive-ui", "HIG là hệ constraint về hierarchy, familiarity, feedback, adaptability và accessibility chứ không phải bộ pixel cố định", "UI đẹp ở một iPhone nhưng vỡ với Dynamic Type, VoiceOver, localization, iPad multitasking, Reduce Motion hoặc contrast mode", "Accessibility Inspector, VoiceOver audit, snapshot theo trait collection và usability evidence", "bắt đầu từ system components/semantic styles, thiết kế adaptive theo content và kiểm chứng bằng ma trận device-accessibility"),
+    (r"app-extensions|notification-service-extension|widgetkit", "app extension là process/lifecycle bị hệ thống giới hạn; Notification Service Extension phải luôn gọi content handler còn WidgetKit chỉ render snapshot/timeline từ shared data contract", "coi extension như app mini chạy lâu, phụ thuộc singleton của host app, bỏ expiration fallback hoặc reload widget vô hạn", "extension logs, delivery/timeline timestamps, memory/energy budget và fallback behavior", "chia sẻ model tối thiểu qua package/App Group, giữ work bounded và thiết kế kết quả hữu ích khi extension bị terminate"),
+    (r"corelocation", "Core Location là permission và energy contract: request mức authorization/accuracy nhỏ nhất đủ cho user value rồi dừng update khi không cần", "xin Always quá sớm, giả định full accuracy, chạy GPS liên tục hoặc không xử lý denied/restricted/background transition", "authorization/accuracy transition log, location age-horizontalAccuracy, Energy Log và background diagnostics", "chọn one-shot, live update, significant-change, visit hoặc region monitoring theo precision-latency-energy requirement"),
+    (r"universal-links|aasa", "Universal Links cần association hai chiều giữa entitlement và AASA, sau đó route URL qua parser/allowlist như untrusted input", "AASA sai path/content type/redirect, route phân tán theo lifecycle hoặc query parameter kích hoạt hành động nhạy cảm", "AASA HTTP response, device association diagnostics, route parser tests và scene delivery logs", "chuẩn hóa một typed router dùng chung cold/warm launch, validate host/path/query và luôn có web/app fallback"),
+    (r"wkwebview|cookie-localstorage|native-web", "WKWebView integration là protocol giữa hai security domains; Cookie thuộc WKHTTPCookieStore còn LocalStorage thuộc origin và chỉ nên truy cập qua bridge versioned, validated", "giả định HTTPCookieStorage tự đồng bộ, inject JavaScript chứa dữ liệu không escape, message handler giữ cycle hoặc native/web schema drift", "Web Inspector, cookie-store snapshot, origin-scoped storage probe, navigation/message correlation và contract tests", "định nghĩa handshake/schema/allowlist/timeout trước, chọn persistent hoặc nonpersistent WKWebsiteDataStore rõ ràng và đồng bộ auth ở một boundary"),
+    (r"e2e-automation|xcuitest", "E2E automation kiểm chứng critical user journey qua public UI contract bằng app state và dependency được kiểm soát", "sleep, coordinate tuyệt đối, shared account hoặc network thật khiến suite flaky và không chẩn đoán được", "xcresult attachment, screenshot/activity, flake rate, retry-with-classification và CI shard timing", "giữ số flow E2E nhỏ theo business risk, dùng launch arguments/fixtures/accessibility identifiers và assertion chờ state có nghĩa"),
+    (r"ci-cd|bitrise|fastlane", "CI/CD biến build-test-sign-distribute thành pipeline versioned, reproducible và audit được; Bitrise orchestration còn fastlane đóng gói release actions", "secret/code signing nằm trong repo, Xcode version drift, lane local khác CI hoặc deploy không có quality gate/rollback", "build artifact/xresult, cache hit, queue/build duration, signing provenance và release audit log", "pin toolchain/dependency, tách verify và release workflow, dùng readonly signing trên CI và least-privilege App Store Connect key"),
+    (r"developer-productivity|data-driven", "developer productivity phải đo flow, quality và developer experience ở cấp team/system để tìm bottleneck, không xếp hạng cá nhân", "tối ưu LOC/commit count, dashboard không dẫn tới hành động hoặc metric trở thành target gây gaming", "DORA throughput/instability, build/test/review lead time, DevEx survey và experiment guardrails", "đặt baseline theo cùng product, chọn một bottleneck, thử thay đổi nhỏ có hypothesis rồi so sánh trend cùng quality/satisfaction guardrail"),
+    (r"cross-platform-collaboration|backend-web-android|api-contract", "cross-platform delivery cần contract chung về schema, error, auth, time, money, pagination, idempotency và rollout thay vì mỗi client tự suy luận", "backend thay enum bắt buộc, web/iOS khác cookie session, Android/iOS khác lifecycle hoặc rollout phá backward compatibility", "OpenAPI/fixture contract tests, compatibility matrix, correlation ID và staged-rollout metrics", "đồng sở hữu API contract, dùng tolerant reader có chủ đích, version breaking change và ghi rõ platform-specific capability"),
+    (r"engineering-management|technical-leadership", "technical leadership tạo clarity, decision quality và hệ thống ownership để team tự giao hàng; management thêm people/process responsibility chứ không phải quyền quyết định mọi code", "hero bottleneck, architecture bằng mệnh lệnh, delegation không context hoặc đo output cá nhân", "decision lead time, ownership health, delivery/quality trend, team feedback và succession evidence", "làm rõ role/decision rights, viết context và guardrail, delegate outcome, coaching qua feedback cụ thể và revisit decision bằng evidence"),
+    (r"technical-speaking|study-groups|community", "community contribution chuyển kinh nghiệm thành nội dung có audience, learning objective, evidence và feedback loop", "talk quảng cáo, lộ dữ liệu công ty, slide quá rộng hoặc activity không có follow-up/reuse", "proposal acceptance, attendance/retention, qualitative feedback, artifact reuse và action items", "bắt đầu từ một problem có bằng chứng, xin approval cho nội dung nhạy cảm, rehearsal với peer và publish artifact dễ tái sử dụng"),
+    (r"oss-contribution|maintainer-workflow", "OSS contribution là collaboration theo governance; release cần compatibility, semantic versioning, changelog, provenance và maintainer response plan", "PR lớn không issue, breaking API dưới minor tag, secret trong history hoặc release không migration/security process", "CI matrix, API diff, dependent tests, release notes, adoption/issues và vulnerability response time", "đọc CONTRIBUTING trước, gửi change nhỏ có test, discuss breaking design sớm và release từ signed/tagged reproducible workflow"),
     (r"optional|nil-safety", "absence là một state trong type, không phải chuỗi rỗng hay sentinel", "force unwrap hoặc che nil bằng fallback vô nghĩa", "branch và invariant tại nơi unwrap", "chọn Optional khi absence hợp lệ; chọn error/state enum khi cần lý do hoặc nhiều state"),
     (r"control-flow|switch|pattern-matching", "control flow nên làm domain cases exhaustive và dễ audit", "default che case mới hoặc nested if làm mất invariant", "branch coverage và compiler exhaustiveness", "ưu tiên switch/pattern khi các case domain loại trừ nhau"),
     (r"function|parameter-label|method", "signature là API contract về intent, input, ownership và failure", "boolean soup, label mơ hồ hoặc side effect ẩn", "call site đọc như câu và test theo output/side effect", "tách function theo một responsibility có tên domain"),
@@ -388,6 +402,214 @@ def topic_profile(title: str, phase_number: int) -> tuple[str, str, str, str]:
 
 def code_example(title: str, phase_number: int) -> str:
     slug = slugify(title)
+    if "reactive-programming" in slug or "combine-stream" in slug:
+        return '''import Combine
+import Foundation
+
+final class ProductSearchModel {
+    @Published var query = ""
+    @Published private(set) var products: [Product] = []
+    private var cancellables = Set<AnyCancellable>()
+
+    init(search: @escaping (String) -> AnyPublisher<[Product], Error>) {
+        $query
+            .debounce(for: .milliseconds(300), scheduler: DispatchQueue.main)
+            .removeDuplicates()
+            .map(search)
+            .switchToLatest() // hủy subscription của query cũ
+            .replaceError(with: [])
+            .receive(on: DispatchQueue.main)
+            .assign(to: &$products)
+    }
+}'''
+    if "human-interface-guidelines" in slug:
+        return '''import SwiftUI
+
+struct CheckoutButton: View {
+    let total: Money
+    let action: () -> Void
+
+    var body: some View {
+        Button(action: action) {
+            Label("Thanh toán, tổng \(total.formatted)", systemImage: "cart")
+                .font(.headline)                 // Dynamic Type
+                .frame(maxWidth: .infinity, minHeight: 44)
+        }
+        .buttonStyle(.borderedProminent)
+        .accessibilityHint("Mở bước xác nhận đơn hàng")
+    }
+}'''
+    if "app-extensions" in slug:
+        return '''import UserNotifications
+
+final class NotificationService: UNNotificationServiceExtension {
+    private var handler: ((UNNotificationContent) -> Void)?
+    private var fallback: UNMutableNotificationContent?
+
+    override func didReceive(
+        _ request: UNNotificationRequest,
+        withContentHandler contentHandler: @escaping (UNNotificationContent) -> Void
+    ) {
+        handler = contentHandler
+        fallback = request.content.mutableCopy() as? UNMutableNotificationContent
+        fallback?.title = "Đơn hàng đã cập nhật"
+        contentHandler(fallback ?? request.content)
+    }
+
+    override func serviceExtensionTimeWillExpire() {
+        if let handler, let fallback { handler(fallback) }
+    }
+}'''
+    if "corelocation" in slug:
+        return '''import CoreLocation
+
+@MainActor
+final class LocationSession: NSObject, CLLocationManagerDelegate {
+    private let manager = CLLocationManager()
+
+    override init() {
+        super.init()
+        manager.delegate = self
+        manager.desiredAccuracy = kCLLocationAccuracyHundredMeters
+    }
+
+    func requestNearbyStores() {
+        manager.requestWhenInUseAuthorization()
+        manager.requestLocation() // one-shot thay vì update liên tục
+    }
+
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations values: [CLLocation]) {
+        guard let latest = values.last, latest.horizontalAccuracy >= 0 else { return }
+        manager.stopUpdatingLocation()
+        renderStores(near: latest)
+    }
+}'''
+    if "universal-links" in slug:
+        return '''import Foundation
+
+enum AppRoute: Equatable {
+    case order(id: String)
+
+    init?(universalLink url: URL) {
+        guard url.scheme == "https", url.host == "shop.example.com" else { return nil }
+        let parts = url.pathComponents.filter { $0 != "/" }
+        guard parts.count == 2, parts[0] == "orders", !parts[1].isEmpty else { return nil }
+        self = .order(id: parts[1])
+    }
+}
+
+// scene(_:continue:) và SwiftUI onOpenURL đều chuyển URL vào cùng router.'''
+    if "wkwebview" in slug:
+        return '''import WebKit
+
+@MainActor
+func makeCheckoutWebView(sessionCookie: HTTPCookie) async -> WKWebView {
+    let configuration = WKWebViewConfiguration()
+    configuration.websiteDataStore = .default()
+    let cookieStore = configuration.websiteDataStore.httpCookieStore
+    await cookieStore.setCookie(sessionCookie)
+
+    let controller = configuration.userContentController
+    controller.addScriptMessageHandler(
+        CheckoutMessageHandler(allowedOrigin: "https://checkout.example.com"),
+        contentWorld: .page,
+        name: "checkout"
+    )
+    return WKWebView(frame: .zero, configuration: configuration)
+}
+
+// LocalStorage thuộc origin. Native trao đổi qua message schema đã version,
+// không ghép token/JSON trực tiếp vào evaluateJavaScript.'''
+    if "e2e-automation" in slug:
+        return '''import XCTest
+
+final class CheckoutE2ETests: XCTestCase {
+    func testGuestCanCompleteCheckout() {
+        let app = XCUIApplication()
+        app.launchArguments += ["-e2e", "-fixture", "checkout-success"]
+        app.launch()
+
+        app.buttons["product.addToCart"].tap()
+        app.buttons["cart.checkout"].tap()
+        app.buttons["checkout.confirm"].tap()
+
+        XCTAssertTrue(app.staticTexts["order.success"].waitForExistence(timeout: 5))
+    }
+}'''
+    if "ci-cd" in slug or "bitrise" in slug or "fastlane" in slug:
+        return '''default_platform(:ios)
+
+platform :ios do
+  lane :verify do
+    scan(scheme: "Commerce", result_bundle: true)
+  end
+
+  lane :beta do
+    match(type: "appstore", readonly: is_ci)
+    build_app(scheme: "Commerce", export_method: "app-store")
+    upload_to_testflight(skip_waiting_for_build_processing: true)
+  end
+end'''
+    if "developer-productivity" in slug:
+        return '''struct DeliveryBaseline: Sendable {
+    let changeLeadTimeHours: Double
+    let deploymentFrequencyPerWeek: Double
+    let failedDeploymentRecoveryHours: Double
+    let changeFailRate: Double
+    let deploymentReworkRate: Double
+    let medianBuildMinutes: Double
+    let developerSatisfaction: Double
+}
+
+// So sánh trend của cùng team/product; không dùng metric để xếp hạng cá nhân.'''
+    if "cross-platform-collaboration" in slug:
+        return '''struct MoneyDTO: Codable, Sendable {
+    let amountMinor: Int64
+    let currency: String
+}
+
+struct APIErrorDTO: Codable, Sendable {
+    let code: String          // machine-readable, documented and versioned
+    let message: String       // user-safe fallback
+    let retryable: Bool
+    let correlationID: String
+}
+
+// Backend, web, Android và iOS dùng cùng contract fixtures/OpenAPI examples.'''
+    if "engineering-management" in slug:
+        return '''struct TechnicalDecision: Sendable {
+    let owner: String
+    let context: String
+    let options: [String]
+    let decision: String
+    let guardrails: [String]
+    let revisitOn: String
+}
+
+// Lead tạo context và decision rights; owner thực thi không bị biến thành proxy.'''
+    if "technical-speaking" in slug or "study-groups" in slug:
+        return '''struct TalkProposal: Sendable {
+    let audience: String
+    let problem: String
+    let learningOutcomes: [String]
+    let evidence: [String]
+    let confidentialityReview: String
+    let feedbackPlan: String
+}'''
+    if "oss-contribution" in slug:
+        return '''// Package.swift
+// swift-tools-version: 6.2
+import PackageDescription
+
+let package = Package(
+    name: "ResilientHTTP",
+    platforms: [.iOS(.v17), .macOS(.v14)],
+    products: [.library(name: "ResilientHTTP", targets: ["ResilientHTTP"])],
+    targets: [
+        .target(name: "ResilientHTTP"),
+        .testTarget(name: "ResilientHTTPTests", dependencies: ["ResilientHTTP"])
+    ]
+)'''
     if phase_number == 10 and "image-loader" in slug:
         return '''import Foundation
 
@@ -664,6 +886,215 @@ logger.info("checkout_started request_id=\\(requestID, privacy: .public)")
     return fallback[phase_number]
 
 
+def code_language(title: str) -> str:
+    slug = slugify(title)
+    if "ci-cd" in slug or "bitrise" in slug or "fastlane" in slug:
+        return "ruby"
+    return "swift"
+
+
+def topic_deep_dive(title: str) -> str:
+    """Return a searchable, topic-specific deep dive for the professional-skill expansion."""
+    slug = slugify(title)
+    if "reactive-programming" in slug:
+        return '''### Stream contract và lifecycle
+
+Một Combine pipeline có bốn chiều phải đọc cùng nhau: `Output`, `Failure`, thời gian và lifetime. `Publisher` không phải collection đã có sẵn; subscription khởi tạo quan hệ, Subscriber tạo demand, upstream phát value/completion và cancellation cắt quan hệ đó. `AnyCancellable` vì vậy là ownership token. Store nó ở scope quá ngắn làm pipeline dừng sớm; store toàn app làm feature và capture sống quá lâu.
+
+Phân biệt `subscribe(on:)` với `receive(on:)`: cái đầu ảnh hưởng nơi subscription/request/cancel diễn ra, cái sau chuyển delivery downstream. Không rải scheduler operator để chữa warning UI. Hãy xác định upstream có thread-safety contract gì, operator nào làm work nặng, và chỉ hop về main ngay trước UI state.
+
+Với search-as-you-type, `debounce` giảm input burst, `removeDuplicates` bỏ query giống nhau, `map` tạo request publisher và `switchToLatest` hủy generation cũ. `flatMap` không mặc định thay thế request cũ; chọn sai operator có thể để response cũ ghi đè query mới. Error completion cũng kết thúc pipeline, vì vậy retry/catch phải phản ánh recovery policy chứ không chỉ giữ UI im lặng.
+
+### Combine, async/await và AsyncSequence
+
+- One-shot request tuyến tính: ưu tiên `async throws`.
+- Nhiều value theo thời gian, cần debounce/combine/share: Combine thường diễn đạt tốt.
+- Stream được consume tuần tự bằng structured task: `AsyncSequence` thường đơn giản hơn.
+- Khi bridge `Publisher.values` hoặc `Future`, kiểm tra cancellation, buffering và việc một API có eager hay lazy hay không.
+
+Test operator theo virtual/test scheduler hoặc dependency clock; assertion phải cover value order, completion, cancellation và scheduler-sensitive state.'''
+    if "human-interface-guidelines" in slug:
+        return '''### HIG như một hệ constraint
+
+Review UI theo hierarchy, consistency, feedback, directness và user control. System component là baseline vì đã mang behavior quen thuộc, focus, accessibility và adaptation; custom component phải chứng minh user value bù cho cost duy trì. Không copy số đo từ một mockup rồi gọi đó là HIG compliance.
+
+Adaptive UI phải chịu được portrait/landscape, compact/regular size class, iPad multitasking, safe area, keyboard, localization dài, right-to-left và Dynamic Type lớn. Layout nên phụ thuộc content và semantic guides. Đừng ẩn nội dung thiết yếu chỉ để tránh wrap; kiểm thử accessibility text size và content compression như một requirement.
+
+Accessibility review cần semantic label/value/hint đúng, reading order hợp lý, control có hit target đủ lớn, không truyền information chỉ bằng màu, và support Reduce Motion/Increase Contrast khi animation hoặc palette có ý nghĩa. VoiceOver phải mô tả outcome chứ không đọc tên icon nội bộ. Dynamic Type phải giữ hierarchy, không chỉ phóng mọi text cùng tỷ lệ.
+
+### Evidence và release gate
+
+Ma trận tối thiểu: iPhone nhỏ, iPhone lớn, iPad split view; light/dark; English và một locale dài; text size mặc định và accessibility; VoiceOver; Reduce Motion. Dùng Accessibility Inspector để tìm violation nhưng luôn làm manual task walkthrough. Snapshot bắt visual regression, không chứng minh usability. Release gate nên liên kết mỗi issue với user task bị ảnh hưởng và có owner sửa rõ ràng.'''
+    if "app-extensions" in slug:
+        return '''### Notification Service Extension
+
+Extension chỉ chạy khi payload remote notification phù hợp và được hệ thống cấp thời gian hữu hạn. `didReceive(_:withContentHandler:)` phải giữ một bản content fallback; mọi path success, error, cancellation và `serviceExtensionTimeWillExpire()` đều phải gọi handler đúng một lần. Download attachment cần giới hạn size/time, lưu tạm đúng lifecycle và không phụ thuộc host app đang chạy.
+
+Payload phải có version và fallback copy do server cung cấp. Decrypt/enrich chỉ nên cải thiện notification; failure không được biến thành notification trống. Không log payload nhạy cảm. App Group dùng cho dữ liệu nhỏ có contract, không biến extension thành client của toàn bộ database graph.
+
+### WidgetKit
+
+Widget không phải mini app liên tục chạy. Timeline entry là snapshot immutable; provider trả placeholder, snapshot và timeline, còn hệ thống quyết định budget refresh. App Intent/interaction gửi intent rõ, và main app là nơi sở hữu workflow dài. Shared state phải nhỏ, atomic và có schema/migration vì app và extension có thể chạy ở thời điểm khác nhau.
+
+Thiết kế glanceable hierarchy cho từng family, privacy redaction ở lock screen, placeholder không lộ user data, và deep link về typed route. `reloadTimelines` là hint có budget, không phải lệnh refresh tức thì.
+
+### Boundary checklist
+
+Mỗi target có bundle identifier, entitlement, signing và dependency surface riêng. Đo memory/launch/expiration trên device, test offline/corrupt shared data/old schema, và bảo đảm UI vẫn hữu ích khi background refresh không tới đúng lúc.'''
+    if "corelocation" in slug:
+        return '''### Permission là progressive disclosure
+
+Chỉ hiện system prompt sau khi user thực hiện action có ngữ cảnh và UI đã giải thích giá trị. Request When In Use trước; chỉ nâng lên Always khi feature thật sự cần background và user đã thấy lợi ích. Xử lý `notDetermined`, `restricted`, `denied`, When In Use, Always cùng reduced/full accuracy như state machine. Settings có thể thay đổi bất kỳ lúc nào.
+
+Một `CLLocation` phải được đánh giá bằng timestamp, `horizontalAccuracy`, source và use case; coordinate mới nhất trong callback chưa chắc đủ mới hoặc đủ chính xác. Không dùng location thô làm identity/authorization. Nếu lưu hoặc gửi server, định nghĩa retention, precision reduction, consent và delete behavior.
+
+### Chọn service theo budget
+
+- `requestLocation` cho one-shot gần hiện tại.
+- Standard/live updates cho tracking cần tần suất, với desired accuracy và distance filter vừa đủ.
+- Significant-change/visit cho awareness năng lượng thấp.
+- Region monitoring cho boundary event, chấp nhận giới hạn và delivery không tuyệt đối tức thì.
+- Background update chỉ khi product requirement, capability và disclosure đều đúng.
+
+Stop update ngay khi đạt outcome; downgrade accuracy khi có thể. Test denied/reduced accuracy, stale location, airplane mode, background/termination và mock route. Energy Log và battery metric phải đi cùng accuracy/latency metric để tránh “tối ưu” làm feature sai.'''
+    if "universal-links" in slug:
+        return '''### Association và delivery
+
+Universal Link chỉ hoạt động khi app entitlement `applinks:` và file `/.well-known/apple-app-site-association` khớp team/app identifier và path components. AASA phải được phục vụ qua HTTPS hợp lệ, không redirect; từng subdomain cần association phù hợp. Vì thiết bị dùng Apple-managed CDN, thay đổi server có propagation delay và cần kế hoạch test riêng cho development mode.
+
+Cold launch, warm app và SwiftUI lifecycle có callback khác nhau, nhưng tất cả phải đi vào một route parser thuần. Parser validate scheme, exact host, normalized path, query length/type và authentication prerequisite; output là typed `AppRoute`, không gọi side effect trực tiếp.
+
+### Security và fallback
+
+Xem URL như untrusted input. Link không được tự xóa dữ liệu, chuyển tiền hoặc bypass confirmation. Nếu route cần login, lưu pending route đã validate với TTL rồi resume sau auth. Unknown/old route phải mở web fallback hoặc safe home, không crash.
+
+Test AASA response độc lập, parser bằng malicious/malformed fixtures, delivery trên device install sạch, reinstall và trạng thái app khác nhau. Log route kind/result/rejection reason không chứa token hay PII; correlate với web campaign ID đã allowlist để điều tra mà không lưu raw URL.'''
+    if "wkwebview" in slug:
+        return '''### Data stores, Cookie và LocalStorage
+
+`WKWebViewConfiguration` phải hoàn chỉnh trước khi tạo web view. `.default()` giữ website data persistent; `.nonPersistent()` cô lập private/ephemeral session. Cookie của WebKit nằm trong `WKHTTPCookieStore`; đừng giả định `HTTPCookieStorage.shared` tự đồng bộ hai chiều. Nếu native bootstrap session cookie, await việc set cookie trước request đầu và định nghĩa logout xóa đúng domains/path/data types.
+
+`localStorage` thuộc security origin (scheme/host/port) và synchronous bên JavaScript. Native không nên đọc/ghi tùy ý bằng string interpolation. Web layer nên expose một bridge function trả schema versioned; native gọi script với arguments được encode an toàn hoặc nhận `WKScriptMessage`, validate type/version/origin/size rồi map sang command allowlist.
+
+### Bridge và navigation security
+
+Message handler thường được `WKUserContentController` giữ; nếu handler giữ web view/owner mạnh sẽ tạo cycle. Dùng proxy/weak ownership và remove handler khi session kết thúc. Chỉ cho phép navigation tới host/scheme đã xác định, mở external link có chủ đích, chặn `javascript:`/unexpected custom scheme, và xử lý process termination/reload như lifecycle bình thường.
+
+Định nghĩa handshake `nativeReady/webReady`, request ID, timeout, cancellation, duplicate response và backward compatibility. Cookie/session refresh phải có một owner; tránh native và web cùng refresh rồi overwrite. Test first load, redirect login, SameSite/domain/path, logout, corrupt LocalStorage, schema cũ, offline, process crash và content process restart. Dùng Safari Web Inspector cùng native correlation logs; không log cookie/token hoặc raw bridge payload nhạy cảm.'''
+    if "e2e-automation" in slug:
+        return '''### Testability contract
+
+XCUITest chạy ngoài process và chỉ quan sát public accessibility tree. Mỗi control quan trọng cần stable accessibility identifier có semantic domain, không phụ thuộc copy localized hoặc vị trí. Page/screen object chỉ gom query và action; assertion business outcome vẫn ở test để failure dễ đọc.
+
+App khởi động với launch arguments/environment để chọn deterministic fixture server, seed account, clock và feature flags. Test không gọi API nội bộ sau launch để “đặt state” theo cách user không thể có; bootstrap chỉ tạo precondition, còn flow phải đi qua UI thật. Mỗi test sở hữu data namespace riêng và teardown idempotent.
+
+### Stability và CI
+
+Không dùng `sleep`. Chờ element/state có nghĩa với timeout được budget; nếu thất bại, attach screenshot, hierarchy, logs và correlation ID vào `xcresult`. Animation có thể tắt ở test configuration nếu không phải behavior cần kiểm chứng. Coordinate gesture chỉ dùng khi semantic element không đủ và phải có device matrix rõ.
+
+Phân tầng suite: smoke PR cho flow cực quan trọng, broader nightly/device matrix, release gate cho checkout/login/update. Shard theo historical duration, không làm test phụ thuộc thứ tự. Retry tối đa một lần chỉ để phân loại flake; build vẫn phải báo flaky debt và owner, không biến retry thành pass giả. Dashboard theo pass, flake, median/p95 duration và failure taxonomy.'''
+    if "ci-cd" in slug:
+        return '''### Pipeline design
+
+Tách `verify` (lint/static checks, unit/integration, build-for-testing, UI smoke) khỏi `release` (version, signing, archive, notarized upload/distribution). Cùng lane fastlane phải chạy được local và trên Bitrise; `bitrise.yml`, `Gemfile.lock`, dependency lockfiles, shared scheme và toolchain version đều ở version control. Bitrise stack/Xcode image phải pin có lịch upgrade, không âm thầm theo latest.
+
+Code signing là secret/provenance boundary. App Store Connect API key dùng least privilege, secret chỉ inject tại runtime và không echo log. `match` trên CI chạy `readonly`; rotation/revocation có runbook. Cache chỉ chứa dependency/build artifact phù hợp key, không chứa keychain hoặc signing secret.
+
+### Quality gates và release safety
+
+Pull request workflow tạo `xcresult`, test report và artifact traceable tới commit. Release workflow chỉ nhận immutable commit/tag đã verify, tạo build number độc nhất, upload TestFlight, ghi release notes và lưu provenance. Có concurrency control để hai release không đua version/signing. Manual approval hợp lý trước production không được che pipeline không reproducible.
+
+Theo dõi queue time, setup/dependency time, compile/test/archive/upload, failure taxonomy, cache hit và flaky rate. Sửa bottleneck dựa trên critical path. Rollback mobile thường là stop rollout, feature flag hoặc expedited fix vì binary đã cài không thể thu hồi tức thì; pipeline cần encode mitigation đó.'''
+    if "developer-productivity" in slug:
+        return '''### Metric system, không phải bảng xếp hạng
+
+Đo ở cấp application/team và so sánh trend của cùng context. DORA hiện nhóm delivery thành throughput (change lead time, deployment frequency, failed deployment recovery time) và instability (change fail rate, deployment rework rate). Với mobile, bổ sung queue/build/test time, code-review wait, release approval, flaky rate, crash-free/SLO và developer satisfaction.
+
+LOC, commit count, story point hoặc online hours không đo value và tạo incentive xấu. Metric phải có definition, source, owner, freshness, segmentation và known bias. Median đi cùng p90/p95 để thấy tail; volume đi cùng quality guardrail. Không drill-down cá nhân cho performance management.
+
+### Data-driven improvement loop
+
+1. Vẽ value stream từ commit đến user release và baseline ít nhất vài chu kỳ.
+2. Chọn một constraint lớn nhất, ví dụ simulator queue hay flaky UI suite.
+3. Viết hypothesis và success/guardrail metric trước thay đổi.
+4. Chạy experiment nhỏ, ghi adoption và confounder như Xcode upgrade.
+5. Review trend định kỳ với developer feedback; giữ, điều chỉnh hoặc rollback.
+
+Dashboard không phải outcome. Mỗi chart cần câu hỏi quyết định và action owner. Kết hợp telemetry định lượng với survey/interview vì giảm build time nhưng tăng cognitive load vẫn có thể làm DevEx xấu hơn.'''
+    if "cross-platform-collaboration" in slug:
+        return '''### Shared contract
+
+Backend, web, Android và iOS thống nhất schema qua OpenAPI/JSON examples và contract fixtures. Mỗi field ghi required/nullable/default, unit và timezone; tiền dùng minor unit + ISO currency; timestamp có timezone; pagination định nghĩa cursor stability; mutation có idempotency; error có machine code, retryability và correlation ID.
+
+Client release chậm hơn server, vì vậy server phải backward compatible qua nhiều app versions. Additive field thường an toàn khi decoder tolerant; đổi enum, meaning, nullability hoặc authentication flow có thể breaking. Deprecation cần usage telemetry, minimum supported version và staged removal. Feature capability negotiation tốt hơn đoán theo user-agent.
+
+### Platform differences
+
+Web có cookie/SameSite/CORS và tab lifecycle; mobile có secure storage, offline/background, app update lag và deep links. Android/iOS khác permission, process death và UI conventions. Shared business rule nên có contract; platform adapter vẫn được quyền khác implementation để tôn trọng OS.
+
+Một design review hiệu quả có sequence diagram, owner cho từng failure, sample payload, rollout/rollback và observability. Consumer-driven contract tests chạy trong CI của producer lẫn clients. Incident log dùng correlation ID end-to-end, không buộc mobile log PII để backend tìm request.'''
+    if "engineering-management" in slug:
+        return '''### Hai track trách nhiệm
+
+Technical lead sở hữu technical direction, decision quality, boundary và mentoring; engineering manager thường thêm staffing, performance, career, delivery system và team health. Một người có thể đội hai mũ, nhưng phải công khai mũ nào đang dùng và decision rights nào được delegate.
+
+Lead mạnh không trở thành reviewer bắt buộc của mọi PR. Họ tạo context, principles, paved road, architecture review threshold và owner gần vấn đề nhất. ADR ghi options/consequence/revisit signal; escalation theo impact/irreversibility. Delegation giao outcome, constraint và checkpoint, không giao từng bước.
+
+### Operating system của team
+
+Thiết lập planning dựa trên capacity/risk, on-call/incident learning không đổ lỗi, feedback cụ thể gần thời điểm, one-on-one bảo mật và career evidence theo kỳ vọng level. Manage stakeholder bằng trade-off, forecast range và early risk; không hứa deadline rồi ép team hấp thụ uncertainty.
+
+Đo kết quả cấp team: lead time, quality, ownership coverage, decision latency, onboarding, retention/satisfaction và succession. Tín hiệu senior là hệ thống tiếp tục vận hành khi lead vắng mặt. Case interview nên dùng STAR nhưng nhấn mạnh decision, conflict, measurable outcome và điều học được/thay đổi sau đó.'''
+    if "technical-speaking" in slug:
+        return '''### Từ kinh nghiệm thành learning artifact
+
+Chọn audience cụ thể và một transformation: sau talk người nghe giải thích/làm/đánh giá được gì. Proposal nêu problem, stakes, three takeaways và vì sao evidence đáng tin. Story kỹ thuật nên đi context → failed approach → evidence → decision/trade-off → reusable model, không biến thành danh sách API.
+
+Trước khi public, loại PII, secret, customer/company metric nhạy cảm và xin review theo policy. Demo có fixture offline, backup video/screenshot và timebox. Rehearsal với người gần audience mục tiêu để phát hiện jargon và gap; thiết kế Q&A sao cho thừa nhận unknown chính xác.
+
+### Community loop
+
+Study group cần cadence, facilitator rotation, code of conduct, reading scope và artifact sau buổi. Conference/meetup contribution có thể là talk, workshop, lightning talk, review proposal hoặc mentoring. Publish sample repo/slides/notes với license rõ để nội dung được tái sử dụng.
+
+Đo acceptance không đủ: xem completion/retention, câu hỏi, feedback định tính, artifact reuse và hành động sau buổi. Ghi feedback log, sửa material và trả insight về team. Community credibility đến từ consistency, attribution và hỗ trợ người mới, không phải số follower.'''
+    if "oss-contribution" in slug:
+        return '''### Contribution workflow
+
+Đọc README, CONTRIBUTING, code of conduct, license, issue/PR templates và release cadence trước khi code. Với thay đổi đáng kể, mở issue/discussion trình bày use case và options; chọn first contribution nhỏ đủ end-to-end. PR giải thích problem, test, compatibility, docs và benchmark/security impact khi có.
+
+Maintainer phải bảo vệ scope và support burden. Review API public bằng Swift API Design Guidelines, availability và SemVer. Breaking change cần major version hoặc migration path/deprecation phù hợp. Test matrix cover supported Swift/platform versions; dependency minimum tránh vô tình nâng requirement.
+
+### Release và operations
+
+Release từ clean immutable tag, CI xanh, changelog/release notes có breaking/fix/security, artifact/provenance reproducible và rollback/yank policy. GitHub Release gắn tag; Swift package consumer resolve theo semantic version tags. Security report đi private advisory/coordinated disclosure, không mở public exploit issue trước fix.
+
+Sau release theo dõi adoption, issue regression, downstream compatibility và maintainer capacity. Bus factor giảm bằng documented triage/release process, co-maintainer và scoped permissions. Thành công OSS không chỉ là merge count; đó là change hữu ích, review respectful và ecosystem giữ trust.'''
+    return ""
+
+
+def topic_references(title: str) -> list[tuple[str, str]]:
+    slug = slugify(title)
+    rules: list[tuple[str, list[tuple[str, str]]]] = [
+        (r"reactive-programming", [("Combine", "https://developer.apple.com/documentation/combine"), ("Publisher", "https://developer.apple.com/documentation/combine/publisher")]),
+        (r"human-interface-guidelines", [("Human Interface Guidelines — Accessibility", "https://developer.apple.com/design/human-interface-guidelines/accessibility"), ("Human Interface Guidelines — Layout", "https://developer.apple.com/design/human-interface-guidelines/layout"), ("Human Interface Guidelines — Typography", "https://developer.apple.com/design/human-interface-guidelines/typography")]),
+        (r"app-extensions", [("UNNotificationServiceExtension", "https://developer.apple.com/documentation/usernotifications/unnotificationserviceextension"), ("WidgetKit", "https://developer.apple.com/documentation/widgetkit")]),
+        (r"corelocation", [("Core Location", "https://developer.apple.com/documentation/corelocation"), ("Requesting authorization to use location services", "https://developer.apple.com/documentation/corelocation/requesting-authorization-to-use-location-services")]),
+        (r"universal-links", [("Supporting universal links in your app", "https://developer.apple.com/documentation/xcode/supporting-universal-links-in-your-app"), ("Supporting associated domains", "https://developer.apple.com/documentation/xcode/supporting-associated-domains")]),
+        (r"wkwebview", [("WKWebView", "https://developer.apple.com/documentation/webkit/wkwebview"), ("WKWebsiteDataStore", "https://developer.apple.com/documentation/webkit/wkwebsitedatastore"), ("WKHTTPCookieStore", "https://developer.apple.com/documentation/webkit/wkhttpcookiestore")]),
+        (r"e2e-automation", [("XCTest", "https://developer.apple.com/documentation/xctest"), ("XCUIAutomation", "https://developer.apple.com/documentation/xcuiautomation")]),
+        (r"ci-cd", [("Bitrise — Getting started with iOS projects", "https://docs.bitrise.io/en/bitrise-ci/getting-started/quick-start-guides/getting-started-with-ios-projects.html"), ("fastlane — run_tests", "https://docs.fastlane.tools/actions/run_tests/"), ("fastlane — match", "https://docs.fastlane.tools/actions/match/"), ("fastlane — TestFlight", "https://docs.fastlane.tools/actions/testflight/")]),
+        (r"developer-productivity", [("DORA software delivery metrics history", "https://dora.dev/insights/dora-metrics-history/"), ("DORA measurement frameworks", "https://dora.dev/research/2025/measurement-frameworks/")]),
+        (r"cross-platform", [("OpenAPI Specification", "https://spec.openapis.org/oas/latest.html"), ("HTTP Semantics — RFC 9110", "https://www.rfc-editor.org/rfc/rfc9110")]),
+        (r"engineering-management", [("DORA — Value stream mapping", "https://dora.dev/guides/value-stream-management/"), ("Architecture Decision Records", "https://adr.github.io/")]),
+        (r"technical-speaking", [("Swift Community", "https://www.swift.org/community/"), ("Swift Code of Conduct", "https://www.swift.org/code-of-conduct/")]),
+        (r"oss-contribution", [("Swift Package Manager", "https://www.swift.org/documentation/package-manager/"), ("Swift API Design Guidelines", "https://www.swift.org/documentation/api-design-guidelines/"), ("GitHub Docs — About releases", "https://docs.github.com/en/repositories/releasing-projects-on-github/about-releases")]),
+    ]
+    for pattern, references in rules:
+        if re.search(pattern, slug):
+            return references
+    return []
+
+
 def yaml_list(values: list[str]) -> str:
     if not values:
         return "[]"
@@ -682,7 +1113,20 @@ def chapter_content(phase: Phase, chapter: Chapter, previous: Chapter | None, fo
     previous_link = f"[{previous.title}]({previous.filename})" if previous else "[Glossary](../GLOSSARY.md)"
     next_link = f"[{following.title}]({following.filename})" if following else "Phase Review"
     code = code_example(chapter.title, phase.number)
-    refs = "\n".join(f"- [{name}]({url}) — truy cập {TODAY}." for name, url in guide["refs"])
+    language = code_language(chapter.title)
+    deep_dive = topic_deep_dive(chapter.title)
+    deep_dive_section = f"\n## Technical Deep Dive\n\n{deep_dive}\n" if deep_dive else ""
+    example_heading = "Implementation Example" if deep_dive else "Runnable Swift Example"
+    example_note = (
+        "Ví dụ Swift chạy trong executable/test target hoặc iOS target tương ứng. "
+        "Ví dụ Ruby mô tả `Fastfile` versioned. Mục tiêu là minh họa contract thực tế, "
+        "không giả lập framework bằng toy code."
+        if deep_dive
+        else "Ví dụ pure Swift chạy trong executable/test target với Swift 6.3. Ví dụ dùng UIKit, SwiftUI, Security, Core Data hoặc SwiftData cần target iOS tương ứng; mục tiêu là minh họa contract, không giả lập framework bằng toy code."
+    )
+    reference_items = list(guide["refs"]) + topic_references(chapter.title)
+    reference_items = list(dict.fromkeys(reference_items))
+    refs = "\n".join(f"- [{name}]({url}) — truy cập {TODAY}." for name, url in reference_items)
     difficulty = min(5, 1 + phase.number // 2 + (1 if chapter.number not in {"01", "02", "03"} else 0))
     return f'''---
 title: "{chapter.title.replace(chr(34), chr(39))}"
@@ -781,7 +1225,7 @@ Giá trị lớn nhất không phải ít dòng code hơn; đó là giảm số 
 3. Chọn API hoặc abstraction thể hiện đúng semantics.
 4. Mô hình hóa failure/cancellation thay vì che bằng fallback.
 5. Đo observable behavior bằng {evidence}.
-
+{deep_dive_section}
 ### Documented behavior vs inference
 
 - **Documented:** dùng contract trong Swift/Apple documentation và availability của SDK.
@@ -806,13 +1250,13 @@ Khi assumption có thể thay đổi qua `await`, lifecycle callback, network re
 3. {risk.capitalize()} tạo evidence gì?
 4. Rule chọn giải pháp là gì, và constraint nào khiến rule đổi?
 
-## Runnable Swift Example
+## {example_heading}
 
-```swift
+```{language}
 {code}
 ```
 
-Ví dụ pure Swift chạy trong executable/test target với Swift 6.3. Ví dụ dùng UIKit, SwiftUI, Security, Core Data hoặc SwiftData cần target iOS tương ứng; mục tiêu là minh họa contract, không giả lập framework bằng toy code.
+{example_note}
 
 ## iOS Runtime Behavior {{ data-search-exclude }}
 
@@ -1181,7 +1625,7 @@ def summary_content(phases: tuple[Phase, ...]) -> str:
     parts = [
         "# SUMMARY — Knowledge Map & Progress",
         "",
-        f"> Verified {TODAY}: toàn bộ 11 Phase và 183 chapter đã có nội dung, Phase Review và quality gate.",
+        f"> Verified {TODAY}: toàn bộ 11 Phase và {CATALOG_TOTAL} chapter đã có nội dung, Phase Review và quality gate.",
         "",
         "Ký hiệu: ✅ chapter hoàn chỉnh và tiêu đề là liên kết.",
     ]
@@ -1191,7 +1635,7 @@ def summary_content(phases: tuple[Phase, ...]) -> str:
             f"- ✅ [{chapter.number} — {chapter.title}]({relative_link(phase, chapter)})"
             for chapter in phase.chapters
         )
-    parts.extend(["", "## Completion snapshot", "", "- 11/11 Phase complete.", "- 183/183 chapter complete.", "- 11/11 Phase Review complete.", "- Navigation, local links và code fences được validator kiểm tra.", ""])
+    parts.extend(["", "## Completion snapshot", "", "- 11/11 Phase complete.", f"- {CATALOG_TOTAL}/{CATALOG_TOTAL} chapter complete.", "- 11/11 Phase Review complete.", "- Navigation, local links và code fences được validator kiểm tra.", ""])
     return "\n".join(parts)
 
 
@@ -1215,6 +1659,7 @@ def mkdocs_content(phases: tuple[Phase, ...]) -> str:
             "      - Glossary: GLOSSARY.md",
             "      - Cross-reference Index: CROSS_REFERENCE_INDEX.md",
             "      - Coverage Matrix: HANDBOOK_COVERAGE.md",
+            "      - Professional Skills Matrix: PROFESSIONAL_SKILLS_MATRIX.md",
             "      - Production Playbook: PRODUCTION_PLAYBOOK.md",
             "      - Interview Playbook: INTERVIEW_PLAYBOOK.md",
             "      - Specification: SPECIFICATION.md",
@@ -1244,6 +1689,64 @@ def coverage_content(phases: tuple[Phase, ...]) -> str:
     return "\n".join(rows)
 
 
+def professional_skills_content(phases: tuple[Phase, ...]) -> str:
+    def link(title_fragment: str) -> str:
+        for phase in phases:
+            for chapter in phase.chapters:
+                if title_fragment.casefold() in chapter.title.casefold():
+                    return f"[{chapter.title}]({relative_link(phase, chapter)})"
+        raise RuntimeError(f"Professional skill target not found: {title_fragment}")
+
+    rows = [
+        ("ネイティブ機能の深い理解（Notification Service Extension / Widget / CoreLocation / Universal Link など）", "Đã bổ sung", "<br>".join([link("App Extensions"), link("CoreLocation"), link("Universal Links")]), "Extension lifecycle/budget; notification fallback; Widget timeline; permission/accuracy/energy; AASA/routing/security."),
+        ("ユーザーインターフェースガイドラインの深い理解", "Đã bổ sung", link("Human Interface Guidelines"), "HIG, adaptive layout, Dynamic Type, VoiceOver, accessibility audit và device-trait matrix."),
+        ("アーキテクチャ設計に関する深い知識", "Đã có sâu", "<br>".join([link("MVC và Massive"), link("MVVM"), link("Clean Architecture"), link("SPM modularization"), link("Architecture Decision Record")]), "Phase 06 cover responsibility, dependency direction, state, modules, ADR và incremental migration; Phase 10 áp dụng ở system scale."),
+        ("WKWebViewを用いたWebサイトとのデータ連携経験（CookieやLocalStorageを含む）", "Đã bổ sung", link("WKWebView bridge"), "WKWebsiteDataStore, WKHTTPCookieStore, origin-scoped LocalStorage, versioned bridge, ownership và navigation security."),
+        ("Reactive programmingの経験", "Đã bổ sung", link("Reactive Programming"), "Combine Publisher/Subscriber/Subscription, demand, operators, scheduler, cancellation và bridge sang async/await."),
+        ("E2Eテストの自動化経験", "Đã bổ sung", link("E2E automation"), "XCUITest fixtures, accessibility identifiers, deterministic wait, xcresult evidence, sharding và flake policy."),
+        ("CI/CD（Bitrise, fastlane等）を用いた自動化経験", "Đã bổ sung", link("iOS CI/CD"), "Bitrise workflows, fastlane verify/release lanes, signing/secrets, artifacts, quality gates và release safety."),
+        ("SwiftUI 経験", "Đã có sâu", "<br>".join([link("SwiftUI declarative"), link("State, Binding"), link("Observation"), link("NavigationStack"), link("UIKit ↔ SwiftUI")]), "Phase 04 cover mental model, state/observation/environment/identity/navigation/task/animation/interoperability; Phase 11 review."),
+        ("サーバーサイド、フロントエンドなどandroid、iOS以外の開発知識", "Đã bổ sung", link("Cross-platform collaboration"), "Backend/web/Android lifecycle differences, OpenAPI schema, error/auth/time/money/idempotency, compatibility và rollout."),
+        ("マネジメントまたは技術リード経験", "Đã bổ sung", link("Engineering management"), "Role/decision rights, delegation, ADR, mentoring, stakeholder/incident operating system và team-level outcomes."),
+        ("開発生産性の可視化やデータドリブンな改善経験", "Đã bổ sung", link("Developer productivity"), "DORA throughput/instability, mobile CI/DevEx metrics, anti-gaming rules và hypothesis-driven improvement loop."),
+        ("社外勉強会や登壇、コミュニティ活動経験", "Đã bổ sung", link("Technical speaking"), "Audience/outcomes, proposal, rehearsal, confidentiality, study-group operation, feedback và reusable artifacts."),
+        ("OSSのリリース・コントリビュート経験", "Đã bổ sung", link("OSS contribution"), "Governance-first contribution, CI/API compatibility, SemVer, changelog, provenance, security và maintainer workflow."),
+    ]
+    output = [
+        "# Professional Skills Coverage Matrix",
+        "",
+        f"> Audit ngày {TODAY}; đối chiếu nguyên văn 13 yêu cầu năng lực với 11 Phase của handbook.",
+        "",
+        "## Kết quả",
+        "",
+        "| Yêu cầu | Trạng thái | Chapter canonical | Evidence scope |",
+        "|---|---|---|---|",
+    ]
+    output.extend(f"| {requirement} | ✅ {status} | {chapters} | {scope} |" for requirement, status, chapters, scope in rows)
+    output.extend([
+        "",
+        "## Cách đọc trạng thái",
+        "",
+        "- **Đã có sâu:** catalog trước audit đã có nhiều chapter canonical, production case, exercises và Phase Review.",
+        "- **Đã bổ sung:** audit phát hiện coverage thiếu hoặc chỉ gián tiếp; handbook đã thêm chapter chuyên sâu, code, failure modes, debugging evidence, interview prompts và references chính thức.",
+        "- Một năng lực chỉ được tính khi chapter có `status: complete`, đủ quality-gate sections và vượt content floor của validator.",
+        "",
+        "## Coverage distribution",
+        "",
+        "```text",
+        "Phase 03  Reactive Programming",
+        "Phase 04  HIG · App Extensions · CoreLocation · Universal Links · WKWebView · SwiftUI",
+        "Phase 06  Architecture foundations and migration",
+        "Phase 08  E2E automation",
+        "Phase 09  CI/CD · Developer Productivity",
+        "Phase 10  Cross-platform/API contracts · system-scale architecture",
+        "Phase 11  Leadership · Community · OSS · interview synthesis",
+        "```",
+        "",
+    ])
+    return "\n".join(output)
+
+
 def cross_reference_content(phases: tuple[Phase, ...]) -> str:
     phase_review_links = "\n".join(
         f"- [{PHASE_GUIDES[p.number]['short']} review]({p.directory}/99-phase-review.md)"
@@ -1265,6 +1768,11 @@ def cross_reference_content(phases: tuple[Phase, ...]) -> str:
 | Previous account data | [Account isolation](Phase-07-Persistence/14-logout-login-va-data-isolation-giua-account.md) | Keychain → repository/cache reset → regression test |
 | Rare concurrency crash | [Strict concurrency](Phase-03-Concurrency/10-sendable-at-sendable-va-strict-concurrency.md) | Actor isolation → reentrancy → production correlation |
 | OS kill không crash log | [Memory pressure](Phase-09-Production/06-memory-pressure-va-os-termination.md) | Allocations → image/cache budget → Organizer metrics |
+| Web/native session lệch | [WKWebView bridge](Phase-04-iOS-Platform/24-wkwebview-bridge-cookie-localstorage-va-native-web-data-contract.md) | Cookie store → LocalStorage origin → bridge contract → logout regression |
+| Deep link không mở app | [Universal Links](Phase-04-iOS-Platform/23-universal-links-aasa-routing-fallback-va-security.md) | AASA/entitlement → scene delivery → typed route → security fallback |
+| E2E flaky trên CI | [E2E automation](Phase-08-Testing/15-e2e-automation-voi-xcuitest-fixtures-stability-va-ci.md) | Fixture/identifier → semantic wait → xcresult → flake taxonomy |
+| Release/signing không ổn định | [iOS CI/CD](Phase-09-Production/19-ios-ci-cd-voi-bitrise-va-fastlane.md) | Toolchain pin → tests → readonly signing → immutable artifact |
+| Team chậm nhưng không rõ bottleneck | [Developer productivity](Phase-09-Production/20-developer-productivity-metrics-va-data-driven-improvement.md) | Value stream → DORA/DevEx baseline → experiment → guardrail |
 
 ## Canonical Phase Reviews
 
@@ -1272,31 +1780,37 @@ def cross_reference_content(phases: tuple[Phase, ...]) -> str:
 
 ## Full coverage
 
-Xem [Handbook Coverage Matrix](HANDBOOK_COVERAGE.md) để tra toàn bộ 183 chapter và các chiều runtime/memory/concurrency/production/interview.
+Xem [Handbook Coverage Matrix](HANDBOOK_COVERAGE.md) để tra toàn bộ {CATALOG_TOTAL} chapter; xem [Professional Skills Matrix](PROFESSIONAL_SKILLS_MATRIX.md) để đối chiếu 13 yêu cầu năng lực tiếng Nhật.
 '''
 
 
 def update_readme() -> None:
     readme = (ROOT / "README.md").read_text(encoding="utf-8")
+    readme = readme.replace("183 chapter", f"{CATALOG_TOTAL} chapter")
     readme = re.sub(
         r"\| Repository skeleton 11 Phase.*?\| Các chapter còn lại.*?\n",
-        "| Repository skeleton 11 Phase | ✅ Hoàn thành |\n| 183 chapter và 11 Phase Review | ✅ Hoàn thành |\n| Website/search/navigation | ✅ GitHub Pages tự động deploy |\n",
+        f"| Repository skeleton 11 Phase | ✅ Hoàn thành |\n| {CATALOG_TOTAL} chapter và 11 Phase Review | ✅ Hoàn thành |\n| Website/search/navigation | ✅ GitHub Pages tự động deploy |\n",
         readme,
         flags=re.DOTALL,
     )
     readme = re.sub(
         r"Repository phát triển.*?(?=\n\n## Bắt đầu đọc)",
-        "Repository hiện có đủ **183 chapter** theo [SUMMARY](SUMMARY.md). Mỗi chapter gồm mental model, runtime/memory/concurrency implications, production case, debugging evidence, interview prompts, exercises, cheat sheet và primary references.",
+        f"Repository hiện có đủ **{CATALOG_TOTAL} chapter** theo [SUMMARY](SUMMARY.md). Mỗi chapter gồm mental model, runtime/memory/concurrency implications, production case, debugging evidence, interview prompts, exercises, cheat sheet và primary references.",
         readme,
         flags=re.DOTALL,
     )
+    if "PROFESSIONAL_SKILLS_MATRIX.md" not in readme:
+        readme = readme.replace(
+            "- Kiểm tra coverage toàn bộ catalog: [HANDBOOK COVERAGE](HANDBOOK_COVERAGE.md)\n",
+            "- Kiểm tra coverage toàn bộ catalog: [HANDBOOK COVERAGE](HANDBOOK_COVERAGE.md)\n- Đối chiếu 13 yêu cầu năng lực: [PROFESSIONAL SKILLS MATRIX](PROFESSIONAL_SKILLS_MATRIX.md)\n",
+        )
     (ROOT / "README.md").write_text(readme, encoding="utf-8")
 
 
 def main() -> None:
     phases = parse_roadmap()
     expected = sum(len(phase.chapters) for phase in phases)
-    if len(phases) != 11 or expected != 183:
+    if len(phases) != 11 or expected != CATALOG_TOTAL:
         raise RuntimeError(f"Roadmap mismatch: {len(phases)} phases, {expected} chapters")
 
     created = 0
@@ -1322,6 +1836,7 @@ def main() -> None:
     SUMMARY.write_text(summary_content(phases), encoding="utf-8")
     (ROOT / "mkdocs.yml").write_text(mkdocs_content(phases), encoding="utf-8")
     (ROOT / "HANDBOOK_COVERAGE.md").write_text(coverage_content(phases), encoding="utf-8")
+    (ROOT / "PROFESSIONAL_SKILLS_MATRIX.md").write_text(professional_skills_content(phases), encoding="utf-8")
     (ROOT / "CROSS_REFERENCE_INDEX.md").write_text(cross_reference_content(phases), encoding="utf-8")
     update_readme()
     print(f"Expanded handbook: {created} new, {refreshed} refreshed, {expected} total catalog entries")

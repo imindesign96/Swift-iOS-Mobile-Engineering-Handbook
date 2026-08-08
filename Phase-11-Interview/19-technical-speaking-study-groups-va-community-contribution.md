@@ -1,5 +1,5 @@
 ---
-title: "Interview question bank & coverage map"
+title: "Technical speaking, study groups và community contribution"
 phase: "Global Interview"
 difficulty: 5
 importance: 5
@@ -10,20 +10,20 @@ swift_baseline: "Swift 6.3 toolchain; Swift 6 language mode"
 levels:
   - L6
 prerequisites:
-  - "Mock interview Junior/Middle/Senior"
-used_later:
   - "Engineering management và technical leadership"
+used_later:
+  - "OSS contribution, release và maintainer workflow"
 competencies:
   - "Global Interview"
   - "Production"
   - "Debugging"
   - "Interview"
 tags:
-  - "interview-question-bank-and-coverage-map"
+  - "technical-speaking-study-groups-va-community-contribution"
   - "global-commerce"
 ---
 
-# Interview question bank & coverage map
+# Technical speaking, study groups và community contribution
 
 > **Version scope**
 >
@@ -31,7 +31,7 @@ tags:
 
 ## Story / Problem
 
-Trong Global Commerce, ứng viên nhớ định nghĩa nhưng không giải thích trade-off, evidence hoặc follow-up production. Chapter này tập trung vào **Interview question bank & coverage map**: không dừng ở syntax/API mà nối behavior với ownership, failure mode và evidence production.
+Trong Global Commerce, ứng viên nhớ định nghĩa nhưng không giải thích trade-off, evidence hoặc follow-up production. Chapter này tập trung vào **Technical speaking, study groups và community contribution**: không dừng ở syntax/API mà nối behavior với ownership, failure mode và evidence production.
 
 Nếu team chỉ nhớ tên concept, fix thường dịch symptom sang chỗ khác. Câu hỏi mở đầu là:
 
@@ -46,21 +46,21 @@ Input/event → state hoặc resource nào thay đổi?
 
 Sau chapter này, bạn có thể:
 
-- giải thích chính xác rằng question bank phải map đủ domain/level/follow-up và dẫn về chapter canonical thay vì lặp đáp án rời rạc;
-- nhận diện failure mode chính: có hàng trăm câu hỏi nhưng coverage lệch, không có rubric hoặc không tìm được prerequisite;
-- chọn giải pháp bằng rule: dùng map làm công cụ chẩn đoán lỗ hổng; học theory ở chapter canonical rồi luyện ba độ sâu;
+- giải thích chính xác rằng community contribution chuyển kinh nghiệm thành nội dung có audience, learning objective, evidence và feedback loop;
+- nhận diện failure mode chính: talk quảng cáo, lộ dữ liệu công ty, slide quá rộng hoặc activity không có follow-up/reuse;
+- chọn giải pháp bằng rule: bắt đầu từ một problem có bằng chứng, xin approval cho nội dung nhạy cảm, rehearsal với peer và publish artifact dễ tái sử dụng;
 - nối runtime, memory, concurrency và architecture implications;
-- điều tra case production bằng coverage matrix theo domain/level cùng kết quả mock interview;
+- điều tra case production bằng proposal acceptance, attendance/retention, qualitative feedback, artifact reuse và action items;
 - trả lời câu hỏi interview ở ba độ sâu thay vì đọc thuộc định nghĩa.
 
 ## Prerequisites { data-search-exclude }
 
-- [Mock interview Junior/Middle/Senior](16-mock-interview-junior-middle-senior.md); không lặp lại định nghĩa nền nếu chapter trước đã giải thích.
+- [Engineering management và technical leadership](18-engineering-management-va-technical-leadership.md); không lặp lại định nghĩa nền nếu chapter trước đã giải thích.
 - [Glossary](../GLOSSARY.md) cho terminology canonical.
 
 ## Used Later { data-search-exclude }
 
-- [Engineering management và technical leadership](18-engineering-management-va-technical-leadership.md) dùng contract của chapter này làm building block.
+- [OSS contribution, release và maintainer workflow](20-oss-contribution-release-va-maintainer-workflow.md) dùng contract của chapter này làm building block.
 - [Production Playbook](../PRODUCTION_PLAYBOOK.md) dùng cùng flow evidence-first.
 - [Interview Playbook](../INTERVIEW_PLAYBOOK.md) dùng mental model để xử lý follow-up.
 
@@ -69,16 +69,16 @@ Sau chapter này, bạn có thể:
 ```text
 Clarify → 30-second thesis → mechanism/trade-off → example → production evidence → senior extension
                  ↓
-Focus: Interview question bank & coverage map
+Focus: Technical speaking, study groups và community contribution
                  ↓
-Evidence: coverage matrix theo domain/level cùng kết quả mock interview
+Evidence: proposal acceptance, attendance/retention, qualitative feedback, artifact reuse và action items
 ```
 
 Mental model hữu ích để đặt câu hỏi đúng, nhưng không thay thế API contract hoặc measurement. Đặc biệt, không suy luận implementation private của compiler/framework thành behavior được đảm bảo.
 
 ## What?
 
-Trọng tâm của **Interview question bank & coverage map** là: question bank phải map đủ domain/level/follow-up và dẫn về chapter canonical thay vì lặp đáp án rời rạc. Hãy mô tả bằng state transition, lifetime hoặc output quan sát được thay vì chỉ bằng keyword.
+Trọng tâm của **Technical speaking, study groups và community contribution** là: community contribution chuyển kinh nghiệm thành nội dung có audience, learning objective, evidence và feedback loop. Hãy mô tả bằng state transition, lifetime hoặc output quan sát được thay vì chỉ bằng keyword.
 
 Một contract tốt nói rõ input hợp lệ, output/failure, side effect, owner và thời điểm kết thúc. Nếu concept chạm external data hoặc asynchronous work, contract cũng phải nói cancellation, ordering và recovery.
 
@@ -94,7 +94,21 @@ Giá trị lớn nhất không phải ít dòng code hơn; đó là giảm số 
 2. Xác định creator/owner/mutator/observer.
 3. Chọn API hoặc abstraction thể hiện đúng semantics.
 4. Mô hình hóa failure/cancellation thay vì che bằng fallback.
-5. Đo observable behavior bằng coverage matrix theo domain/level cùng kết quả mock interview.
+5. Đo observable behavior bằng proposal acceptance, attendance/retention, qualitative feedback, artifact reuse và action items.
+
+## Technical Deep Dive
+
+### Từ kinh nghiệm thành learning artifact
+
+Chọn audience cụ thể và một transformation: sau talk người nghe giải thích/làm/đánh giá được gì. Proposal nêu problem, stakes, three takeaways và vì sao evidence đáng tin. Story kỹ thuật nên đi context → failed approach → evidence → decision/trade-off → reusable model, không biến thành danh sách API.
+
+Trước khi public, loại PII, secret, customer/company metric nhạy cảm và xin review theo policy. Demo có fixture offline, backup video/screenshot và timebox. Rehearsal với người gần audience mục tiêu để phát hiện jargon và gap; thiết kế Q&A sao cho thừa nhận unknown chính xác.
+
+### Community loop
+
+Study group cần cadence, facilitator rotation, code of conduct, reading scope và artifact sau buổi. Conference/meetup contribution có thể là talk, workshop, lightning talk, review proposal hoặc mentoring. Publish sample repo/slides/notes với license rõ để nội dung được tái sử dụng.
+
+Đo acceptance không đủ: xem completion/retention, câu hỏi, feedback định tính, artifact reuse và hành động sau buổi. Ghi feedback log, sửa material và trả insight về team. Community credibility đến từ consistency, attribution và hỗ trợ người mới, không phải số follower.
 
 ### Documented behavior vs inference
 
@@ -103,45 +117,41 @@ Giá trị lớn nhất không phải ít dòng code hơn; đó là giảm số 
 
 ## When?
 
-Áp dụng khi dùng map làm công cụ chẩn đoán lỗ hổng; học theory ở chapter canonical rồi luyện ba độ sâu. Bắt đầu bằng giải pháp đơn giản nhất giữ được invariant; thêm abstraction/synchronization/cache chỉ khi requirement hoặc measurement chứng minh cần.
+Áp dụng khi bắt đầu từ một problem có bằng chứng, xin approval cho nội dung nhạy cảm, rehearsal với peer và publish artifact dễ tái sử dụng. Bắt đầu bằng giải pháp đơn giản nhất giữ được invariant; thêm abstraction/synchronization/cache chỉ khi requirement hoặc measurement chứng minh cần.
 
 Tránh dùng concept như cargo cult. Một type, layer hay primitive không có owner/contract/test rõ chỉ chuyển complexity chứ không loại bỏ nó.
 
 ## What if?
 
-Failure mode quan trọng là có hàng trăm câu hỏi nhưng coverage lệch, không có rubric hoặc không tìm được prerequisite. Consequence có thể là state stale, duplicate work, leak, crash, UI hitch hoặc test flaky tùy boundary.
+Failure mode quan trọng là talk quảng cáo, lộ dữ liệu công ty, slide quá rộng hoặc activity không có follow-up/reuse. Consequence có thể là state stale, duplicate work, leak, crash, UI hitch hoặc test flaky tùy boundary.
 
 Khi assumption có thể thay đổi qua `await`, lifecycle callback, network retry hoặc migration, hãy revalidate state trước khi commit kết quả.
 
 ### Review questions
 
-1. Observable behavior nào định nghĩa Interview question bank & coverage map?
+1. Observable behavior nào định nghĩa Technical speaking, study groups và community contribution?
 2. Owner của state/resource là ai và lifetime kết thúc khi nào?
-3. Có hàng trăm câu hỏi nhưng coverage lệch, không có rubric hoặc không tìm được prerequisite tạo evidence gì?
+3. Talk quảng cáo, lộ dữ liệu công ty, slide quá rộng hoặc activity không có follow-up/reuse tạo evidence gì?
 4. Rule chọn giải pháp là gì, và constraint nào khiến rule đổi?
 
-## Runnable Swift Example
+## Implementation Example
 
 ```swift
-struct InterviewAnswer {
-    let thesis: String
-    let mechanism: [String]
-    let tradeOffs: [String]
-    let productionEvidence: [String]
-}
-
-func isSeniorSignal(_ answer: InterviewAnswer) -> Bool {
-    !answer.thesis.isEmpty &&
-    !answer.tradeOffs.isEmpty &&
-    !answer.productionEvidence.isEmpty
+struct TalkProposal: Sendable {
+    let audience: String
+    let problem: String
+    let learningOutcomes: [String]
+    let evidence: [String]
+    let confidentialityReview: String
+    let feedbackPlan: String
 }
 ```
 
-Ví dụ pure Swift chạy trong executable/test target với Swift 6.3. Ví dụ dùng UIKit, SwiftUI, Security, Core Data hoặc SwiftData cần target iOS tương ứng; mục tiêu là minh họa contract, không giả lập framework bằng toy code.
+Ví dụ Swift chạy trong executable/test target hoặc iOS target tương ứng. Ví dụ Ruby mô tả `Fastfile` versioned. Mục tiêu là minh họa contract thực tế, không giả lập framework bằng toy code.
 
 ## iOS Runtime Behavior { data-search-exclude }
 
-Câu trả lời framework/runtime phải tách documented behavior khỏi inference và tránh slogan. Với **Interview question bank & coverage map**, hãy log hoặc đo transition ở boundary thay vì suy luận từ UI cuối cùng.
+Câu trả lời framework/runtime phải tách documented behavior khỏi inference và tránh slogan. Với **Technical speaking, study groups và community contribution**, hãy log hoặc đo transition ở boundary thay vì suy luận từ UI cuối cùng.
 
 Một callback xuất hiện không chứng minh object còn owner đúng; một UI update đúng không chứng minh request cũ đã bị cancel; một compile success cũng không chứng minh logical ordering đúng.
 
@@ -175,11 +185,11 @@ Không thêm layer chỉ vì chapter nhắc đến pattern. Hãy yêu cầu laye
 
 ### Context
 
-Feature Commerce áp dụng **Interview question bank & coverage map** trong flow có network, UI lifecycle và cache.
+Feature Commerce áp dụng **Technical speaking, study groups và community contribution** trong flow có network, UI lifecycle và cache.
 
 ### Symptom
 
-User báo behavior không ổn định; telemetry cho thấy có hàng trăm câu hỏi nhưng coverage lệch, không có rubric hoặc không tìm được prerequisite.
+User báo behavior không ổn định; telemetry cho thấy talk quảng cáo, lộ dữ liệu công ty, slide quá rộng hoặc activity không có follow-up/reuse.
 
 ### Hypotheses
 
@@ -190,7 +200,7 @@ User báo behavior không ổn định; telemetry cho thấy có hàng trăm câ
 
 ### Investigation
 
-Dùng coverage matrix theo domain/level cùng kết quả mock interview; thêm correlation ID/generation an toàn, tái hiện repeated flow và so sánh expected transition với actual transition.
+Dùng proposal acceptance, attendance/retention, qualitative feedback, artifact reuse và action items; thêm correlation ID/generation an toàn, tái hiện repeated flow và so sánh expected transition với actual transition.
 
 ### Root Cause
 
@@ -198,7 +208,7 @@ Root cause chỉ được kết luận khi evidence chỉ ra nơi invariant bị
 
 ### Fix
 
-Áp dụng rule **dùng map làm công cụ chẩn đoán lỗ hổng; học theory ở chapter canonical rồi luyện ba độ sâu**, thu hẹp mutation/ownership và làm failure/cancellation explicit.
+Áp dụng rule **bắt đầu từ một problem có bằng chứng, xin approval cho nội dung nhạy cảm, rehearsal với peer và publish artifact dễ tái sử dụng**, thu hẹp mutation/ownership và làm failure/cancellation explicit.
 
 ### Prevention
 
@@ -206,7 +216,7 @@ Thêm regression test tại boundary, metric cho failure mode, review checklist 
 
 ## Debug / Instruments { data-search-exclude }
 
-Primary evidence: **coverage matrix theo domain/level cùng kết quả mock interview**.
+Primary evidence: **proposal acceptance, attendance/retention, qualitative feedback, artifact reuse và action items**.
 
 1. Tái hiện trên build/device gần production.
 2. Đánh dấu user flow bằng signpost hoặc correlation ID không chứa PII.
@@ -216,20 +226,20 @@ Primary evidence: **coverage matrix theo domain/level cùng kết quả mock int
 
 ## Myth vs Reality { data-search-exclude }
 
-> **Myth:** Chỉ cần dùng đúng API/pattern tên **Interview question bank & coverage map** là code an toàn.
+> **Myth:** Chỉ cần dùng đúng API/pattern tên **Technical speaking, study groups và community contribution** là code an toàn.
 >
 > **Reality:** Safety đến từ semantics, owner, invariant, lifecycle và evidence; API chỉ là một phần của contract.
 
 ## Common Mistakes { data-search-exclude }
 
-- Có hàng trăm câu hỏi nhưng coverage lệch, không có rubric hoặc không tìm được prerequisite → behavior chỉ sai ở scale/lifecycle edge.
+- Talk quảng cáo, lộ dữ liệu công ty, slide quá rộng hoặc activity không có follow-up/reuse → behavior chỉ sai ở scale/lifecycle edge.
 - Che failure bằng default hoặc retry → mất root-cause signal.
 - Nhiều layer cùng mutate state → source of truth không còn rõ.
 - Tối ưu trước khi đo → tăng complexity nhưng không cải thiện bottleneck.
 
 ## Best Practices { data-search-exclude }
 
-- Dùng map làm công cụ chẩn đoán lỗ hổng; học theory ở chapter canonical rồi luyện ba độ sâu.
+- Bắt đầu từ một problem có bằng chứng, xin approval cho nội dung nhạy cảm, rehearsal với peer và publish artifact dễ tái sử dụng.
 - Ghi assumption và availability cạnh boundary version-sensitive.
 - Dùng immutable value và explicit state transition khi phù hợp.
 - Log category/correlation an toàn; không log token, PII hoặc payment payload.
@@ -239,21 +249,21 @@ Primary evidence: **coverage matrix theo domain/level cùng kết quả mock int
 
 ### Foundation
 
-**Hỏi:** Interview question bank & coverage map giải quyết vấn đề gì?
+**Hỏi:** Technical speaking, study groups và community contribution giải quyết vấn đề gì?
 
-**30-second:** Question bank phải map đủ domain/level/follow-up và dẫn về chapter canonical thay vì lặp đáp án rời rạc. Chọn nó khi dùng map làm công cụ chẩn đoán lỗ hổng; học theory ở chapter canonical rồi luyện ba độ sâu; rủi ro chính là có hàng trăm câu hỏi nhưng coverage lệch, không có rubric hoặc không tìm được prerequisite.
+**30-second:** Community contribution chuyển kinh nghiệm thành nội dung có audience, learning objective, evidence và feedback loop. Chọn nó khi bắt đầu từ một problem có bằng chứng, xin approval cho nội dung nhạy cảm, rehearsal với peer và publish artifact dễ tái sử dụng; rủi ro chính là talk quảng cáo, lộ dữ liệu công ty, slide quá rộng hoặc activity không có follow-up/reuse.
 
 ### Junior
 
 **Hỏi:** Cho một ví dụ Commerce và common mistake.
 
-**2–3 minute:** Nêu input/state, owner, code contract, failure path và test. Dùng ví dụ ở trên, sau đó giải thích vì sao có hàng trăm câu hỏi nhưng coverage lệch, không có rubric hoặc không tìm được prerequisite phá invariant.
+**2–3 minute:** Nêu input/state, owner, code contract, failure path và test. Dùng ví dụ ở trên, sau đó giải thích vì sao talk quảng cáo, lộ dữ liệu công ty, slide quá rộng hoặc activity không có follow-up/reuse phá invariant.
 
 ### Middle
 
 **Hỏi:** Concept ảnh hưởng memory/concurrency/testability thế nào?
 
-Trả lời bằng object/task graph, isolation/cancellation, boundary DI và evidence **coverage matrix theo domain/level cùng kết quả mock interview**.
+Trả lời bằng object/task graph, isolation/cancellation, boundary DI và evidence **proposal acceptance, attendance/retention, qualitative feedback, artifact reuse và action items**.
 
 ### Senior
 
@@ -271,11 +281,11 @@ Clarify impact → thu evidence → hypothesis → controlled measurement → ro
 
 ### Easy
 
-Viết một ví dụ nhỏ minh họa **Interview question bank & coverage map** và test happy path lẫn edge case.
+Viết một ví dụ nhỏ minh họa **Technical speaking, study groups và community contribution** và test happy path lẫn edge case.
 
 ### Medium
 
-Refactor một call site đang gặp **có hàng trăm câu hỏi nhưng coverage lệch, không có rubric hoặc không tìm được prerequisite** để contract/owner rõ hơn.
+Refactor một call site đang gặp **talk quảng cáo, lộ dữ liệu công ty, slide quá rộng hoặc activity không có follow-up/reuse** để contract/owner rõ hơn.
 
 ### Hard
 
@@ -283,7 +293,7 @@ Thiết kế state transition có cancellation/lifecycle interruption và chứn
 
 ### Debugging Lab
 
-Bug report: repeated Commerce flow tạo symptom liên quan **Interview question bank & coverage map**. Thu evidence bằng coverage matrix theo domain/level cùng kết quả mock interview, vẽ owner/state graph, xác định root cause và thêm regression test.
+Bug report: repeated Commerce flow tạo symptom liên quan **Technical speaking, study groups và community contribution**. Thu evidence bằng proposal acceptance, attendance/retention, qualitative feedback, artifact reuse và action items, vẽ owner/state graph, xác định root cause và thêm regression test.
 
 ### Engineering / Design Exercise
 
@@ -292,10 +302,10 @@ Viết ADR một trang: context, options, decision, consequences và revisit con
 ## Cheat Sheet { data-search-exclude }
 
 ```text
-Concept   → question bank phải map đủ domain/level/follow-up và dẫn về chapter canonical thay vì lặp đáp án rời rạc
-Use when  → dùng map làm công cụ chẩn đoán lỗ hổng; học theory ở chapter canonical rồi luyện ba độ sâu
-Risk      → có hàng trăm câu hỏi nhưng coverage lệch, không có rubric hoặc không tìm được prerequisite
-Evidence  → coverage matrix theo domain/level cùng kết quả mock interview
+Concept   → community contribution chuyển kinh nghiệm thành nội dung có audience, learning objective, evidence và feedback loop
+Use when  → bắt đầu từ một problem có bằng chứng, xin approval cho nội dung nhạy cảm, rehearsal với peer và publish artifact dễ tái sử dụng
+Risk      → talk quảng cáo, lộ dữ liệu công ty, slide quá rộng hoặc activity không có follow-up/reuse
+Evidence  → proposal acceptance, attendance/retention, qualitative feedback, artifact reuse và action items
 Remember  → owner + state + failure + lifecycle + measurement
 ```
 
@@ -303,14 +313,14 @@ Remember  → owner + state + failure + lifecycle + measurement
 
 1. Problem: API/pattern không đủ nếu semantics và owner mơ hồ.
 2. Mental model: Clarify → 30-second thesis → mechanism/trade-off → example → production evidence → senior extension.
-3. Usage rule: dùng map làm công cụ chẩn đoán lỗ hổng; học theory ở chapter canonical rồi luyện ba độ sâu.
-4. Mistake nguy hiểm: có hàng trăm câu hỏi nhưng coverage lệch, không có rubric hoặc không tìm được prerequisite.
-5. Production lesson: kết luận bằng coverage matrix theo domain/level cùng kết quả mock interview, rồi bảo vệ bằng test và metric.
+3. Usage rule: bắt đầu từ một problem có bằng chứng, xin approval cho nội dung nhạy cảm, rehearsal với peer và publish artifact dễ tái sử dụng.
+4. Mistake nguy hiểm: talk quảng cáo, lộ dữ liệu công ty, slide quá rộng hoặc activity không có follow-up/reuse.
+5. Production lesson: kết luận bằng proposal acceptance, attendance/retention, qualitative feedback, artifact reuse và action items, rồi bảo vệ bằng test và metric.
 
 ## Related Chapters { data-search-exclude }
 
-- [Mock interview Junior/Middle/Senior](16-mock-interview-junior-middle-senior.md)
 - [Engineering management và technical leadership](18-engineering-management-va-technical-leadership.md)
+- [OSS contribution, release và maintainer workflow](20-oss-contribution-release-va-maintainer-workflow.md)
 - [Cross-reference Index](../CROSS_REFERENCE_INDEX.md)
 
 ## References { data-search-exclude }
@@ -318,6 +328,8 @@ Remember  → owner + state + failure + lifecycle + measurement
 - [The Swift Programming Language](https://docs.swift.org/swift-book/documentation/the-swift-programming-language/) — truy cập 2026-08-09.
 - [Apple Developer Documentation](https://developer.apple.com/documentation/) — truy cập 2026-08-09.
 - [Swift Evolution](https://www.swift.org/swift-evolution/) — truy cập 2026-08-09.
+- [Swift Community](https://www.swift.org/community/) — truy cập 2026-08-09.
+- [Swift Code of Conduct](https://www.swift.org/code-of-conduct/) — truy cập 2026-08-09.
 
 ## Completion Checklist { data-search-exclude }
 

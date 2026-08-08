@@ -49,6 +49,7 @@ Phase hoàn thành mục tiêu: **đặt confidence ở đúng boundary với te
 12. [12 — TDD và design feedback](12-tdd-va-design-feedback.md)
 13. [13 — Code coverage: tín hiệu và giới hạn](13-code-coverage-tin-hieu-va-gioi-han.md)
 14. [14 — Regression test từ production incident](14-regression-test-tu-production-incident.md)
+15. [15 — E2E automation với XCUITest: fixtures, stability và CI](15-e2e-automation-voi-xcuitest-fixtures-stability-va-ci.md)
 
 ## Knowledge Map
 
@@ -89,6 +90,7 @@ Evidence   → Swift Testing, XCTest, test plans, result bundles, sanitizer và 
 12. Với TDD và design feedback, invariant, owner và evidence chính là gì?
 13. Với Code coverage: tín hiệu và giới hạn, invariant, owner và evidence chính là gì?
 14. Với Regression test từ production incident, invariant, owner và evidence chính là gì?
+15. Với E2E automation với XCUITest: fixtures, stability và CI, invariant, owner và evidence chính là gì?
 
 ## Deep-dive Questions
 

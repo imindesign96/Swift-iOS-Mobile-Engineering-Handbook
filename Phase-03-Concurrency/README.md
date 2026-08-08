@@ -36,6 +36,7 @@ Production evidence + Interview synthesis
 - [13 — Task lifetime qua screen lifecycle](13-task-lifetime-qua-screen-lifecycle.md)
 - [14 — Migration từ callback/GCD sang async/await](14-migration-tu-callback-gcd-sang-async-await.md)
 - [15 — Priority inversion, thread explosion và performance](15-priority-inversion-thread-explosion-va-performance.md)
+- [16 — Reactive Programming với Combine: stream, demand, scheduling và cancellation](16-reactive-programming-voi-combine-stream-demand-scheduling-va-cancellation.md)
 - [99 — Phase Review: Concurrency](99-phase-review.md)
 
 ## Quality gate

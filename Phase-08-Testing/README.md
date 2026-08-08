@@ -35,6 +35,7 @@ Production evidence + Interview synthesis
 - [12 — TDD và design feedback](12-tdd-va-design-feedback.md)
 - [13 — Code coverage: tín hiệu và giới hạn](13-code-coverage-tin-hieu-va-gioi-han.md)
 - [14 — Regression test từ production incident](14-regression-test-tu-production-incident.md)
+- [15 — E2E automation với XCUITest: fixtures, stability và CI](15-e2e-automation-voi-xcuitest-fixtures-stability-va-ci.md)
 - [99 — Phase Review: Testing](99-phase-review.md)
 
 ## Quality gate

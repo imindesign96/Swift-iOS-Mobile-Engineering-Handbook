@@ -12,7 +12,7 @@ levels:
 prerequisites:
   - "Animation, transaction và rendering cost"
 used_later:
-  - "Phase Review: iOS Platform"
+  - "Human Interface Guidelines, accessibility và adaptive UI"
 competencies:
   - "iOS Platform"
   - "Production"
@@ -60,7 +60,7 @@ Sau chapter này, bạn có thể:
 
 ## Used Later { data-search-exclude }
 
-- [Phase Review: iOS Platform](99-phase-review.md) dùng contract của chapter này làm building block.
+- [Human Interface Guidelines, accessibility và adaptive UI](20-human-interface-guidelines-accessibility-va-adaptive-ui.md) dùng contract của chapter này làm building block.
 - [Production Playbook](../PRODUCTION_PLAYBOOK.md) dùng cùng flow evidence-first.
 - [Interview Playbook](../INTERVIEW_PLAYBOOK.md) dùng mental model để xử lý follow-up.
 
@@ -308,7 +308,7 @@ Remember  → owner + state + failure + lifecycle + measurement
 ## Related Chapters { data-search-exclude }
 
 - [Animation, transaction và rendering cost](18-animation-transaction-va-rendering-cost.md)
-- [Phase Review: iOS Platform](99-phase-review.md)
+- [Human Interface Guidelines, accessibility và adaptive UI](20-human-interface-guidelines-accessibility-va-adaptive-ui.md)
 - [Cross-reference Index](../CROSS_REFERENCE_INDEX.md)
 
 ## References { data-search-exclude }

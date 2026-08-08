@@ -12,7 +12,7 @@ levels:
 prerequisites:
   - "Migration từ callback/GCD sang async/await"
 used_later:
-  - "Phase Review: Concurrency"
+  - "Reactive Programming với Combine: stream, demand, scheduling và cancellation"
 competencies:
   - "Concurrency"
   - "Production"
@@ -60,7 +60,7 @@ Sau chapter này, bạn có thể:
 
 ## Used Later { data-search-exclude }
 
-- [Phase Review: Concurrency](99-phase-review.md) dùng contract của chapter này làm building block.
+- [Reactive Programming với Combine: stream, demand, scheduling và cancellation](16-reactive-programming-voi-combine-stream-demand-scheduling-va-cancellation.md) dùng contract của chapter này làm building block.
 - [Production Playbook](../PRODUCTION_PLAYBOOK.md) dùng cùng flow evidence-first.
 - [Interview Playbook](../INTERVIEW_PLAYBOOK.md) dùng mental model để xử lý follow-up.
 
@@ -300,7 +300,7 @@ Remember  → owner + state + failure + lifecycle + measurement
 ## Related Chapters { data-search-exclude }
 
 - [Migration từ callback/GCD sang async/await](14-migration-tu-callback-gcd-sang-async-await.md)
-- [Phase Review: Concurrency](99-phase-review.md)
+- [Reactive Programming với Combine: stream, demand, scheduling và cancellation](16-reactive-programming-voi-combine-stream-demand-scheduling-va-cancellation.md)
 - [Cross-reference Index](../CROSS_REFERENCE_INDEX.md)
 
 ## References { data-search-exclude }

@@ -12,7 +12,7 @@ levels:
 prerequisites:
   - "UIKit → SwiftUI migration"
 used_later:
-  - "Phase Review: Mobile System Design"
+  - "Cross-platform collaboration: backend, web, Android và API contracts"
 competencies:
   - "Mobile System Design"
   - "Production"
@@ -60,7 +60,7 @@ Sau chapter này, bạn có thể:
 
 ## Used Later { data-search-exclude }
 
-- [Phase Review: Mobile System Design](99-phase-review.md) dùng contract của chapter này làm building block.
+- [Cross-platform collaboration: backend, web, Android và API contracts](18-cross-platform-collaboration-backend-web-android-va-api-contracts.md) dùng contract của chapter này làm building block.
 - [Production Playbook](../PRODUCTION_PLAYBOOK.md) dùng cùng flow evidence-first.
 - [Interview Playbook](../INTERVIEW_PLAYBOOK.md) dùng mental model để xử lý follow-up.
 
@@ -311,7 +311,7 @@ Remember  → owner + state + failure + lifecycle + measurement
 ## Related Chapters { data-search-exclude }
 
 - [UIKit → SwiftUI migration](16-uikit-to-swiftui-migration.md)
-- [Phase Review: Mobile System Design](99-phase-review.md)
+- [Cross-platform collaboration: backend, web, Android và API contracts](18-cross-platform-collaboration-backend-web-android-va-api-contracts.md)
 - [Cross-reference Index](../CROSS_REFERENCE_INDEX.md)
 
 ## References { data-search-exclude }

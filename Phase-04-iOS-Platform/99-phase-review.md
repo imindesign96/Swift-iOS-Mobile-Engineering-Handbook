@@ -54,6 +54,11 @@ Phase hoàn thành mục tiêu: **đặt UI state và work đúng lifecycle tron
 17. [17 — `.task`, cancellation và view lifecycle](17-task-cancellation-va-view-lifecycle.md)
 18. [18 — Animation, transaction và rendering cost](18-animation-transaction-va-rendering-cost.md)
 19. [19 — UIKit ↔ SwiftUI interoperability](19-uikit-to-swiftui-interoperability.md)
+20. [20 — Human Interface Guidelines, accessibility và adaptive UI](20-human-interface-guidelines-accessibility-va-adaptive-ui.md)
+21. [21 — App Extensions: Notification Service Extension và WidgetKit](21-app-extensions-notification-service-extension-va-widgetkit.md)
+22. [22 — CoreLocation: permission, accuracy, background và energy](22-corelocation-permission-accuracy-background-va-energy.md)
+23. [23 — Universal Links: AASA, routing, fallback và security](23-universal-links-aasa-routing-fallback-va-security.md)
+24. [24 — WKWebView bridge: Cookie, LocalStorage và native-web data contract](24-wkwebview-bridge-cookie-localstorage-va-native-web-data-contract.md)
 
 ## Knowledge Map
 
@@ -99,6 +104,11 @@ Evidence   → View Debugger, constraint logs, SwiftUI Instruments, Time Profile
 17. Với `.task`, cancellation và view lifecycle, invariant, owner và evidence chính là gì?
 18. Với Animation, transaction và rendering cost, invariant, owner và evidence chính là gì?
 19. Với UIKit ↔ SwiftUI interoperability, invariant, owner và evidence chính là gì?
+20. Với Human Interface Guidelines, accessibility và adaptive UI, invariant, owner và evidence chính là gì?
+21. Với App Extensions: Notification Service Extension và WidgetKit, invariant, owner và evidence chính là gì?
+22. Với CoreLocation: permission, accuracy, background và energy, invariant, owner và evidence chính là gì?
+23. Với Universal Links: AASA, routing, fallback và security, invariant, owner và evidence chính là gì?
+24. Với WKWebView bridge: Cookie, LocalStorage và native-web data contract, invariant, owner và evidence chính là gì?
 
 ## Deep-dive Questions
 

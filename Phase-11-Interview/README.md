@@ -38,6 +38,9 @@ Production evidence + Interview synthesis
 - [15 — Behavioral engineering](15-behavioral-engineering.md)
 - [16 — Mock interview Junior/Middle/Senior](16-mock-interview-junior-middle-senior.md)
 - [17 — Interview question bank & coverage map](17-interview-question-bank-and-coverage-map.md)
+- [18 — Engineering management và technical leadership](18-engineering-management-va-technical-leadership.md)
+- [19 — Technical speaking, study groups và community contribution](19-technical-speaking-study-groups-va-community-contribution.md)
+- [20 — OSS contribution, release và maintainer workflow](20-oss-contribution-release-va-maintainer-workflow.md)
 - [99 — Final Capstone & Handbook Review](99-phase-review.md)
 
 ## Quality gate

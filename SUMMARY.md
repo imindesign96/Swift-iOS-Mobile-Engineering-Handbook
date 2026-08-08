@@ -1,6 +1,6 @@
 # SUMMARY — Knowledge Map & Progress
 
-> Verified 2026-08-09: toàn bộ 11 Phase và 183 chapter đã có nội dung, Phase Review và quality gate.
+> Verified 2026-08-09: toàn bộ 11 Phase và 196 chapter đã có nội dung, Phase Review và quality gate.
 
 Ký hiệu: ✅ chapter hoàn chỉnh và tiêu đề là liên kết.
 
@@ -58,6 +58,7 @@ Ký hiệu: ✅ chapter hoàn chỉnh và tiêu đề là liên kết.
 - ✅ [13 — Task lifetime qua screen lifecycle](Phase-03-Concurrency/13-task-lifetime-qua-screen-lifecycle.md)
 - ✅ [14 — Migration từ callback/GCD sang async/await](Phase-03-Concurrency/14-migration-tu-callback-gcd-sang-async-await.md)
 - ✅ [15 — Priority inversion, thread explosion và performance](Phase-03-Concurrency/15-priority-inversion-thread-explosion-va-performance.md)
+- ✅ [16 — Reactive Programming với Combine: stream, demand, scheduling và cancellation](Phase-03-Concurrency/16-reactive-programming-voi-combine-stream-demand-scheduling-va-cancellation.md)
 - ✅ [99 — Phase Review: Concurrency](Phase-03-Concurrency/99-phase-review.md)
 
 ## Phase 04 — iOS Platform
@@ -81,6 +82,11 @@ Ký hiệu: ✅ chapter hoàn chỉnh và tiêu đề là liên kết.
 - ✅ [17 — `.task`, cancellation và view lifecycle](Phase-04-iOS-Platform/17-task-cancellation-va-view-lifecycle.md)
 - ✅ [18 — Animation, transaction và rendering cost](Phase-04-iOS-Platform/18-animation-transaction-va-rendering-cost.md)
 - ✅ [19 — UIKit ↔ SwiftUI interoperability](Phase-04-iOS-Platform/19-uikit-to-swiftui-interoperability.md)
+- ✅ [20 — Human Interface Guidelines, accessibility và adaptive UI](Phase-04-iOS-Platform/20-human-interface-guidelines-accessibility-va-adaptive-ui.md)
+- ✅ [21 — App Extensions: Notification Service Extension và WidgetKit](Phase-04-iOS-Platform/21-app-extensions-notification-service-extension-va-widgetkit.md)
+- ✅ [22 — CoreLocation: permission, accuracy, background và energy](Phase-04-iOS-Platform/22-corelocation-permission-accuracy-background-va-energy.md)
+- ✅ [23 — Universal Links: AASA, routing, fallback và security](Phase-04-iOS-Platform/23-universal-links-aasa-routing-fallback-va-security.md)
+- ✅ [24 — WKWebView bridge: Cookie, LocalStorage và native-web data contract](Phase-04-iOS-Platform/24-wkwebview-bridge-cookie-localstorage-va-native-web-data-contract.md)
 - ✅ [99 — Phase Review: iOS Platform](Phase-04-iOS-Platform/99-phase-review.md)
 
 ## Phase 05 — Networking
@@ -154,6 +160,7 @@ Ký hiệu: ✅ chapter hoàn chỉnh và tiêu đề là liên kết.
 - ✅ [12 — TDD và design feedback](Phase-08-Testing/12-tdd-va-design-feedback.md)
 - ✅ [13 — Code coverage: tín hiệu và giới hạn](Phase-08-Testing/13-code-coverage-tin-hieu-va-gioi-han.md)
 - ✅ [14 — Regression test từ production incident](Phase-08-Testing/14-regression-test-tu-production-incident.md)
+- ✅ [15 — E2E automation với XCUITest: fixtures, stability và CI](Phase-08-Testing/15-e2e-automation-voi-xcuitest-fixtures-stability-va-ci.md)
 - ✅ [99 — Phase Review: Testing](Phase-08-Testing/99-phase-review.md)
 
 ## Phase 09 — Production
@@ -176,6 +183,8 @@ Ký hiệu: ✅ chapter hoàn chỉnh và tiêu đề là liên kết.
 - ✅ [16 — Background execution và interrupted work](Phase-09-Production/16-background-execution-va-interrupted-work.md)
 - ✅ [17 — Concurrency incidents ở quy mô session lớn](Phase-09-Production/17-concurrency-incidents-o-quy-mo-session-lon.md)
 - ✅ [18 — Observability, SLO và incident response](Phase-09-Production/18-observability-slo-va-incident-response.md)
+- ✅ [19 — iOS CI/CD với Bitrise và fastlane](Phase-09-Production/19-ios-ci-cd-voi-bitrise-va-fastlane.md)
+- ✅ [20 — Developer productivity metrics và data-driven improvement](Phase-09-Production/20-developer-productivity-metrics-va-data-driven-improvement.md)
 - ✅ [99 — Phase Review: Production](Phase-09-Production/99-phase-review.md)
 
 ## Phase 10 — Mobile System Design
@@ -197,6 +206,7 @@ Ký hiệu: ✅ chapter hoàn chỉnh và tiêu đề là liên kết.
 - ✅ [15 — Modular architecture cho nhiều team](Phase-10-Mobile-System-Design/15-modular-architecture-cho-nhieu-team.md)
 - ✅ [16 — UIKit → SwiftUI migration](Phase-10-Mobile-System-Design/16-uikit-to-swiftui-migration.md)
 - ✅ [17 — Commerce Checkout state machine](Phase-10-Mobile-System-Design/17-commerce-checkout-state-machine.md)
+- ✅ [18 — Cross-platform collaboration: backend, web, Android và API contracts](Phase-10-Mobile-System-Design/18-cross-platform-collaboration-backend-web-android-va-api-contracts.md)
 - ✅ [99 — Phase Review: Mobile System Design](Phase-10-Mobile-System-Design/99-phase-review.md)
 
 ## Phase 11 — Global Interview
@@ -218,11 +228,14 @@ Ký hiệu: ✅ chapter hoàn chỉnh và tiêu đề là liên kết.
 - ✅ [15 — Behavioral engineering](Phase-11-Interview/15-behavioral-engineering.md)
 - ✅ [16 — Mock interview Junior/Middle/Senior](Phase-11-Interview/16-mock-interview-junior-middle-senior.md)
 - ✅ [17 — Interview question bank & coverage map](Phase-11-Interview/17-interview-question-bank-and-coverage-map.md)
+- ✅ [18 — Engineering management và technical leadership](Phase-11-Interview/18-engineering-management-va-technical-leadership.md)
+- ✅ [19 — Technical speaking, study groups và community contribution](Phase-11-Interview/19-technical-speaking-study-groups-va-community-contribution.md)
+- ✅ [20 — OSS contribution, release và maintainer workflow](Phase-11-Interview/20-oss-contribution-release-va-maintainer-workflow.md)
 - ✅ [99 — Final Capstone & Handbook Review](Phase-11-Interview/99-phase-review.md)
 
 ## Completion snapshot
 
 - 11/11 Phase complete.
-- 183/183 chapter complete.
+- 196/196 chapter complete.
 - 11/11 Phase Review complete.
 - Navigation, local links và code fences được validator kiểm tra.

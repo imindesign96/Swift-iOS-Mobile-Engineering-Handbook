@@ -52,6 +52,7 @@ Phase hoàn thành mục tiêu: **thiết kế feature trong constraint memory, 
 15. [15 — Modular architecture cho nhiều team](15-modular-architecture-cho-nhieu-team.md)
 16. [16 — UIKit → SwiftUI migration](16-uikit-to-swiftui-migration.md)
 17. [17 — Commerce Checkout state machine](17-commerce-checkout-state-machine.md)
+18. [18 — Cross-platform collaboration: backend, web, Android và API contracts](18-cross-platform-collaboration-backend-web-android-va-api-contracts.md)
 
 ## Knowledge Map
 
@@ -95,6 +96,7 @@ Evidence   → Architecture diagram, state machine, load/failure tests, signpost
 15. Với Modular architecture cho nhiều team, invariant, owner và evidence chính là gì?
 16. Với UIKit → SwiftUI migration, invariant, owner và evidence chính là gì?
 17. Với Commerce Checkout state machine, invariant, owner và evidence chính là gì?
+18. Với Cross-platform collaboration: backend, web, Android và API contracts, invariant, owner và evidence chính là gì?
 
 ## Deep-dive Questions
 

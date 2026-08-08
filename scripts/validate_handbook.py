@@ -20,6 +20,7 @@ REQUIRED_ROOT_FILES = {
     "PRODUCTION_PLAYBOOK.md",
     "INTERVIEW_PLAYBOOK.md",
     "HANDBOOK_COVERAGE.md",
+    "PROFESSIONAL_SKILLS_MATRIX.md",
 }
 
 REQUIRED_TEMPLATES = {
@@ -46,15 +47,15 @@ REQUIRED_PHASES = [
 EXPECTED_CHAPTER_COUNTS = {
     "Phase-01-Swift-Foundation": 19,
     "Phase-02-Memory-Runtime": 12,
-    "Phase-03-Concurrency": 16,
-    "Phase-04-iOS-Platform": 20,
+    "Phase-03-Concurrency": 17,
+    "Phase-04-iOS-Platform": 25,
     "Phase-05-Networking": 16,
     "Phase-06-Architecture": 15,
     "Phase-07-Persistence": 15,
-    "Phase-08-Testing": 15,
-    "Phase-09-Production": 19,
-    "Phase-10-Mobile-System-Design": 18,
-    "Phase-11-Interview": 18,
+    "Phase-08-Testing": 16,
+    "Phase-09-Production": 21,
+    "Phase-10-Mobile-System-Design": 19,
+    "Phase-11-Interview": 21,
 }
 
 CHAPTER_SECTIONS = (
@@ -91,6 +92,22 @@ FRONT_MATTER_STATUS_COMPLETE = re.compile(
 )
 PLACEHOLDER = re.compile(r"\b(?:TODO|TBD)\b|<Problem-oriented title>")
 
+PROFESSIONAL_SKILLS_REQUIREMENTS = (
+    "ネイティブ機能の深い理解",
+    "ユーザーインターフェースガイドラインの深い理解",
+    "アーキテクチャ設計に関する深い知識",
+    "WKWebViewを用いたWebサイトとのデータ連携経験",
+    "Reactive programmingの経験",
+    "E2Eテストの自動化経験",
+    "CI/CD（Bitrise, fastlane等）を用いた自動化経験",
+    "SwiftUI 経験",
+    "サーバーサイド、フロントエンドなどandroid、iOS以外の開発知識",
+    "マネジメントまたは技術リード経験",
+    "開発生産性の可視化やデータドリブンな改善経験",
+    "社外勉強会や登壇、コミュニティ活動経験",
+    "OSSのリリース・コントリビュート経験",
+)
+
 
 def report(errors: list[str], message: str) -> None:
     errors.append(message)
@@ -102,6 +119,17 @@ def check_structure(errors: list[str]) -> None:
     )
     if missing_root:
         report(errors, f"Missing root files: {', '.join(missing_root)}")
+
+    skills_matrix = ROOT / "PROFESSIONAL_SKILLS_MATRIX.md"
+    if skills_matrix.is_file():
+        skills_text = skills_matrix.read_text(encoding="utf-8")
+        missing_skills = [
+            requirement
+            for requirement in PROFESSIONAL_SKILLS_REQUIREMENTS
+            if requirement not in skills_text
+        ]
+        if missing_skills:
+            report(errors, f"Professional skills matrix is missing {len(missing_skills)} requirement(s)")
 
     missing_templates = sorted(
         name
@@ -190,8 +218,8 @@ def check_catalog(errors: list[str]) -> None:
                     f"Missing quality-gate sections in {relative}: {', '.join(missing)}",
                 )
 
-    if total != 183:
-        report(errors, f"Full handbook must contain 183 chapters, found {total}")
+    if total != 196:
+        report(errors, f"Full handbook must contain 196 chapters, found {total}")
 
 
 def main() -> int:

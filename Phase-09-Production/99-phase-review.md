@@ -53,6 +53,8 @@ Phase hoàn thành mục tiêu: **đi từ symptom đến evidence, root cause v
 16. [16 — Background execution và interrupted work](16-background-execution-va-interrupted-work.md)
 17. [17 — Concurrency incidents ở quy mô session lớn](17-concurrency-incidents-o-quy-mo-session-lon.md)
 18. [18 — Observability, SLO và incident response](18-observability-slo-va-incident-response.md)
+19. [19 — iOS CI/CD với Bitrise và fastlane](19-ios-ci-cd-voi-bitrise-va-fastlane.md)
+20. [20 — Developer productivity metrics và data-driven improvement](20-developer-productivity-metrics-va-data-driven-improvement.md)
 
 ## Knowledge Map
 
@@ -97,6 +99,8 @@ Evidence   → Xcode Organizer, crash report/symbolication, Instruments, MetricK
 16. Với Background execution và interrupted work, invariant, owner và evidence chính là gì?
 17. Với Concurrency incidents ở quy mô session lớn, invariant, owner và evidence chính là gì?
 18. Với Observability, SLO và incident response, invariant, owner và evidence chính là gì?
+19. Với iOS CI/CD với Bitrise và fastlane, invariant, owner và evidence chính là gì?
+20. Với Developer productivity metrics và data-driven improvement, invariant, owner và evidence chính là gì?
 
 ## Deep-dive Questions
 

@@ -121,6 +121,7 @@ nav:
       - 'Task lifetime qua screen lifecycle': Phase-03-Concurrency/13-task-lifetime-qua-screen-lifecycle.md
       - 'Migration từ callback/GCD sang async/await': Phase-03-Concurrency/14-migration-tu-callback-gcd-sang-async-await.md
       - 'Priority inversion, thread explosion và performance': Phase-03-Concurrency/15-priority-inversion-thread-explosion-va-performance.md
+      - 'Reactive Programming với Combine: stream, demand, scheduling và cancellation': Phase-03-Concurrency/16-reactive-programming-voi-combine-stream-demand-scheduling-va-cancellation.md
       - 'Phase Review: Concurrency': Phase-03-Concurrency/99-phase-review.md
   - 'iOS Platform':
       - Tổng quan: Phase-04-iOS-Platform/index.md
@@ -143,6 +144,11 @@ nav:
       - '`.task`, cancellation và view lifecycle': Phase-04-iOS-Platform/17-task-cancellation-va-view-lifecycle.md
       - 'Animation, transaction và rendering cost': Phase-04-iOS-Platform/18-animation-transaction-va-rendering-cost.md
       - 'UIKit ↔ SwiftUI interoperability': Phase-04-iOS-Platform/19-uikit-to-swiftui-interoperability.md
+      - 'Human Interface Guidelines, accessibility và adaptive UI': Phase-04-iOS-Platform/20-human-interface-guidelines-accessibility-va-adaptive-ui.md
+      - 'App Extensions: Notification Service Extension và WidgetKit': Phase-04-iOS-Platform/21-app-extensions-notification-service-extension-va-widgetkit.md
+      - 'CoreLocation: permission, accuracy, background và energy': Phase-04-iOS-Platform/22-corelocation-permission-accuracy-background-va-energy.md
+      - 'Universal Links: AASA, routing, fallback và security': Phase-04-iOS-Platform/23-universal-links-aasa-routing-fallback-va-security.md
+      - 'WKWebView bridge: Cookie, LocalStorage và native-web data contract': Phase-04-iOS-Platform/24-wkwebview-bridge-cookie-localstorage-va-native-web-data-contract.md
       - 'Phase Review: iOS Platform': Phase-04-iOS-Platform/99-phase-review.md
   - 'Networking':
       - Tổng quan: Phase-05-Networking/index.md
@@ -212,6 +218,7 @@ nav:
       - 'TDD và design feedback': Phase-08-Testing/12-tdd-va-design-feedback.md
       - 'Code coverage: tín hiệu và giới hạn': Phase-08-Testing/13-code-coverage-tin-hieu-va-gioi-han.md
       - 'Regression test từ production incident': Phase-08-Testing/14-regression-test-tu-production-incident.md
+      - 'E2E automation với XCUITest: fixtures, stability và CI': Phase-08-Testing/15-e2e-automation-voi-xcuitest-fixtures-stability-va-ci.md
       - 'Phase Review: Testing': Phase-08-Testing/99-phase-review.md
   - 'Production':
       - Tổng quan: Phase-09-Production/index.md
@@ -233,6 +240,8 @@ nav:
       - 'Background execution và interrupted work': Phase-09-Production/16-background-execution-va-interrupted-work.md
       - 'Concurrency incidents ở quy mô session lớn': Phase-09-Production/17-concurrency-incidents-o-quy-mo-session-lon.md
       - 'Observability, SLO và incident response': Phase-09-Production/18-observability-slo-va-incident-response.md
+      - 'iOS CI/CD với Bitrise và fastlane': Phase-09-Production/19-ios-ci-cd-voi-bitrise-va-fastlane.md
+      - 'Developer productivity metrics và data-driven improvement': Phase-09-Production/20-developer-productivity-metrics-va-data-driven-improvement.md
       - 'Phase Review: Production': Phase-09-Production/99-phase-review.md
   - 'Mobile System Design':
       - Tổng quan: Phase-10-Mobile-System-Design/index.md
@@ -253,6 +262,7 @@ nav:
       - 'Modular architecture cho nhiều team': Phase-10-Mobile-System-Design/15-modular-architecture-cho-nhieu-team.md
       - 'UIKit → SwiftUI migration': Phase-10-Mobile-System-Design/16-uikit-to-swiftui-migration.md
       - 'Commerce Checkout state machine': Phase-10-Mobile-System-Design/17-commerce-checkout-state-machine.md
+      - 'Cross-platform collaboration: backend, web, Android và API contracts': Phase-10-Mobile-System-Design/18-cross-platform-collaboration-backend-web-android-va-api-contracts.md
       - 'Phase Review: Mobile System Design': Phase-10-Mobile-System-Design/99-phase-review.md
   - 'Global Interview':
       - Tổng quan: Phase-11-Interview/index.md
@@ -273,11 +283,15 @@ nav:
       - 'Behavioral engineering': Phase-11-Interview/15-behavioral-engineering.md
       - 'Mock interview Junior/Middle/Senior': Phase-11-Interview/16-mock-interview-junior-middle-senior.md
       - 'Interview question bank & coverage map': Phase-11-Interview/17-interview-question-bank-and-coverage-map.md
+      - 'Engineering management và technical leadership': Phase-11-Interview/18-engineering-management-va-technical-leadership.md
+      - 'Technical speaking, study groups và community contribution': Phase-11-Interview/19-technical-speaking-study-groups-va-community-contribution.md
+      - 'OSS contribution, release và maintainer workflow': Phase-11-Interview/20-oss-contribution-release-va-maintainer-workflow.md
       - 'Final Capstone & Handbook Review': Phase-11-Interview/99-phase-review.md
   - Tra cứu:
       - Glossary: GLOSSARY.md
       - Cross-reference Index: CROSS_REFERENCE_INDEX.md
       - Coverage Matrix: HANDBOOK_COVERAGE.md
+      - Professional Skills Matrix: PROFESSIONAL_SKILLS_MATRIX.md
       - Production Playbook: PRODUCTION_PLAYBOOK.md
       - Interview Playbook: INTERVIEW_PLAYBOOK.md
       - Specification: SPECIFICATION.md

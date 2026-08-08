@@ -50,6 +50,7 @@ Phase hoàn thành mục tiêu: **quản lý isolation, task lifetime, cancellat
 13. [13 — Task lifetime qua screen lifecycle](13-task-lifetime-qua-screen-lifecycle.md)
 14. [14 — Migration từ callback/GCD sang async/await](14-migration-tu-callback-gcd-sang-async-await.md)
 15. [15 — Priority inversion, thread explosion và performance](15-priority-inversion-thread-explosion-va-performance.md)
+16. [16 — Reactive Programming với Combine: stream, demand, scheduling và cancellation](16-reactive-programming-voi-combine-stream-demand-scheduling-va-cancellation.md)
 
 ## Knowledge Map
 
@@ -91,6 +92,7 @@ Evidence   → Strict Concurrency diagnostics, Swift Concurrency instrument, Thr
 13. Với Task lifetime qua screen lifecycle, invariant, owner và evidence chính là gì?
 14. Với Migration từ callback/GCD sang async/await, invariant, owner và evidence chính là gì?
 15. Với Priority inversion, thread explosion và performance, invariant, owner và evidence chính là gì?
+16. Với Reactive Programming với Combine: stream, demand, scheduling và cancellation, invariant, owner và evidence chính là gì?
 
 ## Deep-dive Questions
 

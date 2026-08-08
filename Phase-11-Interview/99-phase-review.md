@@ -52,6 +52,9 @@ Phase hoàn thành mục tiêu: **tổng hợp kiến thức thành câu trả l
 15. [15 — Behavioral engineering](15-behavioral-engineering.md)
 16. [16 — Mock interview Junior/Middle/Senior](16-mock-interview-junior-middle-senior.md)
 17. [17 — Interview question bank & coverage map](17-interview-question-bank-and-coverage-map.md)
+18. [18 — Engineering management và technical leadership](18-engineering-management-va-technical-leadership.md)
+19. [19 — Technical speaking, study groups và community contribution](19-technical-speaking-study-groups-va-community-contribution.md)
+20. [20 — OSS contribution, release và maintainer workflow](20-oss-contribution-release-va-maintainer-workflow.md)
 
 ## Knowledge Map
 
@@ -95,6 +98,9 @@ Evidence   → Timed mock, rubric correctness/depth/reasoning/production/communi
 15. Với Behavioral engineering, invariant, owner và evidence chính là gì?
 16. Với Mock interview Junior/Middle/Senior, invariant, owner và evidence chính là gì?
 17. Với Interview question bank & coverage map, invariant, owner và evidence chính là gì?
+18. Với Engineering management và technical leadership, invariant, owner và evidence chính là gì?
+19. Với Technical speaking, study groups và community contribution, invariant, owner và evidence chính là gì?
+20. Với OSS contribution, release và maintainer workflow, invariant, owner và evidence chính là gì?
 
 ## Deep-dive Questions
 

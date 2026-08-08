@@ -12,7 +12,7 @@ levels:
 prerequisites:
   - "Code coverage: tín hiệu và giới hạn"
 used_later:
-  - "Phase Review: Testing"
+  - "E2E automation với XCUITest: fixtures, stability và CI"
 competencies:
   - "Testing"
   - "Production"
@@ -60,7 +60,7 @@ Sau chapter này, bạn có thể:
 
 ## Used Later { data-search-exclude }
 
-- [Phase Review: Testing](99-phase-review.md) dùng contract của chapter này làm building block.
+- [E2E automation với XCUITest: fixtures, stability và CI](15-e2e-automation-voi-xcuitest-fixtures-stability-va-ci.md) dùng contract của chapter này làm building block.
 - [Production Playbook](../PRODUCTION_PLAYBOOK.md) dùng cùng flow evidence-first.
 - [Interview Playbook](../INTERVIEW_PLAYBOOK.md) dùng mental model để xử lý follow-up.
 
@@ -305,7 +305,7 @@ Remember  → owner + state + failure + lifecycle + measurement
 ## Related Chapters { data-search-exclude }
 
 - [Code coverage: tín hiệu và giới hạn](13-code-coverage-tin-hieu-va-gioi-han.md)
-- [Phase Review: Testing](99-phase-review.md)
+- [E2E automation với XCUITest: fixtures, stability và CI](15-e2e-automation-voi-xcuitest-fixtures-stability-va-ci.md)
 - [Cross-reference Index](../CROSS_REFERENCE_INDEX.md)
 
 ## References { data-search-exclude }

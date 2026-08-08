@@ -39,6 +39,8 @@ Production evidence + Interview synthesis
 - [16 — Background execution và interrupted work](16-background-execution-va-interrupted-work.md)
 - [17 — Concurrency incidents ở quy mô session lớn](17-concurrency-incidents-o-quy-mo-session-lon.md)
 - [18 — Observability, SLO và incident response](18-observability-slo-va-incident-response.md)
+- [19 — iOS CI/CD với Bitrise và fastlane](19-ios-ci-cd-voi-bitrise-va-fastlane.md)
+- [20 — Developer productivity metrics và data-driven improvement](20-developer-productivity-metrics-va-data-driven-improvement.md)
 - [99 — Phase Review: Production](99-phase-review.md)
 
 ## Quality gate

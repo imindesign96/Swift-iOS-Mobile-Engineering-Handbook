@@ -38,6 +38,7 @@ Production evidence + Interview synthesis
 - [15 — Modular architecture cho nhiều team](15-modular-architecture-cho-nhieu-team.md)
 - [16 — UIKit → SwiftUI migration](16-uikit-to-swiftui-migration.md)
 - [17 — Commerce Checkout state machine](17-commerce-checkout-state-machine.md)
+- [18 — Cross-platform collaboration: backend, web, Android và API contracts](18-cross-platform-collaboration-backend-web-android-va-api-contracts.md)
 - [99 — Phase Review: Mobile System Design](99-phase-review.md)
 
 ## Quality gate

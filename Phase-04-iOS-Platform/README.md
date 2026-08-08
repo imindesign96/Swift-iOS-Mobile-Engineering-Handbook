@@ -40,6 +40,11 @@ Production evidence + Interview synthesis
 - [17 — `.task`, cancellation và view lifecycle](17-task-cancellation-va-view-lifecycle.md)
 - [18 — Animation, transaction và rendering cost](18-animation-transaction-va-rendering-cost.md)
 - [19 — UIKit ↔ SwiftUI interoperability](19-uikit-to-swiftui-interoperability.md)
+- [20 — Human Interface Guidelines, accessibility và adaptive UI](20-human-interface-guidelines-accessibility-va-adaptive-ui.md)
+- [21 — App Extensions: Notification Service Extension và WidgetKit](21-app-extensions-notification-service-extension-va-widgetkit.md)
+- [22 — CoreLocation: permission, accuracy, background và energy](22-corelocation-permission-accuracy-background-va-energy.md)
+- [23 — Universal Links: AASA, routing, fallback và security](23-universal-links-aasa-routing-fallback-va-security.md)
+- [24 — WKWebView bridge: Cookie, LocalStorage và native-web data contract](24-wkwebview-bridge-cookie-localstorage-va-native-web-data-contract.md)
 - [99 — Phase Review: iOS Platform](99-phase-review.md)
 
 ## Quality gate
