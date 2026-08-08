@@ -149,6 +149,7 @@ nav:
       - 'CoreLocation: permission, accuracy, background và energy': Phase-04-iOS-Platform/22-corelocation-permission-accuracy-background-va-energy.md
       - 'Universal Links: AASA, routing, fallback và security': Phase-04-iOS-Platform/23-universal-links-aasa-routing-fallback-va-security.md
       - 'WKWebView bridge: Cookie, LocalStorage và native-web data contract': Phase-04-iOS-Platform/24-wkwebview-bridge-cookie-localstorage-va-native-web-data-contract.md
+      - 'Human Interface Guidelines in practice: navigation, modality, controls và feedback': Phase-04-iOS-Platform/25-human-interface-guidelines-in-practice-navigation-modality-controls-va-feedback.md
       - 'Phase Review: iOS Platform': Phase-04-iOS-Platform/99-phase-review.md
   - 'Networking':
       - Tổng quan: Phase-05-Networking/index.md

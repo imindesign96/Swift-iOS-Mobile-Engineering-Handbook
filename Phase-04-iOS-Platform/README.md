@@ -45,6 +45,7 @@ Production evidence + Interview synthesis
 - [22 — CoreLocation: permission, accuracy, background và energy](22-corelocation-permission-accuracy-background-va-energy.md)
 - [23 — Universal Links: AASA, routing, fallback và security](23-universal-links-aasa-routing-fallback-va-security.md)
 - [24 — WKWebView bridge: Cookie, LocalStorage và native-web data contract](24-wkwebview-bridge-cookie-localstorage-va-native-web-data-contract.md)
+- [25 — Human Interface Guidelines in practice: navigation, modality, controls và feedback](25-human-interface-guidelines-in-practice-navigation-modality-controls-va-feedback.md)
 - [99 — Phase Review: iOS Platform](99-phase-review.md)
 
 ## Quality gate

@@ -59,6 +59,7 @@ Phase hoàn thành mục tiêu: **đặt UI state và work đúng lifecycle tron
 22. [22 — CoreLocation: permission, accuracy, background và energy](22-corelocation-permission-accuracy-background-va-energy.md)
 23. [23 — Universal Links: AASA, routing, fallback và security](23-universal-links-aasa-routing-fallback-va-security.md)
 24. [24 — WKWebView bridge: Cookie, LocalStorage và native-web data contract](24-wkwebview-bridge-cookie-localstorage-va-native-web-data-contract.md)
+25. [25 — Human Interface Guidelines in practice: navigation, modality, controls và feedback](25-human-interface-guidelines-in-practice-navigation-modality-controls-va-feedback.md)
 
 ## Knowledge Map
 
@@ -109,6 +110,7 @@ Evidence   → View Debugger, constraint logs, SwiftUI Instruments, Time Profile
 22. Với CoreLocation: permission, accuracy, background và energy, invariant, owner và evidence chính là gì?
 23. Với Universal Links: AASA, routing, fallback và security, invariant, owner và evidence chính là gì?
 24. Với WKWebView bridge: Cookie, LocalStorage và native-web data contract, invariant, owner và evidence chính là gì?
+25. Với Human Interface Guidelines in practice: navigation, modality, controls và feedback, invariant, owner và evidence chính là gì?
 
 ## Deep-dive Questions
 

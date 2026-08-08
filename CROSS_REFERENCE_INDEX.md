@@ -36,4 +36,4 @@
 
 ## Full coverage
 
-Xem [Handbook Coverage Matrix](HANDBOOK_COVERAGE.md) để tra toàn bộ 196 chapter; xem [Professional Skills Matrix](PROFESSIONAL_SKILLS_MATRIX.md) để đối chiếu 13 yêu cầu năng lực tiếng Nhật.
+Xem [Handbook Coverage Matrix](HANDBOOK_COVERAGE.md) để tra toàn bộ 197 chapter; xem [Professional Skills Matrix](PROFESSIONAL_SKILLS_MATRIX.md) để đối chiếu 13 yêu cầu năng lực tiếng Nhật.

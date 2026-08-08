@@ -1,6 +1,6 @@
 # SUMMARY — Knowledge Map & Progress
 
-> Verified 2026-08-09: toàn bộ 11 Phase và 196 chapter đã có nội dung, Phase Review và quality gate.
+> Verified 2026-08-09: toàn bộ 11 Phase và 197 chapter đã có nội dung, Phase Review và quality gate.
 
 Ký hiệu: ✅ chapter hoàn chỉnh và tiêu đề là liên kết.
 
@@ -87,6 +87,7 @@ Ký hiệu: ✅ chapter hoàn chỉnh và tiêu đề là liên kết.
 - ✅ [22 — CoreLocation: permission, accuracy, background và energy](Phase-04-iOS-Platform/22-corelocation-permission-accuracy-background-va-energy.md)
 - ✅ [23 — Universal Links: AASA, routing, fallback và security](Phase-04-iOS-Platform/23-universal-links-aasa-routing-fallback-va-security.md)
 - ✅ [24 — WKWebView bridge: Cookie, LocalStorage và native-web data contract](Phase-04-iOS-Platform/24-wkwebview-bridge-cookie-localstorage-va-native-web-data-contract.md)
+- ✅ [25 — Human Interface Guidelines in practice: navigation, modality, controls và feedback](Phase-04-iOS-Platform/25-human-interface-guidelines-in-practice-navigation-modality-controls-va-feedback.md)
 - ✅ [99 — Phase Review: iOS Platform](Phase-04-iOS-Platform/99-phase-review.md)
 
 ## Phase 05 — Networking
@@ -236,6 +237,6 @@ Ký hiệu: ✅ chapter hoàn chỉnh và tiêu đề là liên kết.
 ## Completion snapshot
 
 - 11/11 Phase complete.
-- 196/196 chapter complete.
+- 197/197 chapter complete.
 - 11/11 Phase Review complete.
 - Navigation, local links và code fences được validator kiểm tra.

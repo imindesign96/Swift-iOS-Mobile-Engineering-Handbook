@@ -18,7 +18,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 SUMMARY = ROOT / "SUMMARY.md"
 TODAY = "2026-08-09"
-CATALOG_TOTAL = 196
+CATALOG_TOTAL = 197
 
 PRESERVE_HAND_WRITTEN = {
     "Phase-01-Swift-Foundation/01-how-a-swift-program-runs.md",
@@ -239,6 +239,7 @@ PHASE_GUIDES = {
 
 TOPIC_RULES = [
     (r"reactive-programming|combine-stream", "Reactive Programming mô hình hóa value, completion và failure theo thời gian; Combine nối Publisher, operator, Subscriber và Subscription thành một contract có demand/cancellation", "pipeline giữ subscription sai lifetime, scheduler hop mơ hồ, nested subscription hoặc bridge async/await làm mất cancellation", "Combine event trace, subscription lifetime, scheduler assertion và deterministic virtual-time test", "dùng Combine khi feature cần compose nhiều event stream hoặc operator theo thời gian; dùng async/await cho one-shot flow và AsyncSequence cho stream tuần tự đơn giản"),
+    (r"human-interface-guidelines-in-practice", "HIG thực hành biến user intent thành hierarchy, navigation, modality, control và feedback nhất quán với convention của Apple platform", "navigation/action lẫn lộn, modal lạm dụng, error không recovery, permission sai thời điểm hoặc custom gesture không có alternative", "task walkthrough, Accessibility Inspector, interaction-state matrix, usability evidence và production funnel/error telemetry", "chọn component/pattern theo user task và platform convention; document mọi deviation cùng evidence, accessibility và fallback"),
     (r"human-interface-guidelines|accessibility|adaptive-ui", "HIG là hệ constraint về hierarchy, familiarity, feedback, adaptability và accessibility chứ không phải bộ pixel cố định", "UI đẹp ở một iPhone nhưng vỡ với Dynamic Type, VoiceOver, localization, iPad multitasking, Reduce Motion hoặc contrast mode", "Accessibility Inspector, VoiceOver audit, snapshot theo trait collection và usability evidence", "bắt đầu từ system components/semantic styles, thiết kế adaptive theo content và kiểm chứng bằng ma trận device-accessibility"),
     (r"app-extensions|notification-service-extension|widgetkit", "app extension là process/lifecycle bị hệ thống giới hạn; Notification Service Extension phải luôn gọi content handler còn WidgetKit chỉ render snapshot/timeline từ shared data contract", "coi extension như app mini chạy lâu, phụ thuộc singleton của host app, bỏ expiration fallback hoặc reload widget vô hạn", "extension logs, delivery/timeline timestamps, memory/energy budget và fallback behavior", "chia sẻ model tối thiểu qua package/App Group, giữ work bounded và thiết kế kết quả hữu ích khi extension bị terminate"),
     (r"corelocation", "Core Location là permission và energy contract: request mức authorization/accuracy nhỏ nhất đủ cho user value rồi dừng update khi không cần", "xin Always quá sớm, giả định full accuracy, chạy GPS liên tục hoặc không xử lý denied/restricted/background transition", "authorization/accuracy transition log, location age-horizontalAccuracy, Energy Log và background diagnostics", "chọn one-shot, live update, significant-change, visit hoặc region monitoring theo precision-latency-energy requirement"),
@@ -420,6 +421,36 @@ final class ProductSearchModel {
             .replaceError(with: [])
             .receive(on: DispatchQueue.main)
             .assign(to: &$products)
+    }
+}'''
+    if "human-interface-guidelines-in-practice" in slug:
+        return '''import SwiftUI
+
+struct CommerceRootView: View {
+    @State private var tab: AppTab = .shop
+    @State private var checkout: CheckoutDraft?
+    @State private var destructiveDraft: CheckoutDraft?
+
+    var body: some View {
+        TabView(selection: $tab) {
+            Tab("Cửa hàng", systemImage: "bag", value: .shop) {
+                NavigationStack { ProductListView(checkout: $checkout) }
+            }
+            Tab("Đơn hàng", systemImage: "shippingbox", value: .orders) {
+                NavigationStack { OrderListView() }
+            }
+        }
+        .sheet(item: $checkout) { CheckoutForm(draft: $0) }
+        .confirmationDialog(
+            "Xoá bản nháp thanh toán?",
+            isPresented: Binding(
+                get: { destructiveDraft != nil },
+                set: { if !$0 { destructiveDraft = nil } }
+            )
+        ) {
+            Button("Xoá bản nháp", role: .destructive) { deleteDraft() }
+            Button("Tiếp tục chỉnh sửa", role: .cancel) {}
+        }
     }
 }'''
     if "human-interface-guidelines" in slug:
@@ -913,6 +944,75 @@ Với search-as-you-type, `debounce` giảm input burst, `removeDuplicates` bỏ
 - Khi bridge `Publisher.values` hoặc `Future`, kiểm tra cancellation, buffering và việc một API có eager hay lazy hay không.
 
 Test operator theo virtual/test scheduler hoặc dependency clock; assertion phải cover value order, completion, cancellation và scheduler-sensitive state.'''
+    if "human-interface-guidelines-in-practice" in slug:
+        return '''### 1. Design principles và content hierarchy
+
+HIG không phải một bộ kích thước để copy; nó là hệ decision tools bắt đầu từ mục đích của người dùng. Với mỗi screen, viết một primary task, một primary content hierarchy và một primary action. Content quan trọng phải nổi bật trước decoration; controls hỗ trợ content thay vì cạnh tranh với nó. Dùng system materials, semantic colors, text styles và SF Symbols để giao diện tự thích ứng appearance, contrast, Dynamic Type và platform evolution.
+
+Consistency không có nghĩa mọi screen giống nhau. Cần nhất quán về meaning, placement, terminology và response của cùng một action. Custom branding nên xuất hiện ở color, illustration, motion và voice có chủ đích; đừng thay system navigation/control chỉ để “khác biệt” rồi mất behavior quen thuộc, focus, keyboard và accessibility.
+
+### 2. Information architecture và navigation
+
+Chọn navigation từ mental model của content:
+
+- Tab bar cho một số ít top-level destinations ổn định; tab là nơi đến, không phải action.
+- Navigation stack cho hierarchy drill-down có đường quay lại rõ.
+- Sidebar/split view cho collection lớn hoặc master-detail trên regular width; compact width cần adaptation có continuity.
+- Search là capability tìm content; giữ query/scope/result state khi user chuyển context hợp lý.
+- Toolbar chứa actions liên quan view hiện tại; không trộn top-level navigation vào toolbar.
+
+Mỗi destination cần title có nghĩa, selection state và restoration policy. Deep link phải đưa người dùng tới đúng hierarchy mà vẫn cho họ hiểu đang ở đâu. Không giấu tab bar tùy tiện giữa các section, không tạo nhiều nút Back giả, và không reset navigation state khi chuyển tab nếu người dùng kỳ vọng quay lại vị trí cũ.
+
+### 3. Modality, sheets, alerts và confirmation
+
+Modal làm gián đoạn parent context nên chỉ dùng cho task hẹp, critical decision hoặc focus thật sự cần thiết. Sheet phù hợp nhập/chọn dữ liệu liên quan context; full screen cho task nhiều bước hoặc immersive; popover cho lựa chọn contextual trên không gian lớn. Chỉ hiển thị một sheet chính tại một thời điểm và để user dismiss trước khi present modal tiếp theo.
+
+Alert dành cho thông tin critical cần hành động ngay, không phải banner “thành công” hay lỗi mạng thông thường. Action sheet/confirmation dialog phù hợp các lựa chọn sau hành động có chủ đích. Destructive action phải có role, copy mô tả consequence và đường cancel rõ. Nếu action thường xuyên và undo được, ưu tiên undo/snackbar contextual thay vì confirmation ở mọi lần.
+
+### 4. Controls, input và action hierarchy
+
+Một view nên có primary action dễ nhận ra, secondary action ít nổi hơn và destructive action không cạnh tranh về emphasis. Button label dùng động từ cụ thể như “Thanh toán” hoặc “Lưu địa chỉ”, không dùng “OK” khi outcome chưa rõ. Hit region tối thiểu 44×44 pt trên iOS/iPadOS; custom button cần pressed, disabled, loading và focus/hover states phù hợp.
+
+Form dùng label persistent, keyboard/content type đúng, autofill khi phù hợp và validation gần field. Placeholder không thay label. Không disable submit mà không giải thích field nào sai; error copy nói cách sửa, giữ input user đã nhập và đưa accessibility focus tới vùng lỗi có chủ đích. Toggle biểu diễn state on/off tức thời; action một lần phải là button, không phải switch.
+
+### 5. Gesture và alternative input
+
+Tap, swipe, drag, pinch và long press mang expectation hệ thống. Custom gesture chỉ nên bổ sung shortcut cho task lặp lại, không phải con đường duy nhất tới chức năng. Luôn có visible control hoặc discoverable alternative cho action quan trọng; hỗ trợ keyboard, pointer, Voice Control và Switch Control khi platform có thể dùng chúng.
+
+Gesture conflict phải được test với scroll, system back gesture, text selection và accessibility. Animation/gesture response cần direct, interruptible và phản ánh state thật; haptic chỉ củng cố outcome có ý nghĩa, không dùng liên tục như decoration.
+
+### 6. Feedback, loading, empty và error states
+
+Mọi action cần feedback tương xứng: visual pressed state ngay, progress cho work đủ lâu, success/failure ở đúng scope. Hiển thị content hoặc skeleton sớm thay vì blank screen. Dùng determinate progress khi biết tiến độ; indeterminate khi không biết, nhưng nếu process stall phải cho user hiểu vấn đề và action tiếp theo. Work dài có thể cancel thì cung cấp Cancel; cancel mất tiến độ cần giải thích consequence.
+
+Empty state phải phân biệt first use, zero search result, filtered-empty, offline và permission-denied vì action recovery khác nhau. Error message đặt gần nơi xảy ra, không đổ lỗi, không chỉ ghi mã lỗi và luôn có recovery hợp lệ: retry, edit input, open Settings hoặc contact support kèm correlation code an toàn.
+
+### 7. Permission và privacy UX
+
+Xin permission đúng lúc người dùng bắt đầu feature cần capability; trước system prompt, giải thích user value bằng UI trung thực nhưng không mô phỏng alert hệ thống hoặc ép/incentivize consent. Purpose string viết cụ thể dữ liệu dùng làm gì. Denied không được biến app thành dead end: giữ phần không cần permission hoạt động và cung cấp đường vào Settings khi user chủ động muốn bật lại.
+
+Data minimization cũng là UX: chỉ hỏi field cần thiết, cho biết dữ liệu nào optional, không hiển thị sensitive content trên lock screen/widget mặc định và có privacy redaction. Destructive privacy actions như xoá account cần consequence, authentication phù hợp, progress và final confirmation/result rõ.
+
+### 8. Writing, localization và tone
+
+UI copy ngắn, trực tiếp, nhất quán với terminology domain. Title mô tả context; button mô tả action; error mô tả vấn đề và cách sửa. Không nối câu bằng string fragments vì word order thay đổi theo locale. Test pseudo-localization, text expansion, right-to-left, plural và formatting theo locale. Icon không thay text khi meaning không phổ biến; accessibility label mô tả intent chứ không đọc tên asset.
+
+### 9. HIG review rubric trước release
+
+Review theo user journey, không theo từng screenshot rời:
+
+1. **Purpose:** primary task/action có rõ trong vài giây không?
+2. **Navigation:** user biết đang ở đâu, quay lại và deep link thế nào?
+3. **Modality:** mỗi interruption có thật sự cần và dismiss an toàn không?
+4. **Input:** label, keyboard, validation, autofill và recovery có đúng không?
+5. **Feedback:** pressed/loading/success/error/empty/offline states đầy đủ chưa?
+6. **Adaptation:** iPhone nhỏ/lớn, iPad split, portrait/landscape, keyboard?
+7. **Accessibility:** Dynamic Type, VoiceOver order, contrast, Reduce Motion, target size?
+8. **Privacy:** permission timing/copy, denied state và sensitive presentation?
+9. **Localization:** locale dài, RTL, plural, currency/date/time?
+10. **Evidence:** usability walkthrough, Accessibility Inspector, snapshots và analytics có cùng chỉ ra outcome tốt hơn không?
+
+HIG review tạo issue theo user impact, severity, owner và verification matrix. Một screenshot “đẹp” không thay thế task completion, error recovery hoặc accessibility walkthrough trên device.'''
     if "human-interface-guidelines" in slug:
         return '''### HIG như một hệ constraint
 
@@ -1076,6 +1176,7 @@ def topic_references(title: str) -> list[tuple[str, str]]:
     slug = slugify(title)
     rules: list[tuple[str, list[tuple[str, str]]]] = [
         (r"reactive-programming", [("Combine", "https://developer.apple.com/documentation/combine"), ("Publisher", "https://developer.apple.com/documentation/combine/publisher")]),
+        (r"human-interface-guidelines-in-practice", [("Human Interface Guidelines", "https://developer.apple.com/design/human-interface-guidelines"), ("HIG — Design principles", "https://developer.apple.com/design/human-interface-guidelines/design-principles"), ("HIG — Tab bars", "https://developer.apple.com/design/human-interface-guidelines/tab-bars"), ("HIG — Modality", "https://developer.apple.com/design/human-interface-guidelines/modality"), ("HIG — Alerts", "https://developer.apple.com/design/human-interface-guidelines/alerts"), ("HIG — Gestures", "https://developer.apple.com/design/human-interface-guidelines/gestures"), ("HIG — Feedback", "https://developer.apple.com/design/human-interface-guidelines/feedback"), ("HIG — Loading", "https://developer.apple.com/design/human-interface-guidelines/loading"), ("HIG — Privacy", "https://developer.apple.com/design/human-interface-guidelines/privacy"), ("HIG — Writing", "https://developer.apple.com/design/human-interface-guidelines/writing")]),
         (r"human-interface-guidelines", [("Human Interface Guidelines — Accessibility", "https://developer.apple.com/design/human-interface-guidelines/accessibility"), ("Human Interface Guidelines — Layout", "https://developer.apple.com/design/human-interface-guidelines/layout"), ("Human Interface Guidelines — Typography", "https://developer.apple.com/design/human-interface-guidelines/typography")]),
         (r"app-extensions", [("UNNotificationServiceExtension", "https://developer.apple.com/documentation/usernotifications/unnotificationserviceextension"), ("WidgetKit", "https://developer.apple.com/documentation/widgetkit")]),
         (r"corelocation", [("Core Location", "https://developer.apple.com/documentation/corelocation"), ("Requesting authorization to use location services", "https://developer.apple.com/documentation/corelocation/requesting-authorization-to-use-location-services")]),
@@ -1699,7 +1800,7 @@ def professional_skills_content(phases: tuple[Phase, ...]) -> str:
 
     rows = [
         ("ネイティブ機能の深い理解（Notification Service Extension / Widget / CoreLocation / Universal Link など）", "Đã bổ sung", "<br>".join([link("App Extensions"), link("CoreLocation"), link("Universal Links")]), "Extension lifecycle/budget; notification fallback; Widget timeline; permission/accuracy/energy; AASA/routing/security."),
-        ("ユーザーインターフェースガイドラインの深い理解", "Đã bổ sung", link("Human Interface Guidelines"), "HIG, adaptive layout, Dynamic Type, VoiceOver, accessibility audit và device-trait matrix."),
+        ("ユーザーインターフェースガイドラインの深い理解", "Đã bổ sung chuyên sâu", "<br>".join([link("Human Interface Guidelines, accessibility"), link("Human Interface Guidelines in practice")]), "HIG foundations + applied review: adaptive UI/accessibility; navigation/tab/sidebar; modality/sheet/alert; controls/input/gesture; feedback/loading/error; permission/privacy; writing/localization và release rubric."),
         ("アーキテクチャ設計に関する深い知識", "Đã có sâu", "<br>".join([link("MVC và Massive"), link("MVVM"), link("Clean Architecture"), link("SPM modularization"), link("Architecture Decision Record")]), "Phase 06 cover responsibility, dependency direction, state, modules, ADR và incremental migration; Phase 10 áp dụng ở system scale."),
         ("WKWebViewを用いたWebサイトとのデータ連携経験（CookieやLocalStorageを含む）", "Đã bổ sung", link("WKWebView bridge"), "WKWebsiteDataStore, WKHTTPCookieStore, origin-scoped LocalStorage, versioned bridge, ownership và navigation security."),
         ("Reactive programmingの経験", "Đã bổ sung", link("Reactive Programming"), "Combine Publisher/Subscriber/Subscription, demand, operators, scheduler, cancellation và bridge sang async/await."),
@@ -1729,6 +1830,7 @@ def professional_skills_content(phases: tuple[Phase, ...]) -> str:
         "",
         "- **Đã có sâu:** catalog trước audit đã có nhiều chapter canonical, production case, exercises và Phase Review.",
         "- **Đã bổ sung:** audit phát hiện coverage thiếu hoặc chỉ gián tiếp; handbook đã thêm chapter chuyên sâu, code, failure modes, debugging evidence, interview prompts và references chính thức.",
+        "- **Đã bổ sung chuyên sâu:** sau audit, chủ đề được mở rộng thành nhiều chapter canonical với rubric thực hành và ma trận review riêng.",
         "- Một năng lực chỉ được tính khi chapter có `status: complete`, đủ quality-gate sections và vượt content floor của validator.",
         "",
         "## Coverage distribution",
@@ -1786,7 +1888,8 @@ Xem [Handbook Coverage Matrix](HANDBOOK_COVERAGE.md) để tra toàn bộ {CATAL
 
 def update_readme() -> None:
     readme = (ROOT / "README.md").read_text(encoding="utf-8")
-    readme = readme.replace("183 chapter", f"{CATALOG_TOTAL} chapter")
+    readme = re.sub(r"\d+ chapter và 11 Phase Review", f"{CATALOG_TOTAL} chapter và 11 Phase Review", readme)
+    readme = re.sub(r"\*\*\d+ chapter\*\*", f"**{CATALOG_TOTAL} chapter**", readme)
     readme = re.sub(
         r"\| Repository skeleton 11 Phase.*?\| Các chapter còn lại.*?\n",
         f"| Repository skeleton 11 Phase | ✅ Hoàn thành |\n| {CATALOG_TOTAL} chapter và 11 Phase Review | ✅ Hoàn thành |\n| Website/search/navigation | ✅ GitHub Pages tự động deploy |\n",

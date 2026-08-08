@@ -17,10 +17,10 @@ Handbook Swift/iOS bằng tiếng Việt, đi từ Foundation đến Senior/Glob
 | Hạng mục | Trạng thái |
 |---|---|
 | Repository skeleton 11 Phase | ✅ Hoàn thành |
-| 196 chapter và 11 Phase Review | ✅ Hoàn thành |
+| 197 chapter và 11 Phase Review | ✅ Hoàn thành |
 | Website/search/navigation | ✅ GitHub Pages tự động deploy |
 
-Repository hiện có đủ **196 chapter** theo [SUMMARY](SUMMARY.md). Mỗi chapter gồm mental model, runtime/memory/concurrency implications, production case, debugging evidence, interview prompts, exercises, cheat sheet và primary references.
+Repository hiện có đủ **197 chapter** theo [SUMMARY](SUMMARY.md). Mỗi chapter gồm mental model, runtime/memory/concurrency implications, production case, debugging evidence, interview prompts, exercises, cheat sheet và primary references.
 
 ## Bắt đầu đọc
 

@@ -12,7 +12,7 @@ levels:
 prerequisites:
   - "Universal Links: AASA, routing, fallback và security"
 used_later:
-  - "Phase Review: iOS Platform"
+  - "Human Interface Guidelines in practice: navigation, modality, controls và feedback"
 competencies:
   - "iOS Platform"
   - "Production"
@@ -60,7 +60,7 @@ Sau chapter này, bạn có thể:
 
 ## Used Later { data-search-exclude }
 
-- [Phase Review: iOS Platform](99-phase-review.md) dùng contract của chapter này làm building block.
+- [Human Interface Guidelines in practice: navigation, modality, controls và feedback](25-human-interface-guidelines-in-practice-navigation-modality-controls-va-feedback.md) dùng contract của chapter này làm building block.
 - [Production Playbook](../PRODUCTION_PLAYBOOK.md) dùng cùng flow evidence-first.
 - [Interview Playbook](../INTERVIEW_PLAYBOOK.md) dùng mental model để xử lý follow-up.
 
@@ -332,7 +332,7 @@ Remember  → owner + state + failure + lifecycle + measurement
 ## Related Chapters { data-search-exclude }
 
 - [Universal Links: AASA, routing, fallback và security](23-universal-links-aasa-routing-fallback-va-security.md)
-- [Phase Review: iOS Platform](99-phase-review.md)
+- [Human Interface Guidelines in practice: navigation, modality, controls và feedback](25-human-interface-guidelines-in-practice-navigation-modality-controls-va-feedback.md)
 - [Cross-reference Index](../CROSS_REFERENCE_INDEX.md)
 
 ## References { data-search-exclude }
