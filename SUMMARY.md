@@ -1,223 +1,228 @@
 # SUMMARY — Knowledge Map & Progress
 
-Ký hiệu:
+> Verified 2026-08-09: toàn bộ 11 Phase và 183 chapter đã có nội dung, Phase Review và quality gate.
 
-- ✅ chapter hoàn chỉnh, tiêu đề là liên kết;
-- ◻ planned chapter, chưa tạo file cho đến khi vượt quality gate;
-- `99` là phase review, chỉ hoàn chỉnh khi toàn phase hoàn chỉnh.
+Ký hiệu: ✅ chapter hoàn chỉnh và tiêu đề là liên kết.
 
 ## Phase 01 — Swift Foundation
 
 - ✅ [01 — Một chương trình Swift chạy như thế nào?](Phase-01-Swift-Foundation/01-how-a-swift-program-runs.md)
 - ✅ [02 — `let`, `var`, type inference và strong typing](Phase-01-Swift-Foundation/02-let-var-type-inference-and-type-safety.md)
 - ✅ [03 — Optional và nil safety](Phase-01-Swift-Foundation/03-optionals-and-nil-safety.md)
-- ◻ 04 — Control flow, `switch` và pattern matching
-- ◻ 05 — Function, parameter label và method
-- ◻ 06 — Closure, capture và `@escaping`
-- ◻ 07 — Enum và state modeling
-- ◻ 08 — Struct, class, equality và identity
-- ◻ 09 — Value semantics vs reference semantics
-- ◻ 10 — Property, initialization và access control
-- ◻ 11 — Extension và tổ chức capability
-- ◻ 12 — Protocol và protocol-oriented design
-- ◻ 13 — Generics, constraint và `associatedtype`
-- ◻ 14 — `some` vs `any`: opaque và existential types
-- ◻ 15 — Error handling, `throws` và `Result`
-- ◻ 16 — Array, Set, Dictionary và collection semantics
-- ◻ 17 — String, Unicode và indexing
-- ◻ 18 — Codable fundamentals
-- ◻ 99 — Phase Review: Swift Foundation
+- ✅ [04 — Control flow, `switch` và pattern matching](Phase-01-Swift-Foundation/04-control-flow-switch-va-pattern-matching.md)
+- ✅ [05 — Function, parameter label và method](Phase-01-Swift-Foundation/05-function-parameter-label-va-method.md)
+- ✅ [06 — Closure, capture và `@escaping`](Phase-01-Swift-Foundation/06-closure-capture-va-at-escaping.md)
+- ✅ [07 — Enum và state modeling](Phase-01-Swift-Foundation/07-enum-va-state-modeling.md)
+- ✅ [08 — Struct, class, equality và identity](Phase-01-Swift-Foundation/08-struct-class-equality-va-identity.md)
+- ✅ [09 — Value semantics vs reference semantics](Phase-01-Swift-Foundation/09-value-semantics-vs-reference-semantics.md)
+- ✅ [10 — Property, initialization và access control](Phase-01-Swift-Foundation/10-property-initialization-va-access-control.md)
+- ✅ [11 — Extension và tổ chức capability](Phase-01-Swift-Foundation/11-extension-va-to-chuc-capability.md)
+- ✅ [12 — Protocol và protocol-oriented design](Phase-01-Swift-Foundation/12-protocol-va-protocol-oriented-design.md)
+- ✅ [13 — Generics, constraint và `associatedtype`](Phase-01-Swift-Foundation/13-generics-constraint-va-associatedtype.md)
+- ✅ [14 — `some` vs `any`: opaque và existential types](Phase-01-Swift-Foundation/14-some-vs-any-opaque-va-existential-types.md)
+- ✅ [15 — Error handling, `throws` và `Result`](Phase-01-Swift-Foundation/15-error-handling-throws-va-result.md)
+- ✅ [16 — Array, Set, Dictionary và collection semantics](Phase-01-Swift-Foundation/16-array-set-dictionary-va-collection-semantics.md)
+- ✅ [17 — String, Unicode và indexing](Phase-01-Swift-Foundation/17-string-unicode-va-indexing.md)
+- ✅ [18 — Codable fundamentals](Phase-01-Swift-Foundation/18-codable-fundamentals.md)
+- ✅ [99 — Phase Review: Swift Foundation](Phase-01-Swift-Foundation/99-phase-review.md)
 
 ## Phase 02 — Memory & Runtime
 
-- ◻ 01 — Stack/Heap: mental model hữu ích và giới hạn
-- ◻ 02 — Copy, value semantics và mutation
-- ◻ 03 — Copy-on-Write: khi copy chưa thực sự copy
-- ◻ 04 — ARC và ownership graph
-- ◻ 05 — `strong`, `weak`, `unowned` theo lifetime
-- ◻ 06 — Closure capture, escaping và capture list
-- ◻ 07 — Vì sao ViewController không `deinit`?
-- ◻ 08 — Delegate, timer, observer và task lifetime
-- ◻ 09 — `deinit` và lifecycle diagnostics
-- ◻ 10 — Memory Graph, Leaks và Allocations
-- ◻ 11 — Leak vs memory pressure
-- ◻ 99 — Phase Review: Memory & Runtime
+- ✅ [01 — Stack/Heap: mental model hữu ích và giới hạn](Phase-02-Memory-Runtime/01-stack-heap-mental-model-huu-ich-va-gioi-han.md)
+- ✅ [02 — Copy, value semantics và mutation](Phase-02-Memory-Runtime/02-copy-value-semantics-va-mutation.md)
+- ✅ [03 — Copy-on-Write: khi copy chưa thực sự copy](Phase-02-Memory-Runtime/03-copy-on-write-khi-copy-chua-thuc-su-copy.md)
+- ✅ [04 — ARC và ownership graph](Phase-02-Memory-Runtime/04-arc-va-ownership-graph.md)
+- ✅ [05 — `strong`, `weak`, `unowned` theo lifetime](Phase-02-Memory-Runtime/05-strong-weak-unowned-theo-lifetime.md)
+- ✅ [06 — Closure capture, escaping và capture list](Phase-02-Memory-Runtime/06-closure-capture-escaping-va-capture-list.md)
+- ✅ [07 — Vì sao ViewController không `deinit`?](Phase-02-Memory-Runtime/07-vi-sao-viewcontroller-khong-deinit.md)
+- ✅ [08 — Delegate, timer, observer và task lifetime](Phase-02-Memory-Runtime/08-delegate-timer-observer-va-task-lifetime.md)
+- ✅ [09 — `deinit` và lifecycle diagnostics](Phase-02-Memory-Runtime/09-deinit-va-lifecycle-diagnostics.md)
+- ✅ [10 — Memory Graph, Leaks và Allocations](Phase-02-Memory-Runtime/10-memory-graph-leaks-va-allocations.md)
+- ✅ [11 — Leak vs memory pressure](Phase-02-Memory-Runtime/11-leak-vs-memory-pressure.md)
+- ✅ [99 — Phase Review: Memory & Runtime](Phase-02-Memory-Runtime/99-phase-review.md)
 
 ## Phase 03 — Concurrency
 
-- ◻ 01 — Thread, shared mutable state và data race
-- ◻ 02 — GCD: serial/concurrent, sync/async và QoS
-- ◻ 03 — Deadlock, barrier, group, semaphore và OperationQueue
-- ◻ 04 — Điều gì thực sự xảy ra tại `await`?
-- ◻ 05 — Task và structured concurrency
-- ◻ 06 — `async let` và TaskGroup
-- ◻ 07 — Cancellation là cooperative contract
-- ◻ 08 — Actor và actor isolation
-- ◻ 09 — MainActor, global actor và UI isolation
-- ◻ 10 — Sendable, `@Sendable` và strict concurrency
-- ◻ 11 — Actor reentrancy và logical race
-- ◻ 12 — Structured vs unstructured vs detached task
-- ◻ 13 — Task lifetime qua screen lifecycle
-- ◻ 14 — Migration từ callback/GCD sang async/await
-- ◻ 15 — Priority inversion, thread explosion và performance
-- ◻ 99 — Phase Review: Concurrency
+- ✅ [01 — Thread, shared mutable state và data race](Phase-03-Concurrency/01-thread-shared-mutable-state-va-data-race.md)
+- ✅ [02 — GCD: serial/concurrent, sync/async và QoS](Phase-03-Concurrency/02-gcd-serial-concurrent-sync-async-va-qos.md)
+- ✅ [03 — Deadlock, barrier, group, semaphore và OperationQueue](Phase-03-Concurrency/03-deadlock-barrier-group-semaphore-va-operationqueue.md)
+- ✅ [04 — Điều gì thực sự xảy ra tại `await`?](Phase-03-Concurrency/04-ieu-gi-thuc-su-xay-ra-tai-await.md)
+- ✅ [05 — Task và structured concurrency](Phase-03-Concurrency/05-task-va-structured-concurrency.md)
+- ✅ [06 — `async let` và TaskGroup](Phase-03-Concurrency/06-async-let-va-taskgroup.md)
+- ✅ [07 — Cancellation là cooperative contract](Phase-03-Concurrency/07-cancellation-la-cooperative-contract.md)
+- ✅ [08 — Actor và actor isolation](Phase-03-Concurrency/08-actor-va-actor-isolation.md)
+- ✅ [09 — MainActor, global actor và UI isolation](Phase-03-Concurrency/09-mainactor-global-actor-va-ui-isolation.md)
+- ✅ [10 — Sendable, `@Sendable` và strict concurrency](Phase-03-Concurrency/10-sendable-at-sendable-va-strict-concurrency.md)
+- ✅ [11 — Actor reentrancy và logical race](Phase-03-Concurrency/11-actor-reentrancy-va-logical-race.md)
+- ✅ [12 — Structured vs unstructured vs detached task](Phase-03-Concurrency/12-structured-vs-unstructured-vs-detached-task.md)
+- ✅ [13 — Task lifetime qua screen lifecycle](Phase-03-Concurrency/13-task-lifetime-qua-screen-lifecycle.md)
+- ✅ [14 — Migration từ callback/GCD sang async/await](Phase-03-Concurrency/14-migration-tu-callback-gcd-sang-async-await.md)
+- ✅ [15 — Priority inversion, thread explosion và performance](Phase-03-Concurrency/15-priority-inversion-thread-explosion-va-performance.md)
+- ✅ [99 — Phase Review: Concurrency](Phase-03-Concurrency/99-phase-review.md)
 
 ## Phase 04 — iOS Platform
 
-- ◻ 01 — App lifecycle và scene lifecycle
-- ◻ 02 — UIView: hierarchy, layout và drawing
-- ◻ 03 — UIViewController lifecycle và ownership
-- ◻ 04 — Navigation: push, present và coordinator boundary
-- ◻ 05 — Auto Layout và intrinsic content size
-- ◻ 06 — Hugging, compression resistance và ambiguous layout
-- ◻ 07 — UITableView reuse và scrolling lifecycle
-- ◻ 08 — UICollectionView và compositional layout
-- ◻ 09 — Diffable Data Source và stable identity
-- ◻ 10 — Delegate pattern trong UIKit
-- ◻ 11 — SwiftUI declarative mental model
-- ◻ 12 — State, Binding và source of truth
-- ◻ 13 — Observation và observable model ownership
-- ◻ 14 — Environment và dependency flow
-- ◻ 15 — View identity, ForEach và state lifetime
-- ◻ 16 — NavigationStack và typed navigation
-- ◻ 17 — `.task`, cancellation và view lifecycle
-- ◻ 18 — Animation, transaction và rendering cost
-- ◻ 19 — UIKit ↔ SwiftUI interoperability
-- ◻ 99 — Phase Review: iOS Platform
+- ✅ [01 — App lifecycle và scene lifecycle](Phase-04-iOS-Platform/01-app-lifecycle-va-scene-lifecycle.md)
+- ✅ [02 — UIView: hierarchy, layout và drawing](Phase-04-iOS-Platform/02-uiview-hierarchy-layout-va-drawing.md)
+- ✅ [03 — UIViewController lifecycle và ownership](Phase-04-iOS-Platform/03-uiviewcontroller-lifecycle-va-ownership.md)
+- ✅ [04 — Navigation: push, present và coordinator boundary](Phase-04-iOS-Platform/04-navigation-push-present-va-coordinator-boundary.md)
+- ✅ [05 — Auto Layout và intrinsic content size](Phase-04-iOS-Platform/05-auto-layout-va-intrinsic-content-size.md)
+- ✅ [06 — Hugging, compression resistance và ambiguous layout](Phase-04-iOS-Platform/06-hugging-compression-resistance-va-ambiguous-layout.md)
+- ✅ [07 — UITableView reuse và scrolling lifecycle](Phase-04-iOS-Platform/07-uitableview-reuse-va-scrolling-lifecycle.md)
+- ✅ [08 — UICollectionView và compositional layout](Phase-04-iOS-Platform/08-uicollectionview-va-compositional-layout.md)
+- ✅ [09 — Diffable Data Source và stable identity](Phase-04-iOS-Platform/09-diffable-data-source-va-stable-identity.md)
+- ✅ [10 — Delegate pattern trong UIKit](Phase-04-iOS-Platform/10-delegate-pattern-trong-uikit.md)
+- ✅ [11 — SwiftUI declarative mental model](Phase-04-iOS-Platform/11-swiftui-declarative-mental-model.md)
+- ✅ [12 — State, Binding và source of truth](Phase-04-iOS-Platform/12-state-binding-va-source-of-truth.md)
+- ✅ [13 — Observation và observable model ownership](Phase-04-iOS-Platform/13-observation-va-observable-model-ownership.md)
+- ✅ [14 — Environment và dependency flow](Phase-04-iOS-Platform/14-environment-va-dependency-flow.md)
+- ✅ [15 — View identity, ForEach và state lifetime](Phase-04-iOS-Platform/15-view-identity-foreach-va-state-lifetime.md)
+- ✅ [16 — NavigationStack và typed navigation](Phase-04-iOS-Platform/16-navigationstack-va-typed-navigation.md)
+- ✅ [17 — `.task`, cancellation và view lifecycle](Phase-04-iOS-Platform/17-task-cancellation-va-view-lifecycle.md)
+- ✅ [18 — Animation, transaction và rendering cost](Phase-04-iOS-Platform/18-animation-transaction-va-rendering-cost.md)
+- ✅ [19 — UIKit ↔ SwiftUI interoperability](Phase-04-iOS-Platform/19-uikit-to-swiftui-interoperability.md)
+- ✅ [99 — Phase Review: iOS Platform](Phase-04-iOS-Platform/99-phase-review.md)
 
 ## Phase 05 — Networking
 
-- ◻ 01 — Một request từ iPhone đến server đi như thế nào?
-- ◻ 02 — HTTP methods, headers, status và idempotency
-- ◻ 03 — URLSession, URLRequest và response lifecycle
-- ◻ 04 — Codable, CodingKeys và resilient decoding
-- ◻ 05 — API client và Endpoint abstraction
-- ◻ 06 — Error taxonomy: transport/HTTP/decode/business
-- ◻ 07 — Timeout, retry, backoff và jitter
-- ◻ 08 — Cancellation từ screen đến URLSession
-- ◻ 09 — Access token, refresh token và Keychain boundary
-- ◻ 10 — Single-flight token refresh
-- ◻ 11 — Pagination, prefetch và duplicate requests
-- ◻ 12 — HTTP caching, ETag và cache policy
-- ◻ 13 — Kết hợp remote cache và offline data
-- ◻ 14 — ATS, TLS và certificate pinning trade-offs
-- ◻ 15 — Network diagnostics và privacy-aware logging
-- ◻ 99 — Phase Review: Networking
+- ✅ [01 — Một request từ iPhone đến server đi như thế nào?](Phase-05-Networking/01-mot-request-tu-iphone-en-server-i-nhu-the-nao.md)
+- ✅ [02 — HTTP methods, headers, status và idempotency](Phase-05-Networking/02-http-methods-headers-status-va-idempotency.md)
+- ✅ [03 — URLSession, URLRequest và response lifecycle](Phase-05-Networking/03-urlsession-urlrequest-va-response-lifecycle.md)
+- ✅ [04 — Codable, CodingKeys và resilient decoding](Phase-05-Networking/04-codable-codingkeys-va-resilient-decoding.md)
+- ✅ [05 — API client và Endpoint abstraction](Phase-05-Networking/05-api-client-va-endpoint-abstraction.md)
+- ✅ [06 — Error taxonomy: transport/HTTP/decode/business](Phase-05-Networking/06-error-taxonomy-transport-http-decode-business.md)
+- ✅ [07 — Timeout, retry, backoff và jitter](Phase-05-Networking/07-timeout-retry-backoff-va-jitter.md)
+- ✅ [08 — Cancellation từ screen đến URLSession](Phase-05-Networking/08-cancellation-tu-screen-en-urlsession.md)
+- ✅ [09 — Access token, refresh token và Keychain boundary](Phase-05-Networking/09-access-token-refresh-token-va-keychain-boundary.md)
+- ✅ [10 — Single-flight token refresh](Phase-05-Networking/10-single-flight-token-refresh.md)
+- ✅ [11 — Pagination, prefetch và duplicate requests](Phase-05-Networking/11-pagination-prefetch-va-duplicate-requests.md)
+- ✅ [12 — HTTP caching, ETag và cache policy](Phase-05-Networking/12-http-caching-etag-va-cache-policy.md)
+- ✅ [13 — Kết hợp remote cache và offline data](Phase-05-Networking/13-ket-hop-remote-cache-va-offline-data.md)
+- ✅ [14 — ATS, TLS và certificate pinning trade-offs](Phase-05-Networking/14-ats-tls-va-certificate-pinning-trade-offs.md)
+- ✅ [15 — Network diagnostics và privacy-aware logging](Phase-05-Networking/15-network-diagnostics-va-privacy-aware-logging.md)
+- ✅ [99 — Phase Review: Networking](Phase-05-Networking/99-phase-review.md)
 
 ## Phase 06 — Architecture
 
-- ◻ 01 — MVC và Massive ViewController
-- ◻ 02 — MVVM và ranh giới trách nhiệm ViewModel
-- ◻ 03 — Coordinator và navigation ownership
-- ◻ 04 — Repository không chỉ là tên khác của API client
-- ◻ 05 — Dependency Injection và constructor injection
-- ◻ 06 — Service Locator và Singleton: trade-offs thật
-- ◻ 07 — UseCase/Interactor: khi nào đáng thêm một layer
-- ◻ 08 — Clean Architecture principles trên mobile
-- ◻ 09 — State machine thay cho Boolean explosion
-- ◻ 10 — SPM modularization và dependency direction
-- ◻ 11 — Feature boundary và ngăn circular dependency
-- ◻ 12 — Architecture Decision Record
-- ◻ 13 — Migration strategy không big-bang rewrite
-- ◻ 14 — Refactoring Massive ViewController/Model/God Service
-- ◻ 99 — Phase Review: Architecture
+- ✅ [01 — MVC và Massive ViewController](Phase-06-Architecture/01-mvc-va-massive-viewcontroller.md)
+- ✅ [02 — MVVM và ranh giới trách nhiệm ViewModel](Phase-06-Architecture/02-mvvm-va-ranh-gioi-trach-nhiem-viewmodel.md)
+- ✅ [03 — Coordinator và navigation ownership](Phase-06-Architecture/03-coordinator-va-navigation-ownership.md)
+- ✅ [04 — Repository không chỉ là tên khác của API client](Phase-06-Architecture/04-repository-khong-chi-la-ten-khac-cua-api-client.md)
+- ✅ [05 — Dependency Injection và constructor injection](Phase-06-Architecture/05-dependency-injection-va-constructor-injection.md)
+- ✅ [06 — Service Locator và Singleton: trade-offs thật](Phase-06-Architecture/06-service-locator-va-singleton-trade-offs-that.md)
+- ✅ [07 — UseCase/Interactor: khi nào đáng thêm một layer](Phase-06-Architecture/07-usecase-interactor-khi-nao-ang-them-mot-layer.md)
+- ✅ [08 — Clean Architecture principles trên mobile](Phase-06-Architecture/08-clean-architecture-principles-tren-mobile.md)
+- ✅ [09 — State machine thay cho Boolean explosion](Phase-06-Architecture/09-state-machine-thay-cho-boolean-explosion.md)
+- ✅ [10 — SPM modularization và dependency direction](Phase-06-Architecture/10-spm-modularization-va-dependency-direction.md)
+- ✅ [11 — Feature boundary và ngăn circular dependency](Phase-06-Architecture/11-feature-boundary-va-ngan-circular-dependency.md)
+- ✅ [12 — Architecture Decision Record](Phase-06-Architecture/12-architecture-decision-record.md)
+- ✅ [13 — Migration strategy không big-bang rewrite](Phase-06-Architecture/13-migration-strategy-khong-big-bang-rewrite.md)
+- ✅ [14 — Refactoring Massive ViewController/Model/God Service](Phase-06-Architecture/14-refactoring-massive-viewcontroller-model-god-service.md)
+- ✅ [99 — Phase Review: Architecture](Phase-06-Architecture/99-phase-review.md)
 
 ## Phase 07 — Persistence
 
-- ◻ 01 — Chọn storage theo data, lifetime và security
-- ◻ 02 — UserDefaults: preference, không phải database
-- ◻ 03 — Keychain và sensitive data lifecycle
-- ◻ 04 — FileManager, atomic write và file coordination
-- ◻ 05 — SQLite concepts, schema và transaction
-- ◻ 06 — Core Data mental model
-- ◻ 07 — Managed Object Context và Core Data concurrency
-- ◻ 08 — SwiftData và ranh giới availability
-- ◻ 09 — SwiftData vs Core Data theo constraint
-- ◻ 10 — Migration strategy và rollback thinking
-- ◻ 11 — Persistent cache và invalidation
-- ◻ 12 — Offline-first synchronization
-- ◻ 13 — Conflict detection và resolution
-- ◻ 14 — Logout/login và data isolation giữa account
-- ◻ 99 — Phase Review: Persistence
+- ✅ [01 — Chọn storage theo data, lifetime và security](Phase-07-Persistence/01-chon-storage-theo-data-lifetime-va-security.md)
+- ✅ [02 — UserDefaults: preference, không phải database](Phase-07-Persistence/02-userdefaults-preference-khong-phai-database.md)
+- ✅ [03 — Keychain và sensitive data lifecycle](Phase-07-Persistence/03-keychain-va-sensitive-data-lifecycle.md)
+- ✅ [04 — FileManager, atomic write và file coordination](Phase-07-Persistence/04-filemanager-atomic-write-va-file-coordination.md)
+- ✅ [05 — SQLite concepts, schema và transaction](Phase-07-Persistence/05-sqlite-concepts-schema-va-transaction.md)
+- ✅ [06 — Core Data mental model](Phase-07-Persistence/06-core-data-mental-model.md)
+- ✅ [07 — Managed Object Context và Core Data concurrency](Phase-07-Persistence/07-managed-object-context-va-core-data-concurrency.md)
+- ✅ [08 — SwiftData và ranh giới availability](Phase-07-Persistence/08-swiftdata-va-ranh-gioi-availability.md)
+- ✅ [09 — SwiftData vs Core Data theo constraint](Phase-07-Persistence/09-swiftdata-vs-core-data-theo-constraint.md)
+- ✅ [10 — Migration strategy và rollback thinking](Phase-07-Persistence/10-migration-strategy-va-rollback-thinking.md)
+- ✅ [11 — Persistent cache và invalidation](Phase-07-Persistence/11-persistent-cache-va-invalidation.md)
+- ✅ [12 — Offline-first synchronization](Phase-07-Persistence/12-offline-first-synchronization.md)
+- ✅ [13 — Conflict detection và resolution](Phase-07-Persistence/13-conflict-detection-va-resolution.md)
+- ✅ [14 — Logout/login và data isolation giữa account](Phase-07-Persistence/14-logout-login-va-data-isolation-giua-account.md)
+- ✅ [99 — Phase Review: Persistence](Phase-07-Persistence/99-phase-review.md)
 
 ## Phase 08 — Testing
 
-- ◻ 01 — Test strategy và test pyramid trên iOS
-- ◻ 02 — XCTest và Swift Testing
-- ◻ 03 — Mock, Stub, Fake và Spy
-- ◻ 04 — Dependency Injection tạo testability
-- ◻ 05 — Async test không sleep
-- ◻ 06 — ViewModel testing theo state transition
-- ◻ 07 — Networking test với URLProtocol/fake transport
-- ◻ 08 — Repository integration test
-- ◻ 09 — UI test cho critical user flow
-- ◻ 10 — Flaky test: nguyên nhân và containment
-- ◻ 11 — Snapshot testing: value và brittleness
-- ◻ 12 — TDD và design feedback
-- ◻ 13 — Code coverage: tín hiệu và giới hạn
-- ◻ 14 — Regression test từ production incident
-- ◻ 99 — Phase Review: Testing
+- ✅ [01 — Test strategy và test pyramid trên iOS](Phase-08-Testing/01-test-strategy-va-test-pyramid-tren-ios.md)
+- ✅ [02 — XCTest và Swift Testing](Phase-08-Testing/02-xctest-va-swift-testing.md)
+- ✅ [03 — Mock, Stub, Fake và Spy](Phase-08-Testing/03-mock-stub-fake-va-spy.md)
+- ✅ [04 — Dependency Injection tạo testability](Phase-08-Testing/04-dependency-injection-tao-testability.md)
+- ✅ [05 — Async test không sleep](Phase-08-Testing/05-async-test-khong-sleep.md)
+- ✅ [06 — ViewModel testing theo state transition](Phase-08-Testing/06-viewmodel-testing-theo-state-transition.md)
+- ✅ [07 — Networking test với URLProtocol/fake transport](Phase-08-Testing/07-networking-test-voi-urlprotocol-fake-transport.md)
+- ✅ [08 — Repository integration test](Phase-08-Testing/08-repository-integration-test.md)
+- ✅ [09 — UI test cho critical user flow](Phase-08-Testing/09-ui-test-cho-critical-user-flow.md)
+- ✅ [10 — Flaky test: nguyên nhân và containment](Phase-08-Testing/10-flaky-test-nguyen-nhan-va-containment.md)
+- ✅ [11 — Snapshot testing: value và brittleness](Phase-08-Testing/11-snapshot-testing-value-va-brittleness.md)
+- ✅ [12 — TDD và design feedback](Phase-08-Testing/12-tdd-va-design-feedback.md)
+- ✅ [13 — Code coverage: tín hiệu và giới hạn](Phase-08-Testing/13-code-coverage-tin-hieu-va-gioi-han.md)
+- ✅ [14 — Regression test từ production incident](Phase-08-Testing/14-regression-test-tu-production-incident.md)
+- ✅ [99 — Phase Review: Testing](Phase-08-Testing/99-phase-review.md)
 
 ## Phase 09 — Production
 
-- ◻ 01 — Structured, privacy-aware logging
-- ◻ 02 — Crash report và symbolication
-- ◻ 03 — EXC_BAD_ACCESS, fatal error và index out of range
-- ◻ 04 — Hang, watchdog và stack evidence
-- ◻ 05 — Memory leak investigation
-- ◻ 06 — Memory pressure và OS termination
-- ◻ 07 — Instruments workflow: measure before fix
-- ◻ 08 — Time Profiler và hot call tree
-- ◻ 09 — Allocations, Leaks và Memory Graph
-- ◻ 10 — Scroll hitch, layout và rendering diagnostics
-- ◻ 11 — Image decoding, downsampling và cache budget
-- ◻ 12 — App launch: pre-main/post-main
-- ◻ 13 — Battery và energy diagnostics
-- ◻ 14 — Network-only production failure
-- ◻ 15 — Release-only và device-specific bugs
-- ◻ 16 — Background execution và interrupted work
-- ◻ 17 — Concurrency incidents ở quy mô session lớn
-- ◻ 18 — Observability, SLO và incident response
-- ◻ 99 — Phase Review: Production
+- ✅ [01 — Structured, privacy-aware logging](Phase-09-Production/01-structured-privacy-aware-logging.md)
+- ✅ [02 — Crash report và symbolication](Phase-09-Production/02-crash-report-va-symbolication.md)
+- ✅ [03 — EXC_BAD_ACCESS, fatal error và index out of range](Phase-09-Production/03-exc-bad-access-fatal-error-va-index-out-of-range.md)
+- ✅ [04 — Hang, watchdog và stack evidence](Phase-09-Production/04-hang-watchdog-va-stack-evidence.md)
+- ✅ [05 — Memory leak investigation](Phase-09-Production/05-memory-leak-investigation.md)
+- ✅ [06 — Memory pressure và OS termination](Phase-09-Production/06-memory-pressure-va-os-termination.md)
+- ✅ [07 — Instruments workflow: measure before fix](Phase-09-Production/07-instruments-workflow-measure-before-fix.md)
+- ✅ [08 — Time Profiler và hot call tree](Phase-09-Production/08-time-profiler-va-hot-call-tree.md)
+- ✅ [09 — Allocations, Leaks và Memory Graph](Phase-09-Production/09-allocations-leaks-va-memory-graph.md)
+- ✅ [10 — Scroll hitch, layout và rendering diagnostics](Phase-09-Production/10-scroll-hitch-layout-va-rendering-diagnostics.md)
+- ✅ [11 — Image decoding, downsampling và cache budget](Phase-09-Production/11-image-decoding-downsampling-va-cache-budget.md)
+- ✅ [12 — App launch: pre-main/post-main](Phase-09-Production/12-app-launch-pre-main-post-main.md)
+- ✅ [13 — Battery và energy diagnostics](Phase-09-Production/13-battery-va-energy-diagnostics.md)
+- ✅ [14 — Network-only production failure](Phase-09-Production/14-network-only-production-failure.md)
+- ✅ [15 — Release-only và device-specific bugs](Phase-09-Production/15-release-only-va-device-specific-bugs.md)
+- ✅ [16 — Background execution và interrupted work](Phase-09-Production/16-background-execution-va-interrupted-work.md)
+- ✅ [17 — Concurrency incidents ở quy mô session lớn](Phase-09-Production/17-concurrency-incidents-o-quy-mo-session-lon.md)
+- ✅ [18 — Observability, SLO và incident response](Phase-09-Production/18-observability-slo-va-incident-response.md)
+- ✅ [99 — Phase Review: Production](Phase-09-Production/99-phase-review.md)
 
 ## Phase 10 — Mobile System Design
 
-- ◻ 01 — Framework phỏng vấn Mobile System Design
-- ◻ 02 — Image Loader production-grade
-- ◻ 03 — Paginated Feed
-- ◻ 04 — Chat với ordering và offline queue
-- ◻ 05 — Download Manager hỗ trợ resume/background
-- ◻ 06 — Offline-first app và conflict resolution
-- ◻ 07 — Video Feed và resource budgeting
-- ◻ 08 — Authentication system và single refresh
-- ◻ 09 — Notification routing
-- ◻ 10 — Analytics SDK privacy-aware
-- ◻ 11 — Feature Flag system
-- ◻ 12 — Networking SDK
-- ◻ 13 — Caching layer
-- ◻ 14 — Search autocomplete
-- ◻ 15 — Modular architecture cho nhiều team
-- ◻ 16 — UIKit → SwiftUI migration
-- ◻ 17 — Commerce Checkout state machine
-- ◻ 99 — Phase Review: Mobile System Design
+- ✅ [01 — Framework phỏng vấn Mobile System Design](Phase-10-Mobile-System-Design/01-framework-phong-van-mobile-system-design.md)
+- ✅ [02 — Image Loader production-grade](Phase-10-Mobile-System-Design/02-image-loader-production-grade.md)
+- ✅ [03 — Paginated Feed](Phase-10-Mobile-System-Design/03-paginated-feed.md)
+- ✅ [04 — Chat với ordering và offline queue](Phase-10-Mobile-System-Design/04-chat-voi-ordering-va-offline-queue.md)
+- ✅ [05 — Download Manager hỗ trợ resume/background](Phase-10-Mobile-System-Design/05-download-manager-ho-tro-resume-background.md)
+- ✅ [06 — Offline-first app và conflict resolution](Phase-10-Mobile-System-Design/06-offline-first-app-va-conflict-resolution.md)
+- ✅ [07 — Video Feed và resource budgeting](Phase-10-Mobile-System-Design/07-video-feed-va-resource-budgeting.md)
+- ✅ [08 — Authentication system và single refresh](Phase-10-Mobile-System-Design/08-authentication-system-va-single-refresh.md)
+- ✅ [09 — Notification routing](Phase-10-Mobile-System-Design/09-notification-routing.md)
+- ✅ [10 — Analytics SDK privacy-aware](Phase-10-Mobile-System-Design/10-analytics-sdk-privacy-aware.md)
+- ✅ [11 — Feature Flag system](Phase-10-Mobile-System-Design/11-feature-flag-system.md)
+- ✅ [12 — Networking SDK](Phase-10-Mobile-System-Design/12-networking-sdk.md)
+- ✅ [13 — Caching layer](Phase-10-Mobile-System-Design/13-caching-layer.md)
+- ✅ [14 — Search autocomplete](Phase-10-Mobile-System-Design/14-search-autocomplete.md)
+- ✅ [15 — Modular architecture cho nhiều team](Phase-10-Mobile-System-Design/15-modular-architecture-cho-nhieu-team.md)
+- ✅ [16 — UIKit → SwiftUI migration](Phase-10-Mobile-System-Design/16-uikit-to-swiftui-migration.md)
+- ✅ [17 — Commerce Checkout state machine](Phase-10-Mobile-System-Design/17-commerce-checkout-state-machine.md)
+- ✅ [99 — Phase Review: Mobile System Design](Phase-10-Mobile-System-Design/99-phase-review.md)
 
-## Phase 11 — Interview
+## Phase 11 — Global Interview
 
-- ◻ 01 — Swift Core review
-- ◻ 02 — Memory review
-- ◻ 03 — Concurrency review
-- ◻ 04 — UIKit review
-- ◻ 05 — SwiftUI review
-- ◻ 06 — Networking review
-- ◻ 07 — Persistence review
-- ◻ 08 — Architecture review
-- ◻ 09 — Testing review
-- ◻ 10 — Performance & Security review
-- ◻ 11 — Production scenario interview
-- ◻ 12 — Swift coding interview
-- ◻ 13 — iOS engineering coding
-- ◻ 14 — Mobile System Design interview
-- ◻ 15 — Behavioral engineering
-- ◻ 16 — Mock interview Junior/Middle/Senior
-- ◻ 17 — Interview question bank & coverage map
-- ◻ 99 — Final Capstone & Handbook Review
+- ✅ [01 — Swift Core review](Phase-11-Interview/01-swift-core-review.md)
+- ✅ [02 — Memory review](Phase-11-Interview/02-memory-review.md)
+- ✅ [03 — Concurrency review](Phase-11-Interview/03-concurrency-review.md)
+- ✅ [04 — UIKit review](Phase-11-Interview/04-uikit-review.md)
+- ✅ [05 — SwiftUI review](Phase-11-Interview/05-swiftui-review.md)
+- ✅ [06 — Networking review](Phase-11-Interview/06-networking-review.md)
+- ✅ [07 — Persistence review](Phase-11-Interview/07-persistence-review.md)
+- ✅ [08 — Architecture review](Phase-11-Interview/08-architecture-review.md)
+- ✅ [09 — Testing review](Phase-11-Interview/09-testing-review.md)
+- ✅ [10 — Performance & Security review](Phase-11-Interview/10-performance-and-security-review.md)
+- ✅ [11 — Production scenario interview](Phase-11-Interview/11-production-scenario-interview.md)
+- ✅ [12 — Swift coding interview](Phase-11-Interview/12-swift-coding-interview.md)
+- ✅ [13 — iOS engineering coding](Phase-11-Interview/13-ios-engineering-coding.md)
+- ✅ [14 — Mobile System Design interview](Phase-11-Interview/14-mobile-system-design-interview.md)
+- ✅ [15 — Behavioral engineering](Phase-11-Interview/15-behavioral-engineering.md)
+- ✅ [16 — Mock interview Junior/Middle/Senior](Phase-11-Interview/16-mock-interview-junior-middle-senior.md)
+- ✅ [17 — Interview question bank & coverage map](Phase-11-Interview/17-interview-question-bank-and-coverage-map.md)
+- ✅ [99 — Final Capstone & Handbook Review](Phase-11-Interview/99-phase-review.md)
+
+## Completion snapshot
+
+- 11/11 Phase complete.
+- 183/183 chapter complete.
+- 11/11 Phase Review complete.
+- Navigation, local links và code fences được validator kiểm tra.

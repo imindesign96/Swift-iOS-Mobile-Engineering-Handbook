@@ -16,6 +16,7 @@ ROOT_DOCUMENTS = (
     "CROSS_REFERENCE_INDEX.md",
     "PRODUCTION_PLAYBOOK.md",
     "INTERVIEW_PLAYBOOK.md",
+    "HANDBOOK_COVERAGE.md",
     "SPECIFICATION.md",
 )
 
@@ -38,6 +39,20 @@ def copy_markdown_tree(source: Path, destination: Path) -> None:
         shutil.copy2(markdown, target)
 
 
+def mark_search_excluded(markdown: Path) -> None:
+    """Exclude supporting/reference pages from the client-side full-text index."""
+    content = markdown.read_text(encoding="utf-8")
+    metadata = "search:\n  exclude: true\n"
+    if content.startswith("---\n"):
+        closing = content.find("\n---\n", 4)
+        if closing == -1:
+            raise RuntimeError(f"Unclosed front matter in {markdown}")
+        content = content[:closing] + "\n" + metadata + content[closing:]
+    else:
+        content = f"---\n{metadata}---\n\n{content}"
+    markdown.write_text(content, encoding="utf-8")
+
+
 def main() -> None:
     reset_destination()
 
@@ -53,6 +68,11 @@ def main() -> None:
     shutil.copytree(ROOT / "assets", DESTINATION / "assets", dirs_exist_ok=True)
     for readme in sorted((DESTINATION / "assets").rglob("README.md")):
         readme.rename(readme.with_name("index.md"))
+
+    mark_search_excluded(DESTINATION / "SPECIFICATION.md")
+    mark_search_excluded(DESTINATION / "HANDBOOK_COVERAGE.md")
+    for template in sorted((DESTINATION / "handbook-templates").glob("*.md")):
+        mark_search_excluded(template)
 
     # MkDocs reserves a top-level `templates/` directory for theme templates.
     # The source layout remains unchanged; only staged links use another name.

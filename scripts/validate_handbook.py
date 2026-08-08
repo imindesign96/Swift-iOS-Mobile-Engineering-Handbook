@@ -19,6 +19,7 @@ REQUIRED_ROOT_FILES = {
     "CROSS_REFERENCE_INDEX.md",
     "PRODUCTION_PLAYBOOK.md",
     "INTERVIEW_PLAYBOOK.md",
+    "HANDBOOK_COVERAGE.md",
 }
 
 REQUIRED_TEMPLATES = {
@@ -41,6 +42,47 @@ REQUIRED_PHASES = [
     "Phase-10-Mobile-System-Design",
     "Phase-11-Interview",
 ]
+
+EXPECTED_CHAPTER_COUNTS = {
+    "Phase-01-Swift-Foundation": 19,
+    "Phase-02-Memory-Runtime": 12,
+    "Phase-03-Concurrency": 16,
+    "Phase-04-iOS-Platform": 20,
+    "Phase-05-Networking": 16,
+    "Phase-06-Architecture": 15,
+    "Phase-07-Persistence": 15,
+    "Phase-08-Testing": 15,
+    "Phase-09-Production": 19,
+    "Phase-10-Mobile-System-Design": 18,
+    "Phase-11-Interview": 18,
+}
+
+CHAPTER_SECTIONS = (
+    "Story / Problem",
+    "Objectives",
+    "Prerequisites",
+    "Used Later",
+    "Mental Model",
+    "Production Case",
+    "Interview Questions",
+    "Exercises",
+    "Cheat Sheet",
+    "Chapter Summary",
+    "References",
+)
+
+REVIEW_SECTIONS = (
+    "Phase Summary",
+    "Phase Cheat Sheet",
+    "Knowledge Map",
+    "Review Questions",
+    "Deep-dive Questions",
+    "Coding Exercises",
+    "Debugging Lab",
+    "Mini Project",
+    "Mock Interview",
+    "Completion Checklist",
+)
 
 MARKDOWN_LINK = re.compile(r"(?<!!)\[[^\]]+\]\(([^)]+)\)")
 FRONT_MATTER_STATUS_COMPLETE = re.compile(
@@ -106,10 +148,57 @@ def check_markdown(errors: list[str]) -> None:
                 report(errors, f"Broken local link in {relative}: {target}")
 
 
+def has_section(text: str, section: str) -> bool:
+    pattern = re.compile(
+        rf"^##\s+(?:\d+\.\s*)?{re.escape(section)}(?:\s|—|$)",
+        re.MULTILINE,
+    )
+    return bool(pattern.search(text))
+
+
+def check_catalog(errors: list[str]) -> None:
+    total = 0
+    for phase, expected_count in EXPECTED_CHAPTER_COUNTS.items():
+        phase_path = ROOT / phase
+        chapters = sorted(path for path in phase_path.glob("*.md") if path.name != "README.md")
+        total += len(chapters)
+        if len(chapters) != expected_count:
+            report(
+                errors,
+                f"Catalog count mismatch for {phase}: expected {expected_count}, found {len(chapters)}",
+            )
+
+        for chapter in chapters:
+            text = chapter.read_text(encoding="utf-8")
+            relative = chapter.relative_to(ROOT)
+            if not FRONT_MATTER_STATUS_COMPLETE.search(text):
+                report(errors, f"Chapter is not marked complete: {relative}")
+
+            word_count = len(text.split())
+            minimum_words = 700 if chapter.name == "99-phase-review.md" else 750
+            if word_count < minimum_words:
+                report(
+                    errors,
+                    f"Chapter is below content floor ({word_count} < {minimum_words} words): {relative}",
+                )
+
+            required = REVIEW_SECTIONS if chapter.name == "99-phase-review.md" else CHAPTER_SECTIONS
+            missing = [section for section in required if not has_section(text, section)]
+            if missing:
+                report(
+                    errors,
+                    f"Missing quality-gate sections in {relative}: {', '.join(missing)}",
+                )
+
+    if total != 183:
+        report(errors, f"Full handbook must contain 183 chapters, found {total}")
+
+
 def main() -> int:
     errors: list[str] = []
     check_structure(errors)
     check_markdown(errors)
+    check_catalog(errors)
 
     if errors:
         print("Handbook validation failed:")
@@ -135,4 +224,3 @@ def main() -> int:
 
 if __name__ == "__main__":
     sys.exit(main())
-

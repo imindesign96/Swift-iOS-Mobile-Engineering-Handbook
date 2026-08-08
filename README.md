@@ -16,13 +16,11 @@ Handbook Swift/iOS bằng tiếng Việt, đi từ Foundation đến Senior/Glob
 
 | Hạng mục | Trạng thái |
 |---|---|
-| Repository skeleton 11 Phase | Hoàn thành |
-| Source of truth và templates | Hoàn thành |
-| Glossary, cross-reference, playbooks | Bản nền có nội dung thật |
-| Phase 01 / Chapter 01–03 | Hoàn thành và đã qua quality gate |
-| Các chapter còn lại | Planned — chưa tạo file rỗng |
+| Repository skeleton 11 Phase | ✅ Hoàn thành |
+| 183 chapter và 11 Phase Review | ✅ Hoàn thành |
+| Website/search/navigation | ✅ GitHub Pages tự động deploy |
 
-Repository phát triển **chapter-by-chapter**. Một file chapter chỉ xuất hiện sau khi có nội dung đủ sâu; danh sách planned chapter vẫn được giữ trong [SUMMARY](SUMMARY.md) để roadmap luôn nhìn thấy nhưng không tạo cảm giác hoàn thành giả.
+Repository hiện có đủ **183 chapter** theo [SUMMARY](SUMMARY.md). Mỗi chapter gồm mental model, runtime/memory/concurrency implications, production case, debugging evidence, interview prompts, exercises, cheat sheet và primary references.
 
 ## Bắt đầu đọc
 
@@ -30,6 +28,7 @@ Repository phát triển **chapter-by-chapter**. Một file chapter chỉ xuất
 - Xem toàn bộ knowledge map và trạng thái: [SUMMARY](SUMMARY.md)
 - Tra cứu thuật ngữ: [GLOSSARY](GLOSSARY.md)
 - Đi từ symptom production đến chapter liên quan: [CROSS REFERENCE INDEX](CROSS_REFERENCE_INDEX.md)
+- Kiểm tra coverage toàn bộ catalog: [HANDBOOK COVERAGE](HANDBOOK_COVERAGE.md)
 - Xử lý incident: [PRODUCTION PLAYBOOK](PRODUCTION_PLAYBOOK.md)
 - Chuẩn bị phỏng vấn: [INTERVIEW PLAYBOOK](INTERVIEW_PLAYBOOK.md)
 
