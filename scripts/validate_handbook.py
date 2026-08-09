@@ -48,12 +48,12 @@ EXPECTED_CHAPTER_COUNTS = {
     "Phase-01-Swift-Foundation": 19,
     "Phase-02-Memory-Runtime": 12,
     "Phase-03-Concurrency": 17,
-    "Phase-04-iOS-Platform": 26,
+    "Phase-04-iOS-Platform": 35,
     "Phase-05-Networking": 16,
     "Phase-06-Architecture": 15,
     "Phase-07-Persistence": 15,
     "Phase-08-Testing": 16,
-    "Phase-09-Production": 21,
+    "Phase-09-Production": 23,
     "Phase-10-Mobile-System-Design": 19,
     "Phase-11-Interview": 21,
 }
@@ -218,8 +218,8 @@ def check_catalog(errors: list[str]) -> None:
                     f"Missing quality-gate sections in {relative}: {', '.join(missing)}",
                 )
 
-    if total != 197:
-        report(errors, f"Full handbook must contain 197 chapters, found {total}")
+    if total != 208:
+        report(errors, f"Full handbook must contain 208 chapters, found {total}")
 
 
 def main() -> int:

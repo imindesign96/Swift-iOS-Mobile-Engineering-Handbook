@@ -46,6 +46,15 @@ Production evidence + Interview synthesis
 - [23 — Universal Links: AASA, routing, fallback và security](23-universal-links-aasa-routing-fallback-va-security.md)
 - [24 — WKWebView bridge: Cookie, LocalStorage và native-web data contract](24-wkwebview-bridge-cookie-localstorage-va-native-web-data-contract.md)
 - [25 — Human Interface Guidelines in practice: navigation, modality, controls và feedback](25-human-interface-guidelines-in-practice-navigation-modality-controls-va-feedback.md)
+- [26 — StoreKit 2: IAP, subscription, verification và server contract](26-storekit-2-iap-subscription-verification-server-contract.md)
+- [27 — APNs và Push Notification end-to-end](27-apns-push-notification-end-to-end.md)
+- [28 — Localization: String Catalog, pluralization, RTL và testing](28-localization-string-catalog-pluralization-rtl-va-testing.md)
+- [29 — App Intents, Shortcuts, Live Activities và ActivityKit](29-app-intents-shortcuts-live-activities-va-activitykit.md)
+- [30 — AVFoundation: camera, audio/video và media pipeline](30-avfoundation-camera-media-pipeline.md)
+- [31 — CoreBluetooth và Core NFC: device connectivity an toàn](31-corebluetooth-va-corenfc-device-connectivity.md)
+- [32 — MapKit: search, directions, camera và location experience](32-mapkit-search-directions-camera-va-location-experience.md)
+- [33 — HealthKit: authorization, query, background delivery và privacy](33-healthkit-authorization-query-background-delivery-va-privacy.md)
+- [34 — CloudKit: sync, account, conflict và offline boundary](34-cloudkit-sync-account-conflict-va-offline-boundary.md)
 - [99 — Phase Review: iOS Platform](99-phase-review.md)
 
 ## Quality gate

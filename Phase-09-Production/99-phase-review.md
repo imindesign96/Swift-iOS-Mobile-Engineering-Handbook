@@ -55,6 +55,8 @@ Phase hoàn thành mục tiêu: **đi từ symptom đến evidence, root cause v
 18. [18 — Observability, SLO và incident response](18-observability-slo-va-incident-response.md)
 19. [19 — iOS CI/CD với Bitrise và fastlane](19-ios-ci-cd-voi-bitrise-va-fastlane.md)
 20. [20 — Developer productivity metrics và data-driven improvement](20-developer-productivity-metrics-va-data-driven-improvement.md)
+21. [21 — App Store release engineering: signing, privacy, review và rollback](21-app-store-release-engineering-signing-privacy-review-va-rollback.md)
+22. [22 — BackgroundTasks và background URLSession: scheduling, expiration, energy và debugging](22-bgtaskscheduler-background-urlsession-energy-va-debugging.md)
 
 ## Knowledge Map
 
@@ -64,6 +66,14 @@ Structured, privacy-aware logging → Crash report và symbolication → EXC_BAD
 Ownership / State / Failure / Lifecycle
         ↓
 Production evidence + interview reasoning
+
+Release system:
+reproducible artifact → signing/entitlements → privacy validation
+→ TestFlight/App Review → phased release → telemetry/mitigation/fix-forward
+
+Background system:
+durable intent → correct mechanism → system opportunity
+→ bounded work → expiration/checkpoint → complete once
 ```
 
 Mỗi edge phải trả lời “vì sao concept trước là prerequisite của concept sau?”. Nếu không trả lời được, quay lại chapter gốc thay vì học thuộc review.
@@ -101,6 +111,8 @@ Evidence   → Xcode Organizer, crash report/symbolication, Instruments, MetricK
 18. Với Observability, SLO và incident response, invariant, owner và evidence chính là gì?
 19. Với iOS CI/CD với Bitrise và fastlane, invariant, owner và evidence chính là gì?
 20. Với Developer productivity metrics và data-driven improvement, invariant, owner và evidence chính là gì?
+21. Với App Store release engineering, signing chain, privacy gate và rollback thực tế vận hành thế nào?
+22. Với BackgroundTasks/background URLSession, mechanism selection, expiration và persistent ownership được chứng minh bằng evidence gì?
 
 ## Deep-dive Questions
 

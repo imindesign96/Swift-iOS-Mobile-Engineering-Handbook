@@ -19,6 +19,17 @@
 | E2E flaky trên CI | [E2E automation](Phase-08-Testing/15-e2e-automation-voi-xcuitest-fixtures-stability-va-ci.md) | Fixture/identifier → semantic wait → xcresult → flake taxonomy |
 | Release/signing không ổn định | [iOS CI/CD](Phase-09-Production/19-ios-ci-cd-voi-bitrise-va-fastlane.md) | Toolchain pin → tests → readonly signing → immutable artifact |
 | Team chậm nhưng không rõ bottleneck | [Developer productivity](Phase-09-Production/20-developer-productivity-metrics-va-data-driven-improvement.md) | Value stream → DORA/DevEx baseline → experiment → guardrail |
+| Purchase thành công nhưng chưa mở quyền | [StoreKit 2](Phase-04-iOS-Platform/26-storekit-2-iap-subscription-verification-server-contract.md) | Verification → entitlement reconciliation → server notification/ledger → refund |
+| APNs trả 200 nhưng user không thấy | [APNs end-to-end](Phase-04-iOS-Platform/27-apns-push-notification-end-to-end.md) | Token/environment → topic/push type → permission/presentation → route telemetry |
+| Chuỗi bị cắt / sai plural / RTL | [Localization](Phase-04-iOS-Platform/28-localization-string-catalog-pluralization-rtl-va-testing.md) | String Catalog → locale/time zone → adaptive layout → localization test matrix |
+| Live Activity stale hoặc không kết thúc | [App Intents & ActivityKit](Phase-04-iOS-Platform/29-app-intents-shortcuts-live-activities-va-activitykit.md) | Token rotation → version ordering → stale/end policy → account isolation |
+| Camera giật hoặc memory tăng | [AVFoundation](Phase-04-iOS-Platform/30-avfoundation-camera-media-pipeline.md) | Session queue → buffer backpressure → orientation/audio → device profiling |
+| BLE reconnect tạo duplicate command | [CoreBluetooth & Core NFC](Phase-04-iOS-Platform/31-corebluetooth-va-corenfc-device-connectivity.md) | State machine → framing/ack → idempotency → restoration/hardware test |
+| Map tự nhảy / search result cũ | [MapKit](Phase-04-iOS-Platform/32-mapkit-search-directions-camera-va-location-experience.md) | Camera owner → debounce/cancel/generation → route staleness |
+| Health sample mất hoặc đếm đôi | [HealthKit](Phase-04-iOS-Platform/33-healthkit-authorization-query-background-delivery-va-privacy.md) | Authorization privacy → observer/anchor → atomic checkpoint → source aggregation |
+| CloudKit mất edit / lộ account cũ | [CloudKit](Phase-04-iOS-Platform/34-cloudkit-sync-account-conflict-va-offline-boundary.md) | Local outbox → conflict policy → account partition → engine state |
+| App Store reject hoặc không thể rollback | [App Store release engineering](Phase-09-Production/21-app-store-release-engineering-signing-privacy-review-va-rollback.md) | Signing/entitlements → privacy manifest → TestFlight/review → pause/kill switch/fix-forward |
+| Background job không chạy hoặc upload mất | [BackgroundTasks & background URLSession](Phase-09-Production/22-bgtaskscheduler-background-urlsession-energy-va-debugging.md) | Mechanism selection → expiration/checkpoint → persistent transfer identity → device evidence |
 
 ## Canonical Phase Reviews
 
@@ -36,4 +47,4 @@
 
 ## Full coverage
 
-Xem [Handbook Coverage Matrix](HANDBOOK_COVERAGE.md) để tra toàn bộ 197 chapter; xem [Professional Skills Matrix](PROFESSIONAL_SKILLS_MATRIX.md) để đối chiếu 13 yêu cầu năng lực tiếng Nhật.
+Xem [Handbook Coverage Matrix](HANDBOOK_COVERAGE.md) để tra toàn bộ 208 chapter; xem [Professional Skills Matrix](PROFESSIONAL_SKILLS_MATRIX.md) để đối chiếu 13 yêu cầu năng lực tiếng Nhật.

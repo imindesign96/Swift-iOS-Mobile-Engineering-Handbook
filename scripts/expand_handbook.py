@@ -18,12 +18,23 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 SUMMARY = ROOT / "SUMMARY.md"
 TODAY = "2026-08-09"
-CATALOG_TOTAL = 197
+CATALOG_TOTAL = 208
 
 PRESERVE_HAND_WRITTEN = {
     "Phase-01-Swift-Foundation/01-how-a-swift-program-runs.md",
     "Phase-01-Swift-Foundation/02-let-var-type-inference-and-type-safety.md",
     "Phase-01-Swift-Foundation/03-optionals-and-nil-safety.md",
+    "Phase-04-iOS-Platform/26-storekit-2-iap-subscription-verification-server-contract.md",
+    "Phase-04-iOS-Platform/27-apns-push-notification-end-to-end.md",
+    "Phase-04-iOS-Platform/28-localization-string-catalog-pluralization-rtl-va-testing.md",
+    "Phase-04-iOS-Platform/29-app-intents-shortcuts-live-activities-va-activitykit.md",
+    "Phase-04-iOS-Platform/30-avfoundation-camera-media-pipeline.md",
+    "Phase-04-iOS-Platform/31-corebluetooth-va-corenfc-device-connectivity.md",
+    "Phase-04-iOS-Platform/32-mapkit-search-directions-camera-va-location-experience.md",
+    "Phase-04-iOS-Platform/33-healthkit-authorization-query-background-delivery-va-privacy.md",
+    "Phase-04-iOS-Platform/34-cloudkit-sync-account-conflict-va-offline-boundary.md",
+    "Phase-09-Production/21-app-store-release-engineering-signing-privacy-review-va-rollback.md",
+    "Phase-09-Production/22-bgtaskscheduler-background-urlsession-energy-va-debugging.md",
 }
 
 

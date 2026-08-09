@@ -41,6 +41,8 @@ Production evidence + Interview synthesis
 - [18 — Observability, SLO và incident response](18-observability-slo-va-incident-response.md)
 - [19 — iOS CI/CD với Bitrise và fastlane](19-ios-ci-cd-voi-bitrise-va-fastlane.md)
 - [20 — Developer productivity metrics và data-driven improvement](20-developer-productivity-metrics-va-data-driven-improvement.md)
+- [21 — App Store release engineering: signing, privacy, review và rollback](21-app-store-release-engineering-signing-privacy-review-va-rollback.md)
+- [22 — BackgroundTasks và background URLSession: scheduling, expiration, energy và debugging](22-bgtaskscheduler-background-urlsession-energy-va-debugging.md)
 - [99 — Phase Review: Production](99-phase-review.md)
 
 ## Quality gate

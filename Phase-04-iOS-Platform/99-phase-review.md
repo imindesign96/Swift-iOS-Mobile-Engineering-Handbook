@@ -60,6 +60,15 @@ Phase hoàn thành mục tiêu: **đặt UI state và work đúng lifecycle tron
 23. [23 — Universal Links: AASA, routing, fallback và security](23-universal-links-aasa-routing-fallback-va-security.md)
 24. [24 — WKWebView bridge: Cookie, LocalStorage và native-web data contract](24-wkwebview-bridge-cookie-localstorage-va-native-web-data-contract.md)
 25. [25 — Human Interface Guidelines in practice: navigation, modality, controls và feedback](25-human-interface-guidelines-in-practice-navigation-modality-controls-va-feedback.md)
+26. [26 — StoreKit 2: IAP, subscription, verification và server contract](26-storekit-2-iap-subscription-verification-server-contract.md)
+27. [27 — APNs và Push Notification end-to-end](27-apns-push-notification-end-to-end.md)
+28. [28 — Localization: String Catalog, pluralization, RTL và testing](28-localization-string-catalog-pluralization-rtl-va-testing.md)
+29. [29 — App Intents, Shortcuts, Live Activities và ActivityKit](29-app-intents-shortcuts-live-activities-va-activitykit.md)
+30. [30 — AVFoundation: camera, audio/video và media pipeline](30-avfoundation-camera-media-pipeline.md)
+31. [31 — CoreBluetooth và Core NFC: device connectivity an toàn](31-corebluetooth-va-corenfc-device-connectivity.md)
+32. [32 — MapKit: search, directions, camera và location experience](32-mapkit-search-directions-camera-va-location-experience.md)
+33. [33 — HealthKit: authorization, query, background delivery và privacy](33-healthkit-authorization-query-background-delivery-va-privacy.md)
+34. [34 — CloudKit: sync, account, conflict và offline boundary](34-cloudkit-sync-account-conflict-va-offline-boundary.md)
 
 ## Knowledge Map
 
@@ -69,6 +78,13 @@ App lifecycle và scene lifecycle → UIView: hierarchy, layout và drawing → 
 Ownership / State / Failure / Lifecycle
         ↓
 Production evidence + interview reasoning
+
+Commerce capabilities:
+StoreKit entitlement ↔ APNs routing ↔ App Intents/ActivityKit
+Localization/HIG ↔ adaptive UI/accessibility
+AVFoundation · Bluetooth/NFC · MapKit · HealthKit · CloudKit
+        ↓
+Permission + entitlement + resource budget + privacy + recovery
 ```
 
 Mỗi edge phải trả lời “vì sao concept trước là prerequisite của concept sau?”. Nếu không trả lời được, quay lại chapter gốc thay vì học thuộc review.
@@ -111,6 +127,15 @@ Evidence   → View Debugger, constraint logs, SwiftUI Instruments, Time Profile
 23. Với Universal Links: AASA, routing, fallback và security, invariant, owner và evidence chính là gì?
 24. Với WKWebView bridge: Cookie, LocalStorage và native-web data contract, invariant, owner và evidence chính là gì?
 25. Với Human Interface Guidelines in practice: navigation, modality, controls và feedback, invariant, owner và evidence chính là gì?
+26. Với StoreKit 2, phân biệt verified transaction, fulfillment và entitlement thế nào?
+27. Với APNs, làm sao phân biệt provider acceptance, delivery, presentation và routing?
+28. Localization contract bao gồm locale/time zone/plural/RTL và testing ra sao?
+29. App Intent và Live Activity chia sẻ domain action/state nhưng giữ extension boundary thế nào?
+30. AVFoundation pipeline kiểm soát session serialization, buffer backpressure và interruption ra sao?
+31. BLE/NFC workflow cần state machine, protocol security và hardware evidence gì?
+32. MapKit camera ownership và async search ordering được bảo vệ thế nào?
+33. HealthKit authorization privacy và observer/anchor checkpoint có constraint gì?
+34. CloudKit local-first sync xử lý account switch, conflict và durable engine state ra sao?
 
 ## Deep-dive Questions
 

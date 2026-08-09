@@ -1,6 +1,6 @@
 # SUMMARY — Knowledge Map & Progress
 
-> Verified 2026-08-09: toàn bộ 11 Phase và 197 chapter đã có nội dung, Phase Review và quality gate.
+> Verified 2026-08-09: toàn bộ 11 Phase và 208 chapter đã có nội dung, Phase Review và quality gate.
 
 Ký hiệu: ✅ chapter hoàn chỉnh và tiêu đề là liên kết.
 
@@ -88,6 +88,15 @@ Ký hiệu: ✅ chapter hoàn chỉnh và tiêu đề là liên kết.
 - ✅ [23 — Universal Links: AASA, routing, fallback và security](Phase-04-iOS-Platform/23-universal-links-aasa-routing-fallback-va-security.md)
 - ✅ [24 — WKWebView bridge: Cookie, LocalStorage và native-web data contract](Phase-04-iOS-Platform/24-wkwebview-bridge-cookie-localstorage-va-native-web-data-contract.md)
 - ✅ [25 — Human Interface Guidelines in practice: navigation, modality, controls và feedback](Phase-04-iOS-Platform/25-human-interface-guidelines-in-practice-navigation-modality-controls-va-feedback.md)
+- ✅ [26 — StoreKit 2: IAP, subscription, verification và server contract](Phase-04-iOS-Platform/26-storekit-2-iap-subscription-verification-server-contract.md)
+- ✅ [27 — APNs và Push Notification end-to-end](Phase-04-iOS-Platform/27-apns-push-notification-end-to-end.md)
+- ✅ [28 — Localization: String Catalog, pluralization, RTL và testing](Phase-04-iOS-Platform/28-localization-string-catalog-pluralization-rtl-va-testing.md)
+- ✅ [29 — App Intents, Shortcuts, Live Activities và ActivityKit](Phase-04-iOS-Platform/29-app-intents-shortcuts-live-activities-va-activitykit.md)
+- ✅ [30 — AVFoundation: camera, audio/video và media pipeline](Phase-04-iOS-Platform/30-avfoundation-camera-media-pipeline.md)
+- ✅ [31 — CoreBluetooth và Core NFC: device connectivity an toàn](Phase-04-iOS-Platform/31-corebluetooth-va-corenfc-device-connectivity.md)
+- ✅ [32 — MapKit: search, directions, camera và location experience](Phase-04-iOS-Platform/32-mapkit-search-directions-camera-va-location-experience.md)
+- ✅ [33 — HealthKit: authorization, query, background delivery và privacy](Phase-04-iOS-Platform/33-healthkit-authorization-query-background-delivery-va-privacy.md)
+- ✅ [34 — CloudKit: sync, account, conflict và offline boundary](Phase-04-iOS-Platform/34-cloudkit-sync-account-conflict-va-offline-boundary.md)
 - ✅ [99 — Phase Review: iOS Platform](Phase-04-iOS-Platform/99-phase-review.md)
 
 ## Phase 05 — Networking
@@ -186,6 +195,8 @@ Ký hiệu: ✅ chapter hoàn chỉnh và tiêu đề là liên kết.
 - ✅ [18 — Observability, SLO và incident response](Phase-09-Production/18-observability-slo-va-incident-response.md)
 - ✅ [19 — iOS CI/CD với Bitrise và fastlane](Phase-09-Production/19-ios-ci-cd-voi-bitrise-va-fastlane.md)
 - ✅ [20 — Developer productivity metrics và data-driven improvement](Phase-09-Production/20-developer-productivity-metrics-va-data-driven-improvement.md)
+- ✅ [21 — App Store release engineering: signing, privacy, review và rollback](Phase-09-Production/21-app-store-release-engineering-signing-privacy-review-va-rollback.md)
+- ✅ [22 — BackgroundTasks và background URLSession: scheduling, expiration, energy và debugging](Phase-09-Production/22-bgtaskscheduler-background-urlsession-energy-va-debugging.md)
 - ✅ [99 — Phase Review: Production](Phase-09-Production/99-phase-review.md)
 
 ## Phase 10 — Mobile System Design
@@ -237,6 +248,6 @@ Ký hiệu: ✅ chapter hoàn chỉnh và tiêu đề là liên kết.
 ## Completion snapshot
 
 - 11/11 Phase complete.
-- 197/197 chapter complete.
+- 208/208 chapter complete.
 - 11/11 Phase Review complete.
 - Navigation, local links và code fences được validator kiểm tra.
